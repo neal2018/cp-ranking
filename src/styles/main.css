@@ -1,0 +1,4 @@
+html * {
+  --un-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--un-border-opacity));
+}
