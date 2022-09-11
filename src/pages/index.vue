@@ -10,8 +10,8 @@ const tableTitles = ['User', 'CodeForces', 'AtCoder', 'Total']
     <p text-4xl>
       CP Ranking
     </p>
-    <div p-10>
-      <table border-1 m-auto>
+    <div>
+      <table border-1 m-auto p-10 m-y-10>
         <tr border-1>
           <th v-for="val in tableTitles" :key="val" border-1>
             {{ val }}
@@ -38,6 +38,6 @@ const tableTitles = ['User', 'CodeForces', 'AtCoder', 'Total']
 table,
 th,
 td {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 </style>
