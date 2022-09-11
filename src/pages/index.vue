@@ -2,7 +2,7 @@
 import handles from '~/data/handles.json'
 import { getPoints } from '~/composables/utils'
 
-const tableTitles = ['User', 'CodeForces', 'AtCoder', 'Total']
+const tableTitles = ['Rank', 'User', 'CodeForces', 'AtCoder', 'Total']
 </script>
 
 <template>
@@ -17,7 +17,10 @@ const tableTitles = ['User', 'CodeForces', 'AtCoder', 'Total']
             {{ val }}
           </th>
         </tr>
-        <tr v-for="item in handles" :key="item.username" border-1>
+        <tr v-for="(item, i) in handles" :key="item.username" border-1>
+          <td border-1>
+            {{ i + 1 }}
+          </td>
           <td border-1>
             {{ item.username }}
           </td>
