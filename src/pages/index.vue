@@ -3,6 +3,33 @@ import handles from '~/data/handles.json'
 import { getPoints } from '~/composables/utils'
 
 const tableTitles = ['Rank', 'User', 'CodeForces', 'AtCoder', 'Total']
+
+const tableData = handles.map((handle, index) => {
+  // TODO: improve time complexity
+  const { codeforces, atcoder, total } = getPoints(handle.username)
+  return {
+    rank: 0,
+    username: handle.username,
+    codeforces,
+    atcoder,
+    total,
+  }
+})
+
+tableData.sort((a, b) => b.total - a.total)
+
+// add rank to tableData, same total should has the same rank
+;(() => {
+  let rank = 1
+  let lastTotal = tableData[0].total
+  tableData.forEach((item, index) => {
+    if (item.total < lastTotal) {
+      rank = index + 1
+      lastTotal = item.total
+    }
+    item.rank = rank
+  })
+})()
 </script>
 
 <template>
@@ -17,14 +44,8 @@ const tableTitles = ['Rank', 'User', 'CodeForces', 'AtCoder', 'Total']
             {{ val }}
           </th>
         </tr>
-        <tr v-for="(item, i) in handles" :key="item.username" border-1>
-          <td border-1>
-            {{ i + 1 }}
-          </td>
-          <td border-1>
-            {{ item.username }}
-          </td>
-          <td v-for="(val, key) in getPoints(item.username)" :key="key" border-1>
+        <tr v-for="(userData, index) in tableData" :key="index" border-1>
+          <td v-for="(val, key) in userData" :key="key" border-1>
             {{ val }}
           </td>
         </tr>

@@ -42,14 +42,12 @@ const getPlatformPoints = (handle: string, platform: string) => {
 
 export const getPoints = (username: string) => {
   const handle = handles.find(handle => handle.username === username)
-  if (!handle)
-    return 0
-  const codeforcesPoints = handle.codeforces_handles.reduce((acc, handle) => {
+  const codeforcesPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'codeforces')
-  }, 0)
-  const atcoderPoints = handle.atcoder_handles.reduce((acc, handle) => {
+  }, 0) ?? 0
+  const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'atcoder')
-  }, 0)
+  }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
     atcoder: atcoderPoints,
