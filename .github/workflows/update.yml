@@ -1,4 +1,4 @@
-name: Test
+name: Update Submissions
 
 on:
   workflow_dispatch:
@@ -21,8 +21,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "update submissions"
-          git add ./data/*
-          git commit -m "update data" -a
+          git diff ./src/data/submissions.json
+          git add ./src/data/submissions.json
+          git commit -m "feat: update submissions" -a
 
       - name: push changes
         uses: ad-m/github-push-action@master
