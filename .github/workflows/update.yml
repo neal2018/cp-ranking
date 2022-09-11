@@ -17,16 +17,20 @@ jobs:
       - run: pip install -r ./scripts/requirements.txt
       - run: python ./scripts/updater.py
 
+      - name: check diff
+        run: echo "DIFF=$(git diff ./src/data/submissions.json)" >> $GITHUB_ENV
+
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "update submissions"
-          git diff ./src/data/submissions.json
           git add ./src/data/submissions.json
           git commit -m "feat: update submissions" -a
+        if: env.DIFF != ''
 
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
+        if: env.DIFF != ''
