@@ -16,7 +16,7 @@ const userATsubmissions = submissions.filter(submission =>
 
 const userPoints = getTableData().find(user => user.username === props.username)!
 
-const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solve Time', 'Points']
+const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Points']
 
 const formatTime = (s: number) => {
   return new Date(s * 1e3).toLocaleString('en-US', {
