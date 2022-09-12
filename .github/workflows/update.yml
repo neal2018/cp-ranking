@@ -19,7 +19,7 @@ jobs:
 
       - name: check diff
         id: diff
-        run: echo "$(git diff ./src/data/submissions.json)"
+        run: echo "::set-output name=DIFF::$(git diff ./src/data/submissions.json)"
 
       - name: commit files
         run: |
@@ -27,11 +27,11 @@ jobs:
           git config --local user.name "update submissions"
           git add ./src/data/submissions.json
           git commit -m "feat: update submissions" -a
-        if: ${{ steps.diff.outputs.stdout }}
+        if: steps.diff.outputs.DIFF
 
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-        if: ${{ steps.diff.outputs.stdout }}
+        if: steps.diff.outputs.DIFF
