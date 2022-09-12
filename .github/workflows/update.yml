@@ -19,7 +19,7 @@ jobs:
 
       - name: check diff
         id: diff
-        run: git diff ./src/data/submissions.json
+        run: echo "$(git diff ./src/data/submissions.json)"
 
       - name: commit files
         run: |
