@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
 html * {
   --un-border-opacity: 1;
   border-color: rgba(156, 163, 175, var(--un-border-opacity));
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
 *{
   font-family: 'Fira Code', monospace;
 }

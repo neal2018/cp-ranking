@@ -38,7 +38,7 @@ const formatTime = (s: number) => {
     </div>
     <div>
       <p text-2xl p-t-10>
-        CodeForces: {{ userPoints.codeforces }} Points
+        Codeforces: {{ userPoints.codeforces }} Points
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
