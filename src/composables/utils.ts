@@ -1,7 +1,7 @@
 import submissions from '~/data/submissions.json'
 import handles from '~/data/handles.json'
 
-const getPointFromRating = (rating: number, platform: string) => {
+export const getPointFromRating = (rating: number, platform: string) => {
   if (platform === 'codeforces') {
     if (rating < 1000)
       return 0
@@ -53,4 +53,33 @@ export const getPoints = (username: string) => {
     atcoder: atcoderPoints,
     total: codeforcesPoints + atcoderPoints,
   }
+}
+
+export const getTableData = () => {
+  const tableData = handles.map((handle) => {
+    // TODO: improve time complexity
+    const { codeforces, atcoder, total } = getPoints(handle.username)
+    return {
+      rank: 0,
+      username: handle.username,
+      codeforces,
+      atcoder,
+      total,
+    }
+  })
+
+  tableData.sort((a, b) => b.total - a.total)
+
+  // add rank to tableData, same total should has the same rank
+  let rank = 1
+  let lastTotal = tableData[0].total
+  tableData.forEach((item, index) => {
+    if (item.total < lastTotal) {
+      rank = index + 1
+      lastTotal = item.total
+    }
+    item.rank = rank
+  })
+
+  return tableData
 }
