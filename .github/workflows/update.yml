@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "* 14 * * *"
+    - cron: "0 18 * * *"
 
 jobs:
   update:
@@ -18,7 +18,8 @@ jobs:
       - run: python ./scripts/updater.py
 
       - name: check diff
-        run: echo "DIFF=$(git diff ./src/data/submissions.json)" >> $GITHUB_ENV
+        id: diff
+        run: git diff ./src/data/submissions.json
 
       - name: commit files
         run: |
@@ -26,11 +27,11 @@ jobs:
           git config --local user.name "update submissions"
           git add ./src/data/submissions.json
           git commit -m "feat: update submissions" -a
-        if: env.DIFF != ''
+        if: ${{ steps.diff.outputs.stdout }}
 
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-        if: env.DIFF != ''
+        if: ${{ steps.diff.outputs.stdout }}
