@@ -25,7 +25,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if submission['contestId'] == 0:
                 return False
-            if submission['author']['participantType'] != 'CONTESTANT':
+            if submission['author']['participantType'] not in ('CONTESTANT', 'OUT_OF_COMPETITION'):
                 return False
             return True
         return list(filter(f, submissions))
@@ -47,7 +47,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 platform="codeforces",
                 contest_id=submission['problem']['contestId'],
                 problem_id=submission['problem']['index'],
-                rating=submission['problem']['rating'],
+                rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
                 time=submission['creationTimeSeconds'],
             )
         return list(map(f, submissions))

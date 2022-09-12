@@ -51,6 +51,9 @@ const formatTime = (s: number) => {
             <span v-if="key === 'time'">
               {{ formatTime(val as number) }}
             </span>
+            <span v-else-if="key === 'rating'">
+              {{ val === -1 ? 'UNKNOWN' : val }}
+            </span>
             <span v-else>
               {{ val }}
             </span>
