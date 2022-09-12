@@ -2,6 +2,62 @@
   {
     "platform": "codeforces",
     "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "G",
+    "rating": -1,
+    "time": 1662999095
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "F",
+    "rating": -1,
+    "time": 1662996453
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "E",
+    "rating": -1,
+    "time": 1662995549
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "D",
+    "rating": -1,
+    "time": 1662994621
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "C",
+    "rating": -1,
+    "time": 1662994191
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1662993762
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1729,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1662993482
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
     "contest_id": 1728,
     "problem_id": "D",
     "rating": 1800,
@@ -94,5 +150,61 @@
     "problem_id": "abc268_a",
     "rating": -876,
     "time": 1662811803
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "G",
+    "rating": -1,
+    "time": 1663000704
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "F",
+    "rating": -1,
+    "time": 1662999743
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "E",
+    "rating": -1,
+    "time": 1662998871
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "D",
+    "rating": -1,
+    "time": 1662997846
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "C",
+    "rating": -1,
+    "time": 1662997249
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1662996576
+  },
+  {
+    "platform": "codeforces",
+    "handle": "askd",
+    "contest_id": 1729,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1662995927
   }
 ]
