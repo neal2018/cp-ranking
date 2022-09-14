@@ -4,7 +4,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "G",
-    "rating": -1,
+    "rating": 2100,
     "time": 1662999095
   },
   {
@@ -12,7 +12,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "F",
-    "rating": -1,
+    "rating": 1900,
     "time": 1662996453
   },
   {
@@ -20,7 +20,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "E",
-    "rating": -1,
+    "rating": 1800,
     "time": 1662995549
   },
   {
@@ -28,7 +28,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1200,
     "time": 1662994621
   },
   {
@@ -36,7 +36,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1100,
     "time": 1662994191
   },
   {
@@ -44,7 +44,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1662993762
   },
   {
@@ -52,7 +52,7 @@
     "handle": "Nea1",
     "contest_id": 1729,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1662993482
   },
   {
@@ -156,7 +156,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "G",
-    "rating": -1,
+    "rating": 2100,
     "time": 1663000704
   },
   {
@@ -164,7 +164,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "F",
-    "rating": -1,
+    "rating": 1900,
     "time": 1662999743
   },
   {
@@ -172,7 +172,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "E",
-    "rating": -1,
+    "rating": 1800,
     "time": 1662998871
   },
   {
@@ -180,7 +180,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1200,
     "time": 1662997846
   },
   {
@@ -188,7 +188,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1100,
     "time": 1662997249
   },
   {
@@ -196,7 +196,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1662996576
   },
   {
@@ -204,7 +204,7 @@
     "handle": "askd",
     "contest_id": 1729,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1662995927
   }
 ]
