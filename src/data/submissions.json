@@ -262,5 +262,29 @@
     "problem_id": "A",
     "rating": 800,
     "time": 1662648542
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yangster67",
+    "contest_id": 1729,
+    "problem_id": "C",
+    "rating": 1100,
+    "time": 1663001054
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yangster67",
+    "contest_id": 1729,
+    "problem_id": "B",
+    "rating": 800,
+    "time": 1663000692
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yangster67",
+    "contest_id": 1729,
+    "problem_id": "A",
+    "rating": 800,
+    "time": 1663000364
   }
 ]
