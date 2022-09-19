@@ -38,7 +38,7 @@ const userATsubmissions = submissions.filter(submission =>
     </div>
     <div>
       <p text-2xl p-t-10>
-        Codeforces: {{ userPoints.codeforces }} Points
+        Codeforces: {{ handle.codeforces_handles }}; {{ userPoints.codeforces }} Points
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
@@ -81,7 +81,7 @@ const userATsubmissions = submissions.filter(submission =>
 
     <div>
       <p text-2xl p-t-10>
-        AtCoder: {{ userPoints.atcoder }} Points
+        AtCoder: {{ handle.atcoder_handles }}; {{ userPoints.atcoder }} Points
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
