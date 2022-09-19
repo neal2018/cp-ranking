@@ -12,7 +12,7 @@ const go = (username: string) => {
 </script>
 
 <template>
-  <div relative>
+  <div relative flex flex-col>
     <p text-4xl p-10>
       CP Ranking
     </p>
@@ -34,6 +34,11 @@ const go = (username: string) => {
           </td>
         </tr>
       </table>
+    </div>
+    <div right border-1 max-w-sm p-2 self-end>
+      <p text-sm text-left>
+        * Note: Currently only record points gained during live contests in Codeforces and AtCoder
+      </p>
     </div>
   </div>
 </template>

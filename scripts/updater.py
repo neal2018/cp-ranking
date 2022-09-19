@@ -3,6 +3,7 @@ import requests
 import datetime
 import os
 import json
+import time
 
 START_DATE = datetime.datetime(2022, 9, 1)
 
@@ -14,6 +15,7 @@ class Submission(NamedTuple):
     problem_id: str
     rating: int
     time: float
+    submission_id: int
 
 
 def get_codeforces(handle: str) -> List[Submission]:
@@ -49,6 +51,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 problem_id=submission['problem']['index'],
                 rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
                 time=submission['creationTimeSeconds'],
+                submission_id=submission['id'],
             )
         return list(map(f, submissions))
 
@@ -96,6 +99,7 @@ def get_atcoder(handle: str) -> List[Submission]:
                 problem_id=submission['problem_id'],
                 rating=difficulties[submission['problem_id']]['difficulty'],
                 time=submission['epoch_second'],
+                submission_id=submission['id'],
             )
         return list(map(f, submissions))
 
@@ -119,6 +123,8 @@ def main():
             submissions.extend(get_codeforces(cf_handle))
         for ac_handle in handle["atcoder_handles"]:
             submissions.extend(get_atcoder(ac_handle))
+        print(f"done {handle}")
+        time.sleep(1)
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
     # write submissions to src/submissions.json

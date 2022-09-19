@@ -6,14 +6,6 @@ import { getPointFromRating, getTableData } from '~/composables/utils'
 const props = defineProps<{ username: string }>()
 const router = useRouter()
 
-// get the user submission history from submission.json
-const handle = handles.find(handle => handle.username === props.username)!
-const userCFSubmissions = submissions.filter(submission =>
-  (submission.platform === 'codeforces' && handle.codeforces_handles.includes(submission.handle)))
-
-const userATsubmissions = submissions.filter(submission =>
-  (submission.platform === 'atcoder' && handle.atcoder_handles.includes(submission.handle)))
-
 const userPoints = getTableData().find(user => user.username === props.username)!
 
 const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Points']
@@ -24,6 +16,14 @@ const formatTime = (s: number) => {
     hour12: false,
   }).replace(', ', ' ').slice(0, -3)
 }
+
+// get the user submission history from submission.json
+const handle = handles.find(handle => handle.username === props.username)!
+const userCFSubmissions = submissions.filter(submission =>
+  (submission.platform === 'codeforces' && handle.codeforces_handles.includes(submission.handle)))
+
+const userATsubmissions = submissions.filter(submission =>
+  (submission.platform === 'atcoder' && handle.atcoder_handles.includes(submission.handle)))
 </script>
 
 <template>
@@ -47,18 +47,32 @@ const formatTime = (s: number) => {
           </th>
         </tr>
         <tr v-for="(userData, index) in userCFSubmissions" :key="index" border-1>
-          <td v-for="(val, key) in userData" :key="key" border-1>
-            <span v-if="key === 'time'">
-              {{ formatTime(val as number) }}
-            </span>
-            <span v-else-if="key === 'rating'">
-              {{ val === -1 ? 'UNKNOWN' : val }}
-            </span>
-            <span v-else>
-              {{ val }}
-            </span>
+          <td border-1>
+            {{ userData.platform }}
           </td>
           <td border-1>
+            <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
+              {{ userData.handle }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/contest/${userData.contest_id}`" target="_blank">
+              {{ userData.contest_id }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/contest/${userData.contest_id}/problem/${userData.problem_id}`" target="_blank">
+              {{ userData.problem_id }}
+            </a>
+          </td>
+          <td border-1>
+            {{ userData.rating === -1 ? 'UNKNOWN' : userData.rating }}
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/contest/${userData.contest_id}/submission/${userData.submission_id}`" target="_blank">
+              {{ formatTime(userData.time) }}
+            </a>
+          </td><td border-1>
             {{ getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
@@ -76,13 +90,31 @@ const formatTime = (s: number) => {
           </th>
         </tr>
         <tr v-for="(userData, index) in userATsubmissions" :key="index" border-1>
-          <td v-for="(val, key) in userData" :key="key" border-1>
-            <span v-if="key === 'time'">
-              {{ formatTime(val as number) }}
-            </span>
-            <span v-else>
-              {{ val }}
-            </span>
+          <td border-1>
+            {{ userData.platform }}
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/users/${userData.handle}`" target="_blank">
+              {{ userData.handle }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}`" target="_blank">
+              {{ userData.contest_id }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/tasks/${userData.problem_id}`" target="_blank">
+              {{ userData.problem_id }}
+            </a>
+          </td>
+          <td border-1>
+            {{ userData.rating }}
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`" target="_blank">
+              {{ formatTime(userData.time) }}
+            </a>
           </td>
           <td border-1>
             {{ getPointFromRating(userData.rating, userData.platform) }}

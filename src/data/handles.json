@@ -1,47 +1,916 @@
 [
   {
-    "username": "nea1",
+    "email_address": "kd2781@columbia.edu",
+    "username": "Kai (askd)",
+    "middle_name": "N/A",
+    "lastname": "Dai",
+    "codeforces_handles": [
+      "askd"
+    ],
+    "atcoder_handles": [
+      "askdfjlas"
+    ]
+  },
+  {
+    "email_address": "fl2571@columbia.edu",
+    "username": "Fangxin",
+    "middle_name": "N/A",
+    "lastname": "Lin",
+    "codeforces_handles": [
+      "zerolin"
+    ],
+    "atcoder_handles": [
+      "zerol"
+    ]
+  },
+  {
+    "email_address": "ac4808@columbia.edu",
+    "username": "Andrei",
+    "middle_name": "N/A",
+    "lastname": "Coman",
+    "codeforces_handles": [
+      "ac4808"
+    ],
+    "atcoder_handles": [
+      "ac4808"
+    ]
+  },
+  {
+    "email_address": "jl5722@columbia.edu",
+    "username": "Jiajie (nea1)",
+    "middle_name": "N/A",
+    "lastname": "Lai",
     "codeforces_handles": [
       "Nea1",
-      "follow_diana_please"
+      "follow_diana_please",
+      "leafeon"
     ],
     "atcoder_handles": [
       "neal2021"
     ]
   },
   {
-    "username": "askd",
+    "email_address": "hy2781@columbia.edu",
+    "username": "Hanming",
+    "middle_name": "N/A",
+    "lastname": "Yang",
     "codeforces_handles": [
-      "askd"
+      "albertyangyhm"
     ],
-    "atcoder_handles": []
+    "atcoder_handles": [
+      "albertyangyhm"
+    ]
   },
   {
-    "username": "zero",
+    "email_address": "idm2114@columbia.edu",
+    "username": "Ian",
+    "middle_name": "Dorian",
+    "lastname": "Macleod",
     "codeforces_handles": [
-      "zerolin"
+      "idm2114"
     ],
-    "atcoder_handles": []
+    "atcoder_handles": [
+      "idm2114"
+    ]
   },
   {
-    "username": "zero2",
+    "email_address": "yw3747@columbia.edu",
+    "username": "Yixing",
+    "middle_name": "N/A",
+    "lastname": "Wang",
     "codeforces_handles": [
-      "zerolin"
+      "Yixing.W"
     ],
-    "atcoder_handles": []
+    "atcoder_handles": [
+      "Yixing"
+    ]
   },
   {
-    "username": "jiayuan",
+    "email_address": "cjy2129@columbia.edu",
+    "username": "Chris",
+    "middle_name": "Jaehyun",
+    "lastname": "Yoon",
+    "codeforces_handles": [
+      "chyoon"
+    ],
+    "atcoder_handles": [
+      "chyoon"
+    ]
+  },
+  {
+    "email_address": "wc2787@columbia.edu",
+    "username": "Wen",
+    "middle_name": "N/A",
+    "lastname": "Chen",
+    "codeforces_handles": [
+      "xmmm0"
+    ],
+    "atcoder_handles": [
+      "xmmm0"
+    ]
+  },
+  {
+    "email_address": "gy2301@columbia.edu",
+    "username": "Guoxin",
+    "middle_name": "N/A",
+    "lastname": "Yin",
+    "codeforces_handles": [
+      "GuoxinYin"
+    ],
+    "atcoder_handles": [
+      "GuoxinYin"
+    ]
+  },
+  {
+    "email_address": "vf2272@columbia.edu",
+    "username": "Vicente",
+    "middle_name": "N/A",
+    "lastname": "Farias",
+    "codeforces_handles": [
+      "vicentef1"
+    ],
+    "atcoder_handles": [
+      "vicentef1"
+    ]
+  },
+  {
+    "email_address": "xh2513@columbia.edu",
+    "username": "Peter",
+    "middle_name": "N/A",
+    "lastname": "He",
+    "codeforces_handles": [
+      "bobbyFischer21"
+    ],
+    "atcoder_handles": [
+      "bobbyFischer"
+    ]
+  },
+  {
+    "email_address": "dac2218@columbia.edu",
+    "username": "David",
+    "middle_name": "Andre",
+    "lastname": "Castro",
+    "codeforces_handles": [
+      "dcastro695"
+    ],
+    "atcoder_handles": [
+      "dcastro695"
+    ]
+  },
+  {
+    "email_address": "dmi2116@columbia.edu",
+    "username": "Dominic",
+    "middle_name": "Michael",
+    "lastname": "Insogna",
+    "codeforces_handles": [
+      "dom876"
+    ],
+    "atcoder_handles": [
+      "dinsogna"
+    ]
+  },
+  {
+    "email_address": "ys3440@columbia.edu",
+    "username": "Yinon",
+    "middle_name": "N/A",
+    "lastname": "Shirazi",
+    "codeforces_handles": [
+      "YinonShirazi"
+    ],
+    "atcoder_handles": [
+      "YinonShirazi"
+    ]
+  },
+  {
+    "email_address": "ezt2102@columbia.edu",
+    "username": "Eitan",
+    "middle_name": "NA",
+    "lastname": "Turok",
+    "codeforces_handles": [
+      "eturok"
+    ],
+    "atcoder_handles": [
+      "eturok"
+    ]
+  },
+  {
+    "email_address": "th2990@columbia.edu",
+    "username": "Tsai-Chen",
+    "middle_name": "N/A",
+    "lastname": "Hsieh",
+    "codeforces_handles": [
+      "th2990"
+    ],
+    "atcoder_handles": [
+      "th2990"
+    ]
+  },
+  {
+    "email_address": "hc2932@columbia.edu",
+    "username": "Helen",
+    "middle_name": "Alicia",
+    "lastname": "Chu",
+    "codeforces_handles": [
+      "yaoqian"
+    ],
+    "atcoder_handles": [
+      "helenchu016"
+    ]
+  },
+  {
+    "email_address": "jl6098@columbia.edu",
+    "username": "Jet",
+    "middle_name": "N/A",
+    "lastname": "Li",
+    "codeforces_handles": [
+      "Kopitiam"
+    ],
+    "atcoder_handles": [
+      "Kopitiam"
+    ]
+  },
+  {
+    "email_address": "rb3512@columbia.edu",
+    "username": "Rong",
+    "middle_name": "N/A",
+    "lastname": "Bai",
+    "codeforces_handles": [
+      "adobemomo"
+    ],
+    "atcoder_handles": [
+      "adbmm"
+    ]
+  },
+  {
+    "email_address": "sll2190@columbia.edu",
+    "username": "Sian",
+    "middle_name": "Laina",
+    "lastname": "Lee Kitt",
+    "codeforces_handles": [
+      "sll2190"
+    ],
+    "atcoder_handles": [
+      "sll2190"
+    ]
+  },
+  {
+    "email_address": "cv2519@columbia.edu",
+    "username": "Haris",
+    "middle_name": "N/A",
+    "lastname": "Vossos",
+    "codeforces_handles": [
+      "harisvossos"
+    ],
+    "atcoder_handles": [
+      "harisvossos"
+    ]
+  },
+  {
+    "email_address": "ws2614@columbia.edu",
+    "username": "Wei",
+    "middle_name": "N/A",
+    "lastname": "Sun",
+    "codeforces_handles": [
+      "stephanie0530"
+    ],
+    "atcoder_handles": [
+      "stephanie0530"
+    ]
+  },
+  {
+    "email_address": "zw2784@columbia.edu",
+    "username": "Zheng",
+    "middle_name": "N/A",
+    "lastname": "Wu",
+    "codeforces_handles": [
+      "Kitatine"
+    ],
+    "atcoder_handles": [
+      "Kitatine"
+    ]
+  },
+  {
+    "email_address": "sy3038@columbia.edu",
+    "username": "Sarah",
+    "middle_name": "N/A",
+    "lastname": "Yang",
+    "codeforces_handles": [
+      "sarahyyang"
+    ],
+    "atcoder_handles": [
+      "sarahyyang"
+    ]
+  },
+  {
+    "email_address": "th2999@columbia.edu",
+    "username": "Tobias",
+    "middle_name": "N/A",
+    "lastname": "Hanl",
+    "codeforces_handles": [
+      "weto"
+    ],
+    "atcoder_handles": [
+      "weto"
+    ]
+  },
+  {
+    "email_address": "mw3540@columbia.edu",
+    "username": "Michael",
+    "middle_name": "Leonard",
+    "lastname": "Wolf-Sonkin",
+    "codeforces_handles": [
+      "mikee478"
+    ],
+    "atcoder_handles": [
+      "mikee478"
+    ]
+  },
+  {
+    "email_address": "yw3901@columbia.edu",
+    "username": "Yiwei",
+    "middle_name": "N/A",
+    "lastname": "Wu",
+    "codeforces_handles": [
+      "aglioeolio"
+    ],
+    "atcoder_handles": [
+      "fotiaoqiang"
+    ]
+  },
+  {
+    "email_address": "xy2515@columbia.edu",
+    "username": "Xikai",
+    "middle_name": "N/A",
+    "lastname": "Yang",
+    "codeforces_handles": [
+      "Xikai_Yang"
+    ],
+    "atcoder_handles": [
+      "Xikai_Yang"
+    ]
+  },
+  {
+    "email_address": "jc5657@columbia.edu",
+    "username": "Jiaqing",
+    "middle_name": "N/A",
+    "lastname": "Chen",
+    "codeforces_handles": [
+      "amayaqing"
+    ],
+    "atcoder_handles": [
+      "amayaqing"
+    ]
+  },
+  {
+    "email_address": "vr2453@columbia.edu",
+    "username": "Venkat",
+    "middle_name": "N/A",
+    "lastname": "Ramamoorthi",
+    "codeforces_handles": [
+      "columbia23"
+    ],
+    "atcoder_handles": [
+      "columbia23"
+    ]
+  },
+  {
+    "email_address": "smh2278@columbia.edu",
+    "username": "Sebastian",
+    "middle_name": "Manuel",
+    "lastname": "Hereu",
+    "codeforces_handles": [
+      "cbass1127"
+    ],
+    "atcoder_handles": [
+      "cbass1127"
+    ]
+  },
+  {
+    "email_address": "rj2628@columbia.edu",
+    "username": "Rongfei",
+    "middle_name": "N/A",
+    "lastname": "Jiao",
+    "codeforces_handles": [
+      "Jason_Jiao"
+    ],
+    "atcoder_handles": [
+      "Jason_Jiao"
+    ]
+  },
+  {
+    "email_address": "jk4671@columbia.edu",
+    "username": "Jiwoo (Jordyn)",
+    "middle_name": "N/A",
+    "lastname": "Kim",
+    "codeforces_handles": [
+      "jiwkim37"
+    ],
+    "atcoder_handles": [
+      "jiwkim37"
+    ]
+  },
+  {
+    "email_address": "yf2602@columbia.edu",
+    "username": "Yiqing",
+    "middle_name": "N/A",
+    "lastname": "Fan",
+    "codeforces_handles": [
+      "yiqingfann"
+    ],
+    "atcoder_handles": [
+      "yiqingfann"
+    ]
+  },
+  {
+    "email_address": "ch3669@columbia.edu",
+    "username": "Chaobang",
+    "middle_name": "N/A",
+    "lastname": "Huang",
+    "codeforces_handles": [
+      "Lancelott_"
+    ],
+    "atcoder_handles": [
+      "Lancelott"
+    ]
+  },
+  {
+    "email_address": "yz3888@columbia.edu",
+    "username": "Yin",
+    "middle_name": "N/A",
+    "lastname": "Zhou",
+    "codeforces_handles": [
+      "levinezhou"
+    ],
+    "atcoder_handles": [
+      "levine"
+    ]
+  },
+  {
+    "email_address": "pj2400@columbia.edu",
+    "username": "Piyush",
+    "middle_name": "N/A",
+    "lastname": "Jena",
+    "codeforces_handles": [
+      "piyushjena"
+    ],
+    "atcoder_handles": [
+      "piyushjena"
+    ]
+  },
+  {
+    "email_address": "sao2148@columbia.edu",
+    "username": "Samuel",
+    "middle_name": "Amoako",
+    "lastname": "Opuni",
+    "codeforces_handles": [
+      "cadeux13"
+    ],
+    "atcoder_handles": [
+      "cadeux13"
+    ]
+  },
+  {
+    "email_address": "yw3761@columbia.edu",
+    "username": "Yuan-Yi",
+    "middle_name": "N/A",
+    "lastname": "Wang",
+    "codeforces_handles": [
+      "dyadi"
+    ],
+    "atcoder_handles": [
+      "dyadi"
+    ]
+  },
+  {
+    "email_address": "rz2561@columbia.edu",
+    "username": "Ray",
+    "middle_name": "N/A",
+    "lastname": "Zhang",
+    "codeforces_handles": [
+      "Ray_29"
+    ],
+    "atcoder_handles": [
+      "Ray_29"
+    ]
+  },
+  {
+    "email_address": "fm2758@columbia.edu",
+    "username": "Fernando",
+    "middle_name": "N/A",
+    "lastname": "Macchiavello Cauvi",
+    "codeforces_handles": [
+      "Ferperlex"
+    ],
+    "atcoder_handles": [
+      "Ferperlex"
+    ]
+  },
+  {
+    "email_address": "ss6624@columbia.edu",
+    "username": "Srishti",
+    "middle_name": "N/A",
+    "lastname": "Srivastava",
+    "codeforces_handles": [
+      "srishtisrivastava28"
+    ],
+    "atcoder_handles": [
+      "srishti28"
+    ]
+  },
+  {
+    "email_address": "jl5957@columbia.edu",
+    "username": "Jiayuan",
+    "middle_name": "N/A",
+    "lastname": "Li",
     "codeforces_handles": [
       "jiayuan8"
     ],
-    "atcoder_handles": []
+    "atcoder_handles": [
+      "jiayuan8"
+    ]
   },
   {
-    "username": "kevin",
+    "email_address": "gs3157@columbia.edu",
+    "username": "Gaurav",
+    "middle_name": "N/A",
+    "lastname": "Sinha",
     "codeforces_handles": [
-      "yangster67"
+      "devilmaycry_95"
     ],
-    "atcoder_handles": []
+    "atcoder_handles": [
+      "devilmaycry_95"
+    ]
+  },
+  {
+    "email_address": "yl4387@columbia.edu",
+    "username": "Yunlan",
+    "middle_name": "N/A",
+    "lastname": "Li",
+    "codeforces_handles": [
+      "yunlan00"
+    ],
+    "atcoder_handles": [
+      "yunlan"
+    ]
+  },
+  {
+    "email_address": "eh2890@columbia.edu",
+    "username": "Eumin",
+    "middle_name": "N/A",
+    "lastname": "Hong",
+    "codeforces_handles": [
+      "eh2890"
+    ],
+    "atcoder_handles": [
+      "e45h"
+    ]
+  },
+  {
+    "email_address": "pl2709@columbia.edu",
+    "username": "Pedro",
+    "middle_name": "N/A",
+    "lastname": "Lazcano",
+    "codeforces_handles": [
+      "PedroLaz"
+    ],
+    "atcoder_handles": [
+      "PedroLaz"
+    ]
+  },
+  {
+    "email_address": "afs2185@columbia.edu",
+    "username": "Annie",
+    "middle_name": "Feng",
+    "lastname": "Song",
+    "codeforces_handles": [
+      "afs2185"
+    ],
+    "atcoder_handles": [
+      "afs2185"
+    ]
+  },
+  {
+    "email_address": "yl4889@columbia.edu",
+    "username": "Yixuan",
+    "middle_name": "N/A",
+    "lastname": "Liu",
+    "codeforces_handles": [
+      "liuyixuan0318"
+    ],
+    "atcoder_handles": [
+      "liuyixuan"
+    ]
+  },
+  {
+    "email_address": "yj2679@columbia.edu",
+    "username": "Yuqing",
+    "middle_name": "N/A",
+    "lastname": "Jin",
+    "codeforces_handles": [
+      "yuqing_99"
+    ],
+    "atcoder_handles": [
+      "yuqing_99"
+    ]
+  },
+  {
+    "email_address": "cnc2164@columbia.edu",
+    "username": "Chiamaka",
+    "middle_name": "Nkemdilim",
+    "lastname": "Chukwuka",
+    "codeforces_handles": [
+      "c-h-i-a-m-a-k-a"
+    ],
+    "atcoder_handles": [
+      "chimnchuk"
+    ]
+  },
+  {
+    "email_address": "sl5203@columbia.edu",
+    "username": "Suro",
+    "middle_name": "N/A",
+    "lastname": "Lee",
+    "codeforces_handles": [
+      "cankor"
+    ],
+    "atcoder_handles": [
+      "cankor"
+    ]
+  },
+  {
+    "email_address": "ng2848@columbia.edu",
+    "username": "Naman",
+    "middle_name": "N/A",
+    "lastname": "Goyal",
+    "codeforces_handles": [
+      "namangoyal"
+    ],
+    "atcoder_handles": [
+      "namangoyal"
+    ]
+  },
+  {
+    "email_address": "hz2759@columbia.edu",
+    "username": "Hao",
+    "middle_name": "N/A",
+    "lastname": "Zeng",
+    "codeforces_handles": [
+      "HaoZeng"
+    ],
+    "atcoder_handles": [
+      "HaoZeng"
+    ]
+  },
+  {
+    "email_address": "to2372@columbia.edu",
+    "username": "Tingting",
+    "middle_name": "N/A",
+    "lastname": "Ou",
+    "codeforces_handles": [
+      "tingtingou123"
+    ],
+    "atcoder_handles": [
+      "tingtingou123"
+    ]
+  },
+  {
+    "email_address": "xz3050@columbia.edu",
+    "username": "Xinyuan",
+    "middle_name": "N/A",
+    "lastname": "Zhao",
+    "codeforces_handles": [
+      "SelmonZhao"
+    ],
+    "atcoder_handles": [
+      "selmonzhao"
+    ]
+  },
+  {
+    "email_address": "mtg2158@columbia.edu",
+    "username": "Matthew",
+    "middle_name": "Thomas",
+    "lastname": "Golden",
+    "codeforces_handles": [
+      "mattgolden100"
+    ],
+    "atcoder_handles": [
+      "mattgolden100"
+    ]
+  },
+  {
+    "email_address": "fg2546@columbia.edu",
+    "username": "Fenglei",
+    "middle_name": "N/A",
+    "lastname": "Gu",
+    "codeforces_handles": [
+      "fungluikoo"
+    ],
+    "atcoder_handles": [
+      "fungluikoo"
+    ]
+  },
+  {
+    "email_address": "xz3014@columbia.edu",
+    "username": "Xiangyu",
+    "middle_name": "N/A",
+    "lastname": "Zhou",
+    "codeforces_handles": [
+      "volivoly"
+    ],
+    "atcoder_handles": [
+      "volivoly"
+    ]
+  },
+  {
+    "email_address": "aw3389@columbia.edu",
+    "username": "Aster",
+    "middle_name": "N/A",
+    "lastname": "Wei",
+    "codeforces_handles": [
+      "AsterWei"
+    ],
+    "atcoder_handles": [
+      "Aster233"
+    ]
+  },
+  {
+    "email_address": "jbf2173@columbia.edu",
+    "username": "Brendan",
+    "middle_name": "N/A",
+    "lastname": "Fay",
+    "codeforces_handles": [
+      "bfay"
+    ],
+    "atcoder_handles": [
+      "bfay"
+    ]
+  },
+  {
+    "email_address": "wz2557@columbia.edu",
+    "username": "Wenqing",
+    "middle_name": "N/A",
+    "lastname": "Zhong",
+    "codeforces_handles": [
+      "WenqingWenqing"
+    ],
+    "atcoder_handles": [
+      "WenqingWenqing"
+    ]
+  },
+  {
+    "email_address": "yf2578@columbia.edu",
+    "username": "Yongjie",
+    "middle_name": "N/A",
+    "lastname": "Fu",
+    "codeforces_handles": [
+      "fuyj15"
+    ],
+    "atcoder_handles": [
+      "fuyj15"
+    ]
+  },
+  {
+    "email_address": "hz2716@columbia.edu",
+    "username": "Frank",
+    "middle_name": "N/A",
+    "lastname": "Zhang",
+    "codeforces_handles": [
+      "hz2716"
+    ],
+    "atcoder_handles": [
+      "hz2716"
+    ]
+  },
+  {
+    "email_address": "an3143@columbia.edu",
+    "username": "Anna",
+    "middle_name": "N/A",
+    "lastname": "Nefedenkova",
+    "codeforces_handles": [
+      "annancs"
+    ],
+    "atcoder_handles": [
+      "annancs"
+    ]
+  },
+  {
+    "email_address": "cn2521@columbia.edu",
+    "username": "ChangSu",
+    "middle_name": "N/A",
+    "lastname": "Nam",
+    "codeforces_handles": [
+      "csn1"
+    ],
+    "atcoder_handles": [
+      "csn1"
+    ]
+  },
+  {
+    "email_address": "rw2800@columbia.edu",
+    "username": "Ryan",
+    "middle_name": "N/A",
+    "lastname": "Wee",
+    "codeforces_handles": [
+      "rwee1001"
+    ],
+    "atcoder_handles": [
+      "rwee1001"
+    ]
+  },
+  {
+    "email_address": "akk2186@columbia.edu",
+    "username": "Alpha",
+    "middle_name": "Kabinet",
+    "lastname": "Kaba",
+    "codeforces_handles": [
+      "mr_robot_96x"
+    ],
+    "atcoder_handles": [
+      "mr_robot_96x"
+    ]
+  },
+  {
+    "email_address": "knb2138@columbia.edu",
+    "username": "Kyle",
+    "middle_name": "Nicholas",
+    "lastname": "Brandt",
+    "codeforces_handles": [
+      "kybra117"
+    ],
+    "atcoder_handles": [
+      "knb117"
+    ]
+  },
+  {
+    "email_address": "rgs2151@columbia.edu",
+    "username": "Rudramani",
+    "middle_name": "Gyawali",
+    "lastname": "Singha",
+    "codeforces_handles": [
+      "rgs2151"
+    ],
+    "atcoder_handles": [
+      "rgs2151"
+    ]
+  },
+  {
+    "email_address": "cy2562@columbia.edu",
+    "username": "Charles",
+    "middle_name": "Seungjo",
+    "lastname": "Yoon",
+    "codeforces_handles": [
+      "charm_y"
+    ],
+    "atcoder_handles": [
+      "marcercyoon"
+    ]
+  },
+  {
+    "email_address": "ua2182@columbia.edu",
+    "username": "Ulas",
+    "middle_name": "Onat",
+    "lastname": "Alakent",
+    "codeforces_handles": [
+      "ulasalakent"
+    ],
+    "atcoder_handles": [
+      "ulasalakent"
+    ]
+  },
+  {
+    "email_address": "tpv2108@columbia.edu",
+    "username": "Thomas",
+    "middle_name": "N/A",
+    "lastname": "Varghese",
+    "codeforces_handles": [
+      "worldwidestepper"
+    ],
+    "atcoder_handles": [
+      "worldwidestepper"
+    ]
+  },
+  {
+    "email_address": "yp2611@columbia.edu",
+    "username": "Yealin",
+    "middle_name": "N/A",
+    "lastname": "Park",
+    "codeforces_handles": [
+      "ylppp"
+    ],
+    "atcoder_handles": [
+      "ylpark"
+    ]
+  },
+  {
+    "email_address": "sy3079@columbia.edu",
+    "username": "Songheng",
+    "middle_name": "N/A",
+    "lastname": "Yin",
+    "codeforces_handles": [
+      "Kumiko_senpai"
+    ],
+    "atcoder_handles": [
+      "Kumiko_senpai"
+    ]
   }
 ]
