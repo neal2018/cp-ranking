@@ -397,6 +397,42 @@
   },
   {
     "platform": "codeforces",
+    "handle": "agarwal.nilaksh",
+    "contest_id": 1729,
+    "problem_id": "C",
+    "rating": 1100,
+    "time": 1662997541,
+    "submission_id": 171900671
+  },
+  {
+    "platform": "codeforces",
+    "handle": "agarwal.nilaksh",
+    "contest_id": 1729,
+    "problem_id": "B",
+    "rating": 800,
+    "time": 1662996858,
+    "submission_id": 171892493
+  },
+  {
+    "platform": "codeforces",
+    "handle": "agarwal.nilaksh",
+    "contest_id": 1729,
+    "problem_id": "A",
+    "rating": 800,
+    "time": 1662996382,
+    "submission_id": 171886525
+  },
+  {
+    "platform": "atcoder",
+    "handle": "nilax",
+    "contest_id": "abc269",
+    "problem_id": "abc269_a",
+    "rating": -1162,
+    "time": 1663420673,
+    "submission_id": 34947766
+  },
+  {
+    "platform": "codeforces",
     "handle": "Nea1",
     "contest_id": 1733,
     "problem_id": "D1",
