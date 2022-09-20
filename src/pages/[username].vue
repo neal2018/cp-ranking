@@ -73,7 +73,7 @@ const userATsubmissions = submissions.filter(submission =>
               {{ formatTime(userData.time) }}
             </a>
           </td><td border-1>
-            {{ getPointFromRating(userData.rating, userData.platform) }}
+            {{ userData.rating === -1 ? '?' : getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
       </table>
