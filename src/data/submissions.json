@@ -398,6 +398,24 @@
   {
     "platform": "codeforces",
     "handle": "agarwal.nilaksh",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663936352,
+    "submission_id": 173183282
+  },
+  {
+    "platform": "codeforces",
+    "handle": "agarwal.nilaksh",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663935257,
+    "submission_id": 173171088
+  },
+  {
+    "platform": "codeforces",
+    "handle": "agarwal.nilaksh",
     "contest_id": 1729,
     "problem_id": "C",
     "rating": 1100,
@@ -430,6 +448,51 @@
     "rating": -1162,
     "time": 1663420673,
     "submission_id": 34947766
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1734,
+    "problem_id": "E",
+    "rating": -1,
+    "time": 1663940824,
+    "submission_id": 173215128
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1734,
+    "problem_id": "D",
+    "rating": -1,
+    "time": 1663938300,
+    "submission_id": 173198646
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1734,
+    "problem_id": "C",
+    "rating": -1,
+    "time": 1663935946,
+    "submission_id": 173178769
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663935438,
+    "submission_id": 173173304
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Nea1",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663935038,
+    "submission_id": 173168346
   },
   {
     "platform": "codeforces",
@@ -695,6 +758,15 @@
   {
     "platform": "codeforces",
     "handle": "albertyangyhm",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663938114,
+    "submission_id": 173197369
+  },
+  {
+    "platform": "codeforces",
+    "handle": "albertyangyhm",
     "contest_id": 1733,
     "problem_id": "C",
     "rating": -1,
@@ -884,6 +956,33 @@
   {
     "platform": "codeforces",
     "handle": "bobbyFischer21",
+    "contest_id": 1734,
+    "problem_id": "C",
+    "rating": -1,
+    "time": 1663941205,
+    "submission_id": 173217467
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bobbyFischer21",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663936411,
+    "submission_id": 173183835
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bobbyFischer21",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663936029,
+    "submission_id": 173179937
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bobbyFischer21",
     "contest_id": 1733,
     "problem_id": "B",
     "rating": -1,
@@ -943,6 +1042,24 @@
     "rating": -1162,
     "time": 1663416323,
     "submission_id": 34924107
+  },
+  {
+    "platform": "codeforces",
+    "handle": "eturok",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663937270,
+    "submission_id": 173191173
+  },
+  {
+    "platform": "codeforces",
+    "handle": "eturok",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663935968,
+    "submission_id": 173179180
   },
   {
     "platform": "codeforces",
@@ -1073,6 +1190,15 @@
   {
     "platform": "codeforces",
     "handle": "sll2190",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663940066,
+    "submission_id": 173210336
+  },
+  {
+    "platform": "codeforces",
+    "handle": "sll2190",
     "contest_id": 1728,
     "problem_id": "A",
     "rating": 800,
@@ -1136,6 +1262,15 @@
   {
     "platform": "codeforces",
     "handle": "mikee478",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663937683,
+    "submission_id": 173194285
+  },
+  {
+    "platform": "codeforces",
+    "handle": "mikee478",
     "contest_id": 1733,
     "problem_id": "D1",
     "rating": -1,
@@ -1186,6 +1321,15 @@
     "rating": 800,
     "time": 1662996447,
     "submission_id": 171887344
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Xikai_Yang",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663936211,
+    "submission_id": 173181825
   },
   {
     "platform": "atcoder",
@@ -1429,6 +1573,15 @@
     "rating": -1162,
     "time": 1663416867,
     "submission_id": 34929378
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Ray_29",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663939866,
+    "submission_id": 173209107
   },
   {
     "platform": "codeforces",
@@ -1694,6 +1847,24 @@
   {
     "platform": "codeforces",
     "handle": "c-h-i-a-m-a-k-a",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663940444,
+    "submission_id": 173212703
+  },
+  {
+    "platform": "codeforces",
+    "handle": "c-h-i-a-m-a-k-a",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663938485,
+    "submission_id": 173200007
+  },
+  {
+    "platform": "codeforces",
+    "handle": "c-h-i-a-m-a-k-a",
     "contest_id": 1729,
     "problem_id": "A",
     "rating": 800,
@@ -1816,6 +1987,24 @@
     "rating": -876,
     "time": 1662811527,
     "submission_id": 34732207
+  },
+  {
+    "platform": "codeforces",
+    "handle": "tingtingou123",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663937006,
+    "submission_id": 173189019
+  },
+  {
+    "platform": "codeforces",
+    "handle": "tingtingou123",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663935891,
+    "submission_id": 173176282
   },
   {
     "platform": "codeforces",
@@ -1951,6 +2140,24 @@
     "rating": -1162,
     "time": 1663416548,
     "submission_id": 34926558
+  },
+  {
+    "platform": "codeforces",
+    "handle": "volivoly",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663938804,
+    "submission_id": 173202169
+  },
+  {
+    "platform": "codeforces",
+    "handle": "volivoly",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663937192,
+    "submission_id": 173190539
   },
   {
     "platform": "atcoder",
@@ -2099,6 +2306,15 @@
   {
     "platform": "codeforces",
     "handle": "bfay",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663937081,
+    "submission_id": 173189623
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bfay",
     "contest_id": 1728,
     "problem_id": "A",
     "rating": 800,
@@ -2151,6 +2367,15 @@
     "submission_id": 34947811
   },
   {
+    "platform": "codeforces",
+    "handle": "hz2716",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663937598,
+    "submission_id": 173193651
+  },
+  {
     "platform": "atcoder",
     "handle": "hz2716",
     "contest_id": "abc269",
@@ -2158,6 +2383,33 @@
     "rating": -1162,
     "time": 1663417809,
     "submission_id": 34935672
+  },
+  {
+    "platform": "codeforces",
+    "handle": "rwee1001",
+    "contest_id": 1734,
+    "problem_id": "D",
+    "rating": -1,
+    "time": 1663941208,
+    "submission_id": 173217485
+  },
+  {
+    "platform": "codeforces",
+    "handle": "rwee1001",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1663938464,
+    "submission_id": 173199869
+  },
+  {
+    "platform": "codeforces",
+    "handle": "rwee1001",
+    "contest_id": 1734,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1663935111,
+    "submission_id": 173169362
   },
   {
     "platform": "atcoder",
