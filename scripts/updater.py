@@ -111,7 +111,7 @@ class CFLogin:
     BASE = "https://codeforces.com"
     service_url = f"{BASE}/enter"
 
-    def __init__(self, username:str, password:str):
+    def __init__(self, username: str, password: str):
         self.username = username
         self.password = password
 
@@ -208,6 +208,7 @@ def get_icpc(handles: List[str], contests):
                     time=timestamp,
                     submission_id=0,
                 ))
+            print(f"done {contest_name}")
         return submissions
 
 
