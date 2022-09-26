@@ -232,7 +232,7 @@ def main():
     print("starting handling icpc")
     cf_handles = [handle["codeforces_handles"] for handle in handles]
     submissions.extend(get_icpc(cf_handles, icpc_contests))
-
+    print(f"fetched {len(submissions)} submissions from icpc")
     print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
