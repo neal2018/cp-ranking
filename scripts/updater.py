@@ -222,8 +222,14 @@ def main():
     data_path = os.path.join(base_path, "src", "data")
     handles = read_json(os.path.join(data_path, "handles.json"))
     icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
-    # fetch submissions from codeforces and atcoder
+
     submissions = list()
+
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_icpc(cf_handles, icpc_contests))
+
+    print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
             submissions.extend(get_codeforces(cf_handle))
@@ -232,12 +238,8 @@ def main():
         print(f"done {handle}")
         time.sleep(1)
     # handle icpc
-    print("starting handle icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
-    print("done all")
     # write submissions to src/submissions.json
     with open(os.path.join(data_path, "submissions.json"), "w") as f:
         json.dump(submissions, f, indent=2)
