@@ -1,4 +1,5 @@
 from typing import NamedTuple, List
+from bs4 import BeautifulSoup
 import requests
 import datetime
 import os
@@ -106,16 +107,121 @@ def get_atcoder(handle: str) -> List[Submission]:
     return transform(unique(validate(submissions)))
 
 
+class CFLogin:
+    BASE = "https://codeforces.com"
+    service_url = f"{BASE}/enter"
+
+    def __init__(self, username:str, password:str):
+        self.username = username
+        self.password = password
+
+    def __enter__(self):
+        self.session = requests.session()
+        dt = self.session.get(self.service_url).text
+        raw_html = BeautifulSoup(dt, 'html.parser')
+        csrf_token = raw_html.find_all(
+            "span", {"class": "csrf-token"})[0]["data-csrf"]
+        headers = {
+            'X-Csrf-Token': csrf_token
+        }
+        payload = {
+            'csrf_token': csrf_token,
+            'action': 'enter',
+            'handleOrEmail': self.username,
+            'password': self.password,
+        }
+        self.session.post(self.service_url, data=payload, headers=headers)
+        return self
+
+    def __exit__(self, etype, value, traceback):
+        soup = BeautifulSoup(self.session.get(self.BASE).text, 'html.parser')
+        logout = soup.select_one("a[href*=logout]")
+        if logout:
+            href = logout["href"]
+            assert isinstance(href, str)
+            self.session.get(self.BASE + href)
+
+
+def get_icpc(handles: List[str], contests):
+
+    def get_token(data, start, end):
+        pos = data.find(start)
+        data = data[pos + len(start):]
+        pos = data.find(end)
+        tok = data[:pos]
+        data = data[pos:]
+        return (data, tok)
+
+    profile_str = "href=\"/profile/"
+    verdict_str = "submissionverdict=\""
+    problem_str = "a href=\""
+    time_str = "<span class=\"format-time\" data-locale=\"en\">"
+    start = "<div class=\"datatable\" " + \
+        "style=\"background-color: #E1E1E1; padding-bottom: 3px;\">"
+
+    all_handles = [item for sublist in handles for item in sublist]
+
+    with CFLogin(os.environ["CF_USERNAME"], os.environ["CF_PASSWORD"]) as cf:
+        submissions = list()
+        for contest in contests:
+            contest_name = contest["name"]
+            contest_start = datetime.datetime.strptime(
+                contest["start"], "%b/%d/%Y %H:%M")
+            contest_end = datetime.datetime.strptime(
+                contest["end"], "%b/%d/%Y %H:%M")
+
+            solved = {}
+            index = 1
+            need_break = False
+            while not need_break:
+                submission_url = f"{cf.BASE}/gym/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
+                data = cf.session.get(submission_url).text
+                soup = BeautifulSoup(data, 'html.parser')
+                data = str(soup)
+                data = data[data.find(start):]
+                while data.find(profile_str) != -1:
+                    data, tm = get_token(data, time_str, "<")
+                    data, uname = get_token(data, profile_str, "\"")
+                    data, problem = get_token(data, problem_str, "\"")
+                    data, verdict = get_token(data, verdict_str, "\"")
+                    dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+                    if dt < contest_start:
+                        need_break = True
+                        continue
+
+                    if verdict == "OK" and uname in all_handles:
+                        timestamp = int(datetime.datetime.timestamp(dt))
+                        if (uname, problem) not in solved:
+                            solved[(uname, problem)] = timestamp
+                        elif timestamp < solved[(uname, problem)]:
+                            solved[(uname, problem)] = timestamp
+
+                index += 1
+                time.sleep(1)
+            for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
+                submissions.append(Submission(
+                    handle=uname,
+                    platform="codeforces",
+                    contest_id=int(contest_name),
+                    problem_id=problem,
+                    rating=int(timestamp <= contest_end.timestamp()),
+                    time=timestamp,
+                    submission_id=0,
+                ))
+        return submissions
+
+
 def read_json(path):
     with open(path, "r") as f:
         return json.load(f)
 
 
 def main():
-    # read handles from src/handles.json
+    # read data from src/data/
     base_path = os.path.dirname(os.path.dirname(__file__))
     data_path = os.path.join(base_path, "src", "data")
     handles = read_json(os.path.join(data_path, "handles.json"))
+    icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
     # fetch submissions from codeforces and atcoder
     submissions = list()
     for handle in handles:
@@ -125,8 +231,13 @@ def main():
             submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
         time.sleep(1)
+    # handle icpc
+    print("starting handle icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_icpc(cf_handles, icpc_contests))
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
+    print("done all")
     # write submissions to src/submissions.json
     with open(os.path.join(data_path, "submissions.json"), "w") as f:
         json.dump(submissions, f, indent=2)
