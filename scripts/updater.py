@@ -179,15 +179,17 @@ def get_icpc(handles: List[str], contests):
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
                 data = data[data.find(start):]
+                fetched_cnt = 0
                 while data.find(profile_str) != -1:
                     data, tm = get_token(data, time_str, "<")
                     data, uname = get_token(data, profile_str, "\"")
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
                     dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+                    fetched_cnt += 1
                     if dt < contest_start:
                         need_break = True
-                        continue
+                        break
 
                     if verdict == "OK" and uname in all_handles:
                         timestamp = int(datetime.datetime.timestamp(dt))
@@ -195,7 +197,8 @@ def get_icpc(handles: List[str], contests):
                             solved[(uname, problem)] = timestamp
                         elif timestamp < solved[(uname, problem)]:
                             solved[(uname, problem)] = timestamp
-
+                if not fetched_cnt:
+                    break
                 index += 1
                 time.sleep(1)
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
@@ -225,6 +228,10 @@ def main():
     icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
 
     submissions = list()
+    # handle icpc
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_icpc(cf_handles, icpc_contests))
 
     print("starting handling codeforces and atcoder")
     for handle in handles:
@@ -234,10 +241,6 @@ def main():
             submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
         time.sleep(1)
-    # handle icpc
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
