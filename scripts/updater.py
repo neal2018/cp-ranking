@@ -112,6 +112,7 @@ class CFLogin:
     service_url = f"{BASE}/enter"
 
     def __init__(self, username: str, password: str):
+        print(f"secrets: {username} {password}")
         self.username = username
         self.password = password
 
