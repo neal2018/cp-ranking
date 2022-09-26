@@ -20,7 +20,7 @@ jobs:
         run: python ./scripts/updater.py
         env:
           CF_USERNAME: ${{ secrets.CF_USERNAME }}
-          CF_PASSWORD: ${{ github.CF_PASSWORD }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
 
       - name: check diff
         id: diff
