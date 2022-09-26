@@ -122,7 +122,8 @@ class CFLogin:
         csrf_token = raw_html.find_all(
             "span", {"class": "csrf-token"})[0]["data-csrf"]
         headers = {
-            'X-Csrf-Token': csrf_token
+            'X-Csrf-Token': csrf_token,
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
         }
         payload = {
             'csrf_token': csrf_token,
@@ -176,6 +177,7 @@ def get_icpc(handles: List[str], contests):
             while not need_break:
                 submission_url = f"{cf.BASE}/gym/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
+                print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
                 data = data[data.find(start):]
