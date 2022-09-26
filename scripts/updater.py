@@ -226,10 +226,6 @@ def main():
 
     submissions = list()
 
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
-
     print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
@@ -239,6 +235,10 @@ def main():
         print(f"done {handle}")
         time.sleep(1)
     # handle icpc
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_icpc(cf_handles, icpc_contests))
+
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
     # write submissions to src/submissions.json
