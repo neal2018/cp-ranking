@@ -205,7 +205,7 @@ def get_icpc(handles: List[str], contests):
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
-                    platform="codeforces",
+                    platform="icpc",
                     contest_id=int(contest_name),
                     problem_id=problem,
                     rating=int(timestamp <= contest_end.timestamp()),
