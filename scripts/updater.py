@@ -112,7 +112,6 @@ class CFLogin:
     service_url = f"{BASE}/enter"
 
     def __init__(self, username: str, password: str):
-        print(f"secrets: {username} {password}")
         self.username = username
         self.password = password
 
@@ -178,7 +177,6 @@ def get_icpc(handles: List[str], contests):
             while not need_break:
                 submission_url = f"{cf.BASE}/gym/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
-                print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
                 data = data[data.find(start):]
