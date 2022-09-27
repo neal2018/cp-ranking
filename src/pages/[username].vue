@@ -26,7 +26,7 @@ const userATsubmissions = submissions.filter(submission =>
   (submission.platform === 'atcoder' && handle.atcoder_handles.includes(submission.handle)))
 
 const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && handle.atcoder_handles.includes(submission.handle))).reverse()
+  (submission.platform === 'icpc' && handle.codeforces_handles.includes(submission.handle))).reverse()
 </script>
 
 <template>
