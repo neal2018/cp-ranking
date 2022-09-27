@@ -24,6 +24,9 @@ const userCFSubmissions = submissions.filter(submission =>
 
 const userATsubmissions = submissions.filter(submission =>
   (submission.platform === 'atcoder' && handle.atcoder_handles.includes(submission.handle)))
+
+const userICPCsubmissions = submissions.filter(submission =>
+  (submission.platform === 'icpc' && handle.atcoder_handles.includes(submission.handle))).reverse()
 </script>
 
 <template>
@@ -33,7 +36,7 @@ const userATsubmissions = submissions.filter(submission =>
     </p>
     <div>
       <p text-3xl>
-        Rank: {{ userPoints.rank }}; Total: {{ userPoints.total }} Points
+        Rank: {{ userPoints.rank }}; Total: {{ userPoints.total.toFixed(1) }} Points
       </p>
     </div>
     <div>
@@ -118,6 +121,47 @@ const userATsubmissions = submissions.filter(submission =>
           </td>
           <td border-1>
             {{ getPointFromRating(userData.rating, userData.platform) }}
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <p text-2xl p-t-10>
+        ICPC: {{ handle.codeforces_handles }}; {{ userPoints.icpc.toFixed(1) }} Points
+      </p>
+      <table border-1 m-auto m-y-5>
+        <tr border-1>
+          <th v-for="val in tableTitles" :key="val" border-1>
+            {{ val }}
+          </th>
+        </tr>
+        <tr v-for="(userData, index) in userICPCsubmissions" :key="index" border-1>
+          <td border-1>
+            {{ userData.platform }}
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
+              {{ userData.handle }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/gym/${userData.contest_id}`" target="_blank">
+              {{ userData.contest_id }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com${userData.problem_id}`" target="_blank">
+              {{ userData.problem_id }}
+            </a>
+          </td>
+          <td border-1>
+            {{ userData.rating }}
+          </td>
+          <td border-1>
+            {{ formatTime(userData.time) }}
+          </td><td border-1>
+            {{ userData.rating === -1 ? '?' : getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
       </table>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces', 'AtCoder', 'Total']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'AtCoder', 'ICPC', 'Total']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -27,6 +27,9 @@ const go = (username: string) => {
           <td v-for="(val, key) in userData" :key="key" border-1>
             <span v-if="key === 'username'" cursor-pointer @click="go(val as string)">
               {{ val }}
+            </span>
+            <span v-else-if="key === 'total' || key === 'icpc'">
+              {{ (val as number).toFixed(1) }}
             </span>
             <span v-else>
               {{ val }}

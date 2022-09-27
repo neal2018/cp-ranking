@@ -28,6 +28,11 @@ export const getPointFromRating = (rating: number, platform: string) => {
       return 4
     return 5
   }
+  if (platform === 'icpc') {
+    if (rating === 1)
+      return 1
+    return 0.8
+  }
   return 0
 }
 
@@ -48,22 +53,27 @@ export const getPoints = (username: string) => {
   const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'atcoder')
   }, 0) ?? 0
+  const icpcPoints = handle?.atcoder_handles.reduce((acc, handle) => {
+    return acc + getPlatformPoints(handle, 'icpc')
+  }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
     atcoder: atcoderPoints,
-    total: codeforcesPoints + atcoderPoints,
+    icpc: icpcPoints,
+    total: codeforcesPoints + atcoderPoints + icpcPoints,
   }
 }
 
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, atcoder, total } = getPoints(handle.username)
+    const { codeforces, atcoder, icpc, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
       codeforces,
       atcoder,
+      icpc,
       total,
     }
   })
