@@ -174,7 +174,7 @@ def get_icpc(handles: List[str], contests):
             solved = {}
             index = 1
             need_break = False
-            while not need_break:
+            while not need_break and index <= 50:
                 submission_url = f"{cf.BASE}/gym/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
                 soup = BeautifulSoup(data, 'html.parser')
@@ -202,6 +202,7 @@ def get_icpc(handles: List[str], contests):
                     break
                 index += 1
                 time.sleep(1)
+                print(f"fetched {len(solved)} {index} {fetched_cnt}")
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
