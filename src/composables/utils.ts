@@ -53,7 +53,7 @@ export const getPoints = (username: string) => {
   const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'atcoder')
   }, 0) ?? 0
-  const icpcPoints = handle?.atcoder_handles.reduce((acc, handle) => {
+  const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
   }, 0) ?? 0
   return {
