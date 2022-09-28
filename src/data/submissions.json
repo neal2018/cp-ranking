@@ -2844,6 +2844,15 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "tingtingou123",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/B",
+    "rating": 0,
+    "time": 1664390820,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1733,
