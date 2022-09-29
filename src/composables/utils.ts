@@ -45,10 +45,22 @@ const getPlatformPoints = (handle: string, platform: string) => {
   }, 0)
 }
 
+const getPlatformUnknownCount = (handle: string, platform: string) => {
+  return submissions.reduce((acc, submission) => {
+    if (submission.handle.toLowerCase() === handle.toLowerCase()
+    && submission.platform === platform)
+      return acc + (submission.rating === -1 ? 1 : 0)
+    return acc
+  }, 0)
+}
+
 export const getPoints = (username: string) => {
   const handle = handles.find(handle => handle.username === username)
   const codeforcesPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'codeforces')
+  }, 0) ?? 0
+  const codeforcesUnknownCount = handle?.codeforces_handles.reduce((acc, handle) => {
+    return acc + getPlatformUnknownCount(handle, 'codeforces')
   }, 0) ?? 0
   const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'atcoder')
@@ -58,6 +70,7 @@ export const getPoints = (username: string) => {
   }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
+    codeforcesUnknown: codeforcesUnknownCount,
     atcoder: atcoderPoints,
     icpc: icpcPoints,
     total: codeforcesPoints + atcoderPoints + icpcPoints,
@@ -67,11 +80,12 @@ export const getPoints = (username: string) => {
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, atcoder, icpc, total } = getPoints(handle.username)
+    const { codeforces, codeforcesUnknown, atcoder, icpc, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
       codeforces,
+      codeforcesUnknown,
       atcoder,
       icpc,
       total,

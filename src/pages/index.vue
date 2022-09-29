@@ -24,15 +24,30 @@ const go = (username: string) => {
           </th>
         </tr>
         <tr v-for="(userData, index) in tableData" :key="index" border-1>
-          <td v-for="(val, key) in userData" :key="key" border-1>
-            <span v-if="key === 'username'" cursor-pointer @click="go(val as string)">
-              {{ val }}
+          <td border-1>
+            {{ userData.rank }}
+          </td>
+          <td border-1>
+            <span cursor-pointer @click="go(userData.username)">
+              {{ userData.username }}
             </span>
-            <span v-else-if="key === 'total' || key === 'icpc'">
-              {{ (val as number).toFixed(1) }}
+          </td>
+          <td border-1>
+            {{ userData.codeforces }}
+            <span v-if="userData.codeforcesUnknown">
+              + {{ userData.codeforcesUnknown }}?
             </span>
-            <span v-else>
-              {{ val }}
+          </td>
+          <td border-1>
+            {{ userData.atcoder }}
+          </td>
+          <td border-1>
+            {{ userData.icpc.toFixed(1) }}
+          </td>
+          <td border-1>
+            {{ userData.total.toFixed(1) }}
+            <span v-if="userData.codeforcesUnknown">
+              + {{ userData.codeforcesUnknown }}?
             </span>
           </td>
         </tr>
