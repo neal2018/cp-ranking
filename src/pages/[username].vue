@@ -27,10 +27,10 @@ const getColor = (points: number) => {
   if (points === 3)
     return 'text-yellow-500'
   if (points === 4)
-    return 'text-purple-500'
-  if (points === 5)
     return 'text-red-500'
-  return 'text-emerald-800'
+  if (points === 5)
+    return 'first-letter:text-black dark:first-letter:text-white text-red-500'
+  return 'text-emerald-600'
 }
 
 // get the user submission history from submission.json
@@ -91,12 +91,12 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
-            <span v-if="userData.rating === -1" text-red>
+            <p v-if="userData.rating === -1" text-fuchsia-600>
               UNKNOWN
-            </span>
-            <span v-else :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            </p>
+            <p v-else :class="getColor(getPointFromRating(userData.rating, userData.platform))">
               {{ userData.rating }}
-            </span>
+            </p>
           </td>
           <td border-1>
             <a :href="`https://codeforces.com/contest/${userData.contest_id}/submission/${userData.submission_id}`" target="_blank">
@@ -206,3 +206,9 @@ const userICPCsubmissions = submissions.filter(submission =>
     </div>
   </div>
 </template>
+
+<style scoped>
+.first-black::first-letter{
+  color: black;
+}
+</style>
