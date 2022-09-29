@@ -469,6 +469,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/I",
+    "rating": 1,
+    "time": 1663533120,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "chyoon",
     "contest_id": 398558,
     "problem_id": "/gym/398558/problem/A",
@@ -573,6 +582,15 @@
     "problem_id": "/gym/398558/problem/I",
     "rating": 1,
     "time": 1663536240,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/A",
+    "rating": 1,
+    "time": 1663536300,
     "submission_id": 0
   },
   {
@@ -703,6 +721,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/F",
+    "rating": 1,
+    "time": 1663541160,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "th2990",
     "contest_id": 398558,
     "problem_id": "/gym/398558/problem/A",
@@ -807,6 +834,24 @@
     "problem_id": "/gym/398558/problem/A",
     "rating": 0,
     "time": 1663547280,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "theriley106",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/A",
+    "rating": 0,
+    "time": 1663548060,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "cc4884",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/A",
+    "rating": 0,
+    "time": 1663549620,
     "submission_id": 0
   },
   {
@@ -951,6 +996,15 @@
     "problem_id": "/gym/398558/problem/C",
     "rating": 0,
     "time": 1663890660,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "ih2403",
+    "contest_id": 398558,
+    "problem_id": "/gym/398558/problem/A",
+    "rating": 0,
+    "time": 1663998600,
     "submission_id": 0
   },
   {
@@ -1180,6 +1234,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664133420,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "sll2190",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/A",
@@ -1225,6 +1288,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "bretticus",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664133660,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "dcastro695",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/A",
@@ -1239,6 +1311,15 @@
     "problem_id": "/gym/103915/problem/A",
     "rating": 1,
     "time": 1664133720,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "ih2403",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664133960,
     "submission_id": 0
   },
   {
@@ -1284,6 +1365,15 @@
     "problem_id": "/gym/103915/problem/A",
     "rating": 1,
     "time": 1664134140,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "cc4884",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664134200,
     "submission_id": 0
   },
   {
@@ -1648,6 +1738,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "ih2403",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664136120,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "fuyj15",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/J",
@@ -1666,9 +1765,27 @@
   },
   {
     "platform": "icpc",
+    "handle": "cc4884",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664136240,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "yuqing_99",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664136300,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "theriley106",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/C",
     "rating": 1,
     "time": 1664136300,
     "submission_id": 0
@@ -1783,6 +1900,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "theriley106",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664136720,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "rwee1001",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/I",
@@ -1846,6 +1972,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "ih2403",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664137260,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "WenqingWenqing",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/J",
@@ -1891,6 +2026,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664137560,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "yuqing_99",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/I",
@@ -1914,6 +2058,15 @@
     "problem_id": "/gym/103915/problem/I",
     "rating": 1,
     "time": 1664137620,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664137680,
     "submission_id": 0
   },
   {
@@ -2116,6 +2269,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "cc4884",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664139780,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "ac4808",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/B",
@@ -2139,6 +2301,15 @@
     "problem_id": "/gym/103915/problem/G",
     "rating": 1,
     "time": 1664139960,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "bretticus",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664140140,
     "submission_id": 0
   },
   {
@@ -2191,6 +2362,15 @@
     "handle": "GuoxinYin",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/G",
+    "rating": 1,
+    "time": 1664140500,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "bretticus",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/J",
     "rating": 1,
     "time": 1664140500,
     "submission_id": 0
@@ -2701,6 +2881,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "theriley106",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664148600,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "Xikai_Yang",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/C",
@@ -2737,11 +2926,29 @@
   },
   {
     "platform": "icpc",
+    "handle": "JoeyXia",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/C",
+    "rating": 1,
+    "time": 1664149380,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "ac4808",
     "contest_id": 103915,
     "problem_id": "/gym/103915/problem/E",
     "rating": 1,
     "time": 1664149440,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "theriley106",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664149500,
     "submission_id": 0
   },
   {
@@ -2859,6 +3066,15 @@
     "problem_id": "/gym/103915/problem/F",
     "rating": 0,
     "time": 1664432100,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "sll2190",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/C",
+    "rating": 0,
+    "time": 1664493600,
     "submission_id": 0
   },
   {
@@ -5529,15 +5745,6 @@
     "platform": "codeforces",
     "handle": "cankor",
     "contest_id": 1739,
-    "problem_id": "B",
-    "rating": -1,
-    "time": 1664464110,
-    "submission_id": 173963964
-  },
-  {
-    "platform": "codeforces",
-    "handle": "cankor",
-    "contest_id": 1739,
     "problem_id": "A",
     "rating": -1,
     "time": 1664462813,
@@ -6352,5 +6559,113 @@
     "rating": -1,
     "time": 1664465174,
     "submission_id": 173973001
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bretticus_mc",
+    "contest_id": "abc270",
+    "problem_id": "abc270_b",
+    "rating": -131,
+    "time": 1664025234,
+    "submission_id": 35128235
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bretticus_mc",
+    "contest_id": "abc270",
+    "problem_id": "abc270_a",
+    "rating": -473,
+    "time": 1664021486,
+    "submission_id": 35099460
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bretticus_mc",
+    "contest_id": "abc269",
+    "problem_id": "abc269_a",
+    "rating": -1162,
+    "time": 1663416608,
+    "submission_id": 34927129
+  },
+  {
+    "platform": "codeforces",
+    "handle": "JoeyXia",
+    "contest_id": 1739,
+    "problem_id": "B",
+    "rating": -1,
+    "time": 1664464374,
+    "submission_id": 173966477
+  },
+  {
+    "platform": "codeforces",
+    "handle": "JoeyXia",
+    "contest_id": 1739,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1664463094,
+    "submission_id": 173951273
+  },
+  {
+    "platform": "codeforces",
+    "handle": "JoeyXia",
+    "contest_id": 1730,
+    "problem_id": "A",
+    "rating": 800,
+    "time": 1664118590,
+    "submission_id": 173459352
+  },
+  {
+    "platform": "codeforces",
+    "handle": "JoeyXia",
+    "contest_id": 1734,
+    "problem_id": "A",
+    "rating": 800,
+    "time": 1663937572,
+    "submission_id": 173193461
+  },
+  {
+    "platform": "codeforces",
+    "handle": "JoeyXia",
+    "contest_id": 1733,
+    "problem_id": "B",
+    "rating": 900,
+    "time": 1663602645,
+    "submission_id": 172715283
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
+    "contest_id": "abc270",
+    "problem_id": "abc270_a",
+    "rating": -473,
+    "time": 1664026773,
+    "submission_id": 35136659
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
+    "contest_id": "abc269",
+    "problem_id": "abc269_b",
+    "rating": -308,
+    "time": 1663420994,
+    "submission_id": 34948823
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
+    "contest_id": "abc269",
+    "problem_id": "abc269_a",
+    "rating": -1162,
+    "time": 1663420061,
+    "submission_id": 34945708
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
+    "contest_id": "abc269",
+    "problem_id": "abc269_d",
+    "rating": 612,
+    "time": 1663419939,
+    "submission_id": 34945254
   }
 ]
