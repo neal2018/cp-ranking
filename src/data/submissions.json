@@ -4512,15 +4512,6 @@
     "platform": "codeforces",
     "handle": "weto",
     "contest_id": 1739,
-    "problem_id": "B",
-    "rating": -1,
-    "time": 1664463159,
-    "submission_id": 173952297
-  },
-  {
-    "platform": "codeforces",
-    "handle": "weto",
-    "contest_id": 1739,
     "problem_id": "A",
     "rating": -1,
     "time": 1664462451,
@@ -5227,15 +5218,6 @@
     "rating": -1,
     "time": 1664464826,
     "submission_id": 173970286
-  },
-  {
-    "platform": "codeforces",
-    "handle": "eh2890",
-    "contest_id": 1739,
-    "problem_id": "B",
-    "rating": -1,
-    "time": 1664462735,
-    "submission_id": 173944650
   },
   {
     "platform": "codeforces",
