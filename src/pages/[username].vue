@@ -30,7 +30,7 @@ const getColor = (points: number) => {
     return 'text-purple-500'
   if (points === 5)
     return 'text-red-500'
-  return 'text-green-500'
+  return 'text-emerald-800'
 }
 
 // get the user submission history from submission.json
@@ -94,7 +94,7 @@ const userICPCsubmissions = submissions.filter(submission =>
             <span v-if="userData.rating === -1" text-red>
               UNKNOWN
             </span>
-            <span v-else>
+            <span v-else :class="getColor(getPointFromRating(userData.rating, userData.platform))">
               {{ userData.rating }}
             </span>
           </td>
@@ -139,7 +139,7 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ userData.problem_id }}
             </a>
           </td>
-          <td border-1>
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
             {{ userData.rating }}
           </td>
           <td border-1>
@@ -183,7 +183,7 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ userData.problem_id }}
             </a>
           </td>
-          <td border-1>
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
             {{ userData.rating }}
           </td>
           <td border-1>
