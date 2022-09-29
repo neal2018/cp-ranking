@@ -33,22 +33,20 @@ const go = (username: string) => {
             </span>
           </td>
           <td border-1>
-            {{ userData.codeforces }}
-            <span v-if="userData.codeforcesUnknown">
-              + {{ userData.codeforcesUnknown }}?
-            </span>
+            <p relative>
+              {{ userData.codeforces }}<sup v-if="userData.codeforcesUnknown" text-gray-500 text-xs absolute p-1>+{{ userData.codeforcesUnknown }}?</sup>
+            </p>
           </td>
           <td border-1>
             {{ userData.atcoder }}
           </td>
-          <td border-1>
+          <td border-1 px-6>
             {{ userData.icpc.toFixed(1) }}
           </td>
           <td border-1>
-            {{ userData.total.toFixed(1) }}
-            <span v-if="userData.codeforcesUnknown">
-              + {{ userData.codeforcesUnknown }}?
-            </span>
+            <p relative px-6>
+              {{ userData.total.toFixed(1) }}<sup v-if="userData.codeforcesUnknown" text-gray-500 text-xs absolute p-1>+{{ userData.codeforcesUnknown }}?</sup>
+            </p>
           </td>
         </tr>
       </table>
