@@ -3114,6 +3114,33 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "fuyj15",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/G",
+    "rating": 0,
+    "time": 1664582160,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "cbass1127",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/C",
+    "rating": 0,
+    "time": 1664592360,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "c-h-i-a-m-a-k-a",
+    "contest_id": 103915,
+    "problem_id": "/gym/103915/problem/G",
+    "rating": 0,
+    "time": 1664602500,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1739,
@@ -6919,5 +6946,23 @@
     "rating": 612,
     "time": 1663419939,
     "submission_id": 34945254
+  },
+  {
+    "platform": "codeforces",
+    "handle": "eversun",
+    "contest_id": 1739,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1664463841,
+    "submission_id": 173961162
+  },
+  {
+    "platform": "atcoder",
+    "handle": "eversun",
+    "contest_id": "abc270",
+    "problem_id": "abc270_a",
+    "rating": -473,
+    "time": 1664022017,
+    "submission_id": 35105629
   }
 ]
