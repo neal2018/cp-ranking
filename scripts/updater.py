@@ -26,6 +26,8 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if submission['creationTimeSeconds'] < START_DATE.timestamp():
                 return False
+            if 'contestId' not in submission:
+                return False
             if submission['contestId'] == 0:
                 return False
             if submission['author']['participantType'] not in ('CONTESTANT', 'OUT_OF_COMPETITION'):
