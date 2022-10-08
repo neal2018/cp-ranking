@@ -4511,6 +4511,15 @@
   {
     "platform": "atcoder",
     "handle": "xmmm0",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665235945,
+    "submission_id": 35505659
+  },
+  {
+    "platform": "atcoder",
+    "handle": "xmmm0",
     "contest_id": "abc271",
     "problem_id": "abc271_a",
     "rating": -662,
@@ -4763,6 +4772,42 @@
   {
     "platform": "atcoder",
     "handle": "bobbyFischer",
+    "contest_id": "abc272",
+    "problem_id": "abc272_d",
+    "rating": 804,
+    "time": 1665235135,
+    "submission_id": 35501803
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bobbyFischer",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232964,
+    "submission_id": 35490748
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bobbyFischer",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232614,
+    "submission_id": 35488643
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bobbyFischer",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665231913,
+    "submission_id": 35484041
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bobbyFischer",
     "contest_id": "abc271",
     "problem_id": "abc271_b",
     "rating": -166,
@@ -4804,6 +4849,33 @@
     "rating": -1162,
     "time": 1663416602,
     "submission_id": 34927069
+  },
+  {
+    "platform": "atcoder",
+    "handle": "YinonShirazi",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232405,
+    "submission_id": 35487347
+  },
+  {
+    "platform": "atcoder",
+    "handle": "YinonShirazi",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665231716,
+    "submission_id": 35482573
+  },
+  {
+    "platform": "atcoder",
+    "handle": "YinonShirazi",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230622,
+    "submission_id": 35471561
   },
   {
     "platform": "atcoder",
@@ -5065,6 +5137,24 @@
     "rating": 800,
     "time": 1662654825,
     "submission_id": 171423178
+  },
+  {
+    "platform": "atcoder",
+    "handle": "sll2190",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232868,
+    "submission_id": 35490181
+  },
+  {
+    "platform": "atcoder",
+    "handle": "sll2190",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230513,
+    "submission_id": 35469984
   },
   {
     "platform": "atcoder",
@@ -5474,6 +5564,24 @@
   {
     "platform": "atcoder",
     "handle": "Xikai_Yang",
+    "contest_id": "abc272",
+    "problem_id": "abc272_d",
+    "rating": 804,
+    "time": 1665233490,
+    "submission_id": 35493623
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Xikai_Yang",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232023,
+    "submission_id": 35484874
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Xikai_Yang",
     "contest_id": "abc271",
     "problem_id": "abc271_d",
     "rating": 886,
@@ -5591,6 +5699,42 @@
   {
     "platform": "atcoder",
     "handle": "amayaqing",
+    "contest_id": "abc272",
+    "problem_id": "abc272_d",
+    "rating": 804,
+    "time": 1665234355,
+    "submission_id": 35498045
+  },
+  {
+    "platform": "atcoder",
+    "handle": "amayaqing",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232410,
+    "submission_id": 35487379
+  },
+  {
+    "platform": "atcoder",
+    "handle": "amayaqing",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232114,
+    "submission_id": 35485497
+  },
+  {
+    "platform": "atcoder",
+    "handle": "amayaqing",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230795,
+    "submission_id": 35473665
+  },
+  {
+    "platform": "atcoder",
+    "handle": "amayaqing",
     "contest_id": "abc271",
     "problem_id": "abc271_b",
     "rating": -166,
@@ -5695,6 +5839,15 @@
     "rating": 800,
     "time": 1662996601,
     "submission_id": 171889255
+  },
+  {
+    "platform": "atcoder",
+    "handle": "columbia23",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665231133,
+    "submission_id": 35477520
   },
   {
     "platform": "atcoder",
@@ -6248,6 +6401,33 @@
   {
     "platform": "atcoder",
     "handle": "afs2185",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665233608,
+    "submission_id": 35494265
+  },
+  {
+    "platform": "atcoder",
+    "handle": "afs2185",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232852,
+    "submission_id": 35490081
+  },
+  {
+    "platform": "atcoder",
+    "handle": "afs2185",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665231026,
+    "submission_id": 35476349
+  },
+  {
+    "platform": "atcoder",
+    "handle": "afs2185",
     "contest_id": "abc270",
     "problem_id": "abc270_b",
     "rating": -131,
@@ -6379,6 +6559,33 @@
     "rating": 800,
     "time": 1662996851,
     "submission_id": 171892404
+  },
+  {
+    "platform": "atcoder",
+    "handle": "chimnchuk",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232917,
+    "submission_id": 35490484
+  },
+  {
+    "platform": "atcoder",
+    "handle": "chimnchuk",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232450,
+    "submission_id": 35487616
+  },
+  {
+    "platform": "atcoder",
+    "handle": "chimnchuk",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665231821,
+    "submission_id": 35483359
   },
   {
     "platform": "atcoder",
@@ -6743,6 +6950,33 @@
   {
     "platform": "atcoder",
     "handle": "tingtingou123",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665232570,
+    "submission_id": 35488364
+  },
+  {
+    "platform": "atcoder",
+    "handle": "tingtingou123",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665232022,
+    "submission_id": 35484872
+  },
+  {
+    "platform": "atcoder",
+    "handle": "tingtingou123",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230576,
+    "submission_id": 35470998
+  },
+  {
+    "platform": "atcoder",
+    "handle": "tingtingou123",
     "contest_id": "abc271",
     "problem_id": "abc271_d",
     "rating": 886,
@@ -6896,6 +7130,15 @@
   {
     "platform": "atcoder",
     "handle": "mattgolden100",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230990,
+    "submission_id": 35475946
+  },
+  {
+    "platform": "atcoder",
+    "handle": "mattgolden100",
     "contest_id": "abc271",
     "problem_id": "abc271_a",
     "rating": -662,
@@ -6959,6 +7202,33 @@
   {
     "platform": "atcoder",
     "handle": "volivoly",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665234236,
+    "submission_id": 35497455
+  },
+  {
+    "platform": "atcoder",
+    "handle": "volivoly",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665231463,
+    "submission_id": 35480567
+  },
+  {
+    "platform": "atcoder",
+    "handle": "volivoly",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230531,
+    "submission_id": 35470367
+  },
+  {
+    "platform": "atcoder",
+    "handle": "volivoly",
     "contest_id": "abc270",
     "problem_id": "abc270_b",
     "rating": -131,
@@ -7000,6 +7270,51 @@
     "rating": -1162,
     "time": 1663416210,
     "submission_id": 34922812
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Aster233",
+    "contest_id": "abc272",
+    "problem_id": "abc272_e",
+    "rating": 1434,
+    "time": 1665235925,
+    "submission_id": 35505554
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Aster233",
+    "contest_id": "abc272",
+    "problem_id": "abc272_d",
+    "rating": 804,
+    "time": 1665232817,
+    "submission_id": 35489860
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Aster233",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665231852,
+    "submission_id": 35483585
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Aster233",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665231261,
+    "submission_id": 35478772
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Aster233",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230806,
+    "submission_id": 35473798
   },
   {
     "platform": "atcoder",
@@ -7229,6 +7544,24 @@
   {
     "platform": "atcoder",
     "handle": "bfay",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665233050,
+    "submission_id": 35491254
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bfay",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230773,
+    "submission_id": 35473385
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bfay",
     "contest_id": "abc271",
     "problem_id": "abc271_b",
     "rating": -166,
@@ -7310,6 +7643,15 @@
   {
     "platform": "atcoder",
     "handle": "WenqingWenqing",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665233113,
+    "submission_id": 35491593
+  },
+  {
+    "platform": "atcoder",
+    "handle": "WenqingWenqing",
     "contest_id": "abc270",
     "problem_id": "abc270_a",
     "rating": -473,
@@ -7369,6 +7711,15 @@
     "rating": 800,
     "time": 1663937598,
     "submission_id": 173193651
+  },
+  {
+    "platform": "atcoder",
+    "handle": "hz2716",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665231161,
+    "submission_id": 35477818
   },
   {
     "platform": "atcoder",
@@ -7515,6 +7866,24 @@
     "submission_id": 173973001
   },
   {
+    "platform": "atcoder",
+    "handle": "Kumiko_senpai",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665231169,
+    "submission_id": 35477890
+  },
+  {
+    "platform": "atcoder",
+    "handle": "Kumiko_senpai",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230605,
+    "submission_id": 35471367
+  },
+  {
     "platform": "codeforces",
     "handle": "bretticus",
     "contest_id": 1737,
@@ -7522,6 +7891,24 @@
     "rating": -1,
     "time": 1665160150,
     "submission_id": 175019645
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bretticus_mc",
+    "contest_id": "abc272",
+    "problem_id": "abc272_b",
+    "rating": -24,
+    "time": 1665233934,
+    "submission_id": 35495879
+  },
+  {
+    "platform": "atcoder",
+    "handle": "bretticus_mc",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230736,
+    "submission_id": 35472918
   },
   {
     "platform": "atcoder",
@@ -7625,6 +8012,24 @@
   {
     "platform": "atcoder",
     "handle": "JoeyXia",
+    "contest_id": "abc272",
+    "problem_id": "abc272_c",
+    "rating": 51,
+    "time": 1665233015,
+    "submission_id": 35491037
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665230921,
+    "submission_id": 35475172
+  },
+  {
+    "platform": "atcoder",
+    "handle": "JoeyXia",
     "contest_id": "abc270",
     "problem_id": "abc270_a",
     "rating": -473,
@@ -7675,6 +8080,15 @@
     "rating": -1,
     "time": 1664463841,
     "submission_id": 173961162
+  },
+  {
+    "platform": "atcoder",
+    "handle": "eversun",
+    "contest_id": "abc272",
+    "problem_id": "abc272_a",
+    "rating": -1186,
+    "time": 1665233371,
+    "submission_id": 35492969
   },
   {
     "platform": "atcoder",
