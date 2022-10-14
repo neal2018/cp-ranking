@@ -3890,15 +3890,6 @@
   {
     "platform": "codeforces",
     "handle": "Nea1",
-    "contest_id": 1742,
-    "problem_id": "F",
-    "rating": -1,
-    "time": 1665674116,
-    "submission_id": 175959741
-  },
-  {
-    "platform": "codeforces",
-    "handle": "Nea1",
     "contest_id": 1736,
     "problem_id": "C1",
     "rating": -1,
@@ -5506,15 +5497,6 @@
     "rating": -131,
     "time": 1664022100,
     "submission_id": 35106497
-  },
-  {
-    "platform": "codeforces",
-    "handle": "weto",
-    "contest_id": 1742,
-    "problem_id": "F",
-    "rating": -1,
-    "time": 1665680210,
-    "submission_id": 176041758
   },
   {
     "platform": "codeforces",
