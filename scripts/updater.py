@@ -215,7 +215,8 @@ def get_icpc(handles: List[str], contests):
                     break
                 index += 1
                 time.sleep(1)
-                print(f"fetched total: {len(solved)} current page: {index}/{fetched_cnt}")
+                print(
+                    f"fetched total: {len(solved)} current page: {index}/{fetched_cnt}")
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,

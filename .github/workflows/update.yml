@@ -24,7 +24,6 @@ jobs:
 
       - name: check diff
         id: diff
-        run: echo "::set-output name=DIFF::$(git diff ./src/data/submissions.json)"
         run: echo "DIFF=\"$(git diff ./src/data/submissions.json)\"" >> $GITHUB_ENV
 
       - name: commit files
