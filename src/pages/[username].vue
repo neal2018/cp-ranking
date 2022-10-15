@@ -176,7 +176,7 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
-            <a :href="`https://codeforces.com/gym/${userData.contest_id}`" target="_blank">
+            <a :href="`https://codeforces.com/${userData.contest_id}`" target="_blank">
               {{ getLast(userData.contest_id as string) }}
             </a>
           </td>
