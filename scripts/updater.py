@@ -1,10 +1,11 @@
-from typing import NamedTuple, List
-from bs4 import BeautifulSoup
-import requests
 import datetime
-import os
 import json
+import os
 import time
+from typing import List, NamedTuple
+
+import requests
+from bs4 import BeautifulSoup
 
 START_DATE = datetime.datetime(2022, 9, 1)
 
@@ -147,6 +148,15 @@ class CFLogin:
 
 def get_icpc(handles: List[str], contests):
 
+    profile_str = "href=\"/profile/"
+    team_str = "<td class=\\status-party-cell\""
+    team_end_str = "</td>"
+    verdict_str = "submissionverdict=\""
+    problem_str = "a href=\""
+    time_str = "<span class=\"format-time\" data-locale=\"en\">"
+    start = "<div class=\"datatable\" " + \
+        "style=\"background-color: #E1E1E1; padding-bottom: 3px;\">"
+
     def get_token(data, start, end):
         pos = data.find(start)
         data = data[pos + len(start):]
@@ -155,12 +165,12 @@ def get_icpc(handles: List[str], contests):
         data = data[pos:]
         return (data, tok)
 
-    profile_str = "href=\"/profile/"
-    verdict_str = "submissionverdict=\""
-    problem_str = "a href=\""
-    time_str = "<span class=\"format-time\" data-locale=\"en\">"
-    start = "<div class=\"datatable\" " + \
-        "style=\"background-color: #E1E1E1; padding-bottom: 3px;\">"
+    def get_usernames(team):
+        usernames = []
+        while profile_str in team:
+            team, names = get_token(team, profile_str, "\"")
+            usernames.append(names)
+        return usernames
 
     all_handles = [item for sublist in handles for item in sublist]
 
@@ -185,7 +195,8 @@ def get_icpc(handles: List[str], contests):
                 fetched_cnt = 0
                 while data.find(profile_str) != -1:
                     data, tm = get_token(data, time_str, "<")
-                    data, uname = get_token(data, profile_str, "\"")
+                    data, team = get_token(data, team_str, team_end_str)
+                    usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
                     dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
@@ -193,13 +204,13 @@ def get_icpc(handles: List[str], contests):
                     if dt < contest_start:
                         need_break = True
                         break
-
-                    if verdict == "OK" and uname in all_handles:
-                        timestamp = int(datetime.datetime.timestamp(dt))
-                        if (uname, problem) not in solved:
-                            solved[(uname, problem)] = timestamp
-                        elif timestamp < solved[(uname, problem)]:
-                            solved[(uname, problem)] = timestamp
+                    for uname in usernames:
+                        if verdict == "OK" and uname in all_handles:
+                            timestamp = int(datetime.datetime.timestamp(dt))
+                            if (uname, problem) not in solved:
+                                solved[(uname, problem)] = timestamp
+                            elif timestamp < solved[(uname, problem)]:
+                                solved[(uname, problem)] = timestamp
                 if not fetched_cnt:
                     break
                 index += 1
