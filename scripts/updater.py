@@ -13,7 +13,7 @@ START_DATE = datetime.datetime(2022, 9, 1)
 class Submission(NamedTuple):
     platform: str
     handle: str
-    contest_id: int
+    contest_id: str
     problem_id: str
     rating: int
     time: float
@@ -187,7 +187,7 @@ def get_icpc(handles: List[str], contests):
             index = 1
             need_break = False
             while not need_break and index <= 50:
-                submission_url = f"{cf.BASE}/gym/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
+                submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
@@ -215,12 +215,12 @@ def get_icpc(handles: List[str], contests):
                     break
                 index += 1
                 time.sleep(1)
-                print(f"fetched {len(solved)} {index} {fetched_cnt}")
+                print(f"fetched total: {len(solved)} current page: {index}/{fetched_cnt}")
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
                     platform="icpc",
-                    contest_id=int(contest_name),
+                    contest_id=contest_name,
                     problem_id=problem,
                     rating=int(timestamp <= contest_end.timestamp()),
                     time=timestamp,
