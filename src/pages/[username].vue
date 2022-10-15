@@ -33,6 +33,8 @@ const getColor = (points: number) => {
   return 'text-emerald-600'
 }
 
+const getLast = (str: string) => str.substring(str.lastIndexOf('/') + 1, str.length)
+
 // get the user submission history from submission.json
 const handle = handles.find(handle => handle.username === props.username)!
 const userCFSubmissions = submissions.filter(submission =>
@@ -175,12 +177,12 @@ const userICPCsubmissions = submissions.filter(submission =>
           </td>
           <td border-1>
             <a :href="`https://codeforces.com/gym/${userData.contest_id}`" target="_blank">
-              {{ userData.contest_id }}
+              {{ getLast(userData.contest_id as string) }}
             </a>
           </td>
           <td border-1>
             <a :href="`https://codeforces.com${userData.problem_id}`" target="_blank">
-              {{ userData.problem_id }}
+              {{ getLast(userData.problem_id) }}
             </a>
           </td>
           <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
