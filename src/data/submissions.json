@@ -9324,6 +9324,51 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "mikee478",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/G",
+    "rating": 0,
+    "time": 1666068900,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "mikee478",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/B",
+    "rating": 0,
+    "time": 1666069380,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "mikee478",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
+    "rating": 0,
+    "time": 1666070520,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "mikee478",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/L",
+    "rating": 0,
+    "time": 1666074480,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "mikee478",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/A",
+    "rating": 0,
+    "time": 1666108500,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1743,
@@ -13232,15 +13277,6 @@
   {
     "platform": "codeforces",
     "handle": "Ray_29",
-    "contest_id": 1743,
-    "problem_id": "C",
-    "rating": 1100,
-    "time": 1666024429,
-    "submission_id": 176776833
-  },
-  {
-    "platform": "codeforces",
-    "handle": "Ray_29",
     "contest_id": 1746,
     "problem_id": "A",
     "rating": 800,
@@ -15442,15 +15478,6 @@
     "rating": 384,
     "time": 1663420686,
     "submission_id": 34947811
-  },
-  {
-    "platform": "codeforces",
-    "handle": "fuyj15",
-    "contest_id": 1743,
-    "problem_id": "C",
-    "rating": 1100,
-    "time": 1666022826,
-    "submission_id": 176763537
   },
   {
     "platform": "codeforces",
