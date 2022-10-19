@@ -172,7 +172,7 @@ def get_icpc(handles: List[str], contests):
             usernames.append(names)
         return usernames
 
-    all_handles = [item for sublist in handles for item in sublist]
+    all_handles = [item.lower() for sublist in handles for item in sublist]
 
     with CFLogin(os.environ["CF_USERNAME"], os.environ["CF_PASSWORD"]) as cf:
         submissions = list()
@@ -205,7 +205,7 @@ def get_icpc(handles: List[str], contests):
                         need_break = True
                         break
                     for uname in usernames:
-                        if verdict == "OK" and uname in all_handles:
+                        if verdict == "OK" and uname.lower() in all_handles:
                             timestamp = int(datetime.datetime.timestamp(dt))
                             if (uname, problem) not in solved:
                                 solved[(uname, problem)] = timestamp

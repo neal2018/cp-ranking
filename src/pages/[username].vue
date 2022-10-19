@@ -37,14 +37,17 @@ const getLast = (str: string) => str.substring(str.lastIndexOf('/') + 1, str.len
 
 // get the user submission history from submission.json
 const handle = handles.find(handle => handle.username === props.username)!
+const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) => handle.toLowerCase())
+const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
+
 const userCFSubmissions = submissions.filter(submission =>
-  (submission.platform === 'codeforces' && handle.codeforces_handles.includes(submission.handle)))
+  (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
 
 const userATsubmissions = submissions.filter(submission =>
-  (submission.platform === 'atcoder' && handle.atcoder_handles.includes(submission.handle)))
+  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase())))
 
 const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && handle.codeforces_handles.includes(submission.handle))).reverse()
+  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 </script>
 
 <template>
