@@ -82,6 +82,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "gym/397895",
+    "problem_id": "/gym/397895/problem/B",
+    "rating": 0,
+    "time": 1663358880,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "Nea1",
     "contest_id": "gym/398558",
     "problem_id": "/gym/398558/problem/I",
@@ -348,6 +357,15 @@
     "problem_id": "/gym/398558/problem/F",
     "rating": 1,
     "time": 1663530900,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "gym/398558",
+    "problem_id": "/gym/398558/problem/I",
+    "rating": 1,
+    "time": 1663531140,
     "submission_id": 0
   },
   {
@@ -1252,6 +1270,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664133480,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "amayaqing",
     "contest_id": "gym/103915",
     "problem_id": "/gym/103915/problem/A",
@@ -1351,6 +1378,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/A",
+    "rating": 1,
+    "time": 1664134080,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "c-h-i-a-m-a-k-a",
     "contest_id": "gym/103915",
     "problem_id": "/gym/103915/problem/A",
@@ -1410,6 +1446,15 @@
     "problem_id": "/gym/103915/problem/A",
     "rating": 1,
     "time": 1664134440,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664134500,
     "submission_id": 0
   },
   {
@@ -1837,6 +1882,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664136480,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "tingtingou123",
     "contest_id": "gym/103915",
     "problem_id": "/gym/103915/problem/J",
@@ -2080,6 +2134,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/J",
+    "rating": 1,
+    "time": 1664137860,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "albertyangyhm",
     "contest_id": "gym/103915",
     "problem_id": "/gym/103915/problem/I",
@@ -2202,6 +2265,15 @@
     "problem_id": "/gym/103915/problem/J",
     "rating": 1,
     "time": 1664138880,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/I",
+    "rating": 1,
+    "time": 1664139000,
     "submission_id": 0
   },
   {
@@ -3124,6 +3196,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "gym/103915",
+    "problem_id": "/gym/103915/problem/G",
+    "rating": 0,
+    "time": 1664585340,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "cbass1127",
     "contest_id": "gym/103915",
     "problem_id": "/gym/103915/problem/C",
@@ -3442,6 +3523,15 @@
     "handle": "GuoxinYin",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/D",
+    "rating": 1,
+    "time": 1664739780,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/N",
     "rating": 1,
     "time": 1664739780,
     "submission_id": 0
@@ -3835,6 +3925,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/D",
+    "rating": 1,
+    "time": 1664743020,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "devilmaycry_95",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/D",
@@ -3854,6 +3953,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/N",
+    "rating": 1,
+    "time": 1664743080,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/N",
     "rating": 1,
@@ -4222,6 +4330,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/D",
+    "rating": 1,
+    "time": 1664747640,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "harisvossos",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/D",
@@ -4330,11 +4447,29 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/L",
+    "rating": 1,
+    "time": 1664750220,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "devilmaycry_95",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/L",
     "rating": 1,
     "time": 1664750220,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/C",
+    "rating": 1,
+    "time": 1664750280,
     "submission_id": 0
   },
   {
@@ -4448,6 +4583,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401035",
+    "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/L",
+    "rating": 1,
+    "time": 1664751420,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401035",
     "problem_id": "/group/yeHL59WDJ0/contest/401035/problem/L",
     "rating": 1,
@@ -5572,6 +5716,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/C",
+    "rating": 1,
+    "time": 1665344280,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "afs2185",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/K",
@@ -5959,6 +6112,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/K",
+    "rating": 1,
+    "time": 1665346200,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "ih2403",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/H",
@@ -6328,6 +6490,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/H",
+    "rating": 1,
+    "time": 1665349260,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "AsterWei",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/F",
@@ -6351,6 +6522,15 @@
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/F",
     "rating": 1,
     "time": 1665349440,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/C",
+    "rating": 1,
+    "time": 1665349800,
     "submission_id": 0
   },
   {
@@ -6787,6 +6967,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/D",
+    "rating": 1,
+    "time": 1665357180,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "ac4808",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/G",
@@ -6895,6 +7084,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/K",
+    "rating": 1,
+    "time": 1665359640,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "Ray_29",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/K",
@@ -6941,6 +7139,15 @@
   {
     "platform": "icpc",
     "handle": "devilmaycry_95",
+    "contest_id": "group/yeHL59WDJ0/contest/401036",
+    "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/A",
+    "rating": 1,
+    "time": 1665359820,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
     "contest_id": "group/yeHL59WDJ0/contest/401036",
     "problem_id": "/group/yeHL59WDJ0/contest/401036/problem/A",
     "rating": 1,
@@ -7319,6 +7526,15 @@
   {
     "platform": "icpc",
     "handle": "devilmaycry_95",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/G",
+    "rating": 1,
+    "time": 1665947820,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/G",
     "rating": 1,
@@ -7714,7 +7930,25 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/B",
+    "rating": 1,
+    "time": 1665949260,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/G",
+    "rating": 1,
+    "time": 1665949440,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/G",
     "rating": 1,
@@ -7787,6 +8021,15 @@
   {
     "platform": "icpc",
     "handle": "devilmaycry_95",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
+    "rating": 1,
+    "time": 1665949740,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
     "rating": 1,
@@ -7958,6 +8201,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/B",
+    "rating": 1,
+    "time": 1665950760,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/B",
     "rating": 1,
@@ -8174,6 +8426,15 @@
   {
     "platform": "icpc",
     "handle": "devilmaycry_95",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/A",
+    "rating": 1,
+    "time": 1665951900,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/A",
     "rating": 1,
@@ -8569,6 +8830,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/L",
+    "rating": 1,
+    "time": 1665955440,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "bretticus",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
@@ -8650,6 +8920,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Eversun",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/H",
+    "rating": 1,
+    "time": 1665955980,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "Ray_29",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/H",
@@ -8687,6 +8966,15 @@
   {
     "platform": "icpc",
     "handle": "devilmaycry_95",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/H",
+    "rating": 1,
+    "time": 1665956340,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Volivoly",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/H",
     "rating": 1,
@@ -8741,6 +9029,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
+    "rating": 1,
+    "time": 1665957180,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/F",
     "rating": 1,
@@ -8876,6 +9173,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/A",
+    "rating": 1,
+    "time": 1665958320,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/A",
     "rating": 1,
@@ -9037,6 +9343,15 @@
   },
   {
     "platform": "icpc",
+    "handle": "Volivoly",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/N",
+    "rating": 1,
+    "time": 1665961200,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
     "handle": "yuqing_99",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/L",
@@ -9173,6 +9488,15 @@
   {
     "platform": "icpc",
     "handle": "fuyj15",
+    "contest_id": "group/yeHL59WDJ0/contest/401037",
+    "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/L",
+    "rating": 1,
+    "time": 1665962460,
+    "submission_id": 0
+  },
+  {
+    "platform": "icpc",
+    "handle": "Eversun",
     "contest_id": "group/yeHL59WDJ0/contest/401037",
     "problem_id": "/group/yeHL59WDJ0/contest/401037/problem/L",
     "rating": 1,
@@ -10021,7 +10345,7 @@
     "handle": "agarwal.nilaksh",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665413890,
     "submission_id": 175387742
   },
@@ -10282,7 +10606,7 @@
     "handle": "Nea1",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665413010,
     "submission_id": 175374680
   },
@@ -10993,7 +11317,7 @@
     "handle": "albertyangyhm",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665414043,
     "submission_id": 175389784
   },
@@ -11128,7 +11452,7 @@
     "handle": "xmmm0",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665414302,
     "submission_id": 175393261
   },
@@ -11218,7 +11542,7 @@
     "handle": "GuoxinYin",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665418061,
     "submission_id": 175430850
   },
@@ -11227,7 +11551,7 @@
     "handle": "GuoxinYin",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665413228,
     "submission_id": 175378039
   },
@@ -11407,7 +11731,7 @@
     "handle": "bobbyFischer21",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665413997,
     "submission_id": 175389161
   },
@@ -11731,7 +12055,7 @@
     "handle": "th2990",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665418571,
     "submission_id": 175434711
   },
@@ -12001,7 +12325,7 @@
     "handle": "harisvossos",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665413365,
     "submission_id": 175380105
   },
@@ -12109,7 +12433,7 @@
     "handle": "weto",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665417319,
     "submission_id": 175424967
   },
@@ -12118,7 +12442,7 @@
     "handle": "weto",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665415549,
     "submission_id": 175407911
   },
@@ -12127,7 +12451,7 @@
     "handle": "weto",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665412937,
     "submission_id": 175373672
   },
@@ -12289,7 +12613,7 @@
     "handle": "mikee478",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665418246,
     "submission_id": 175432206
   },
@@ -12298,7 +12622,7 @@
     "handle": "mikee478",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665415322,
     "submission_id": 175405433
   },
@@ -12307,7 +12631,7 @@
     "handle": "mikee478",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665412810,
     "submission_id": 175371787
   },
@@ -12496,7 +12820,7 @@
     "handle": "aglioeolio",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665419369,
     "submission_id": 175440558
   },
@@ -12505,7 +12829,7 @@
     "handle": "aglioeolio",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665417128,
     "submission_id": 175423370
   },
@@ -12775,7 +13099,7 @@
     "handle": "amayaqing",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665418383,
     "submission_id": 175433260
   },
@@ -12784,7 +13108,7 @@
     "handle": "amayaqing",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665415319,
     "submission_id": 175405406
   },
@@ -12793,7 +13117,7 @@
     "handle": "amayaqing",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665412925,
     "submission_id": 175373498
   },
@@ -13306,7 +13630,7 @@
     "handle": "Ray_29",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665419558,
     "submission_id": 175442053
   },
@@ -13504,7 +13828,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665418240,
     "submission_id": 175432159
   },
@@ -13513,7 +13837,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665417173,
     "submission_id": 175423741
   },
@@ -13756,7 +14080,7 @@
     "handle": "afs2185",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665416205,
     "submission_id": 175414819
   },
@@ -13945,7 +14269,7 @@
     "handle": "yuqing_99",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665415427,
     "submission_id": 175406621
   },
@@ -14089,7 +14413,7 @@
     "handle": "cankor",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665413964,
     "submission_id": 175388745
   },
@@ -14098,7 +14422,7 @@
     "handle": "cankor",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665412937,
     "submission_id": 175373682
   },
@@ -14422,7 +14746,7 @@
     "handle": "tingtingou123",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665419600,
     "submission_id": 175442420
   },
@@ -14431,7 +14755,7 @@
     "handle": "tingtingou123",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665417371,
     "submission_id": 175425392
   },
@@ -14440,7 +14764,7 @@
     "handle": "tingtingou123",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665413250,
     "submission_id": 175378394
   },
@@ -15250,7 +15574,7 @@
     "handle": "bfay",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665417434,
     "submission_id": 175425887
   },
@@ -15520,7 +15844,7 @@
     "handle": "fuyj15",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665417125,
     "submission_id": 175423346
   },
@@ -15529,7 +15853,7 @@
     "handle": "fuyj15",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665414548,
     "submission_id": 175396415
   },
@@ -15673,7 +15997,7 @@
     "handle": "rwee1001",
     "contest_id": 1736,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 2200,
     "time": 1665419040,
     "submission_id": 175438152
   },
@@ -15682,7 +16006,7 @@
     "handle": "rwee1001",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665415600,
     "submission_id": 175408473
   },
@@ -15691,7 +16015,7 @@
     "handle": "rwee1001",
     "contest_id": 1736,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1200,
     "time": 1665414890,
     "submission_id": 175400513
   },
@@ -15700,7 +16024,7 @@
     "handle": "rwee1001",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665414250,
     "submission_id": 175392576
   },
@@ -16078,7 +16402,7 @@
     "handle": "eversun",
     "contest_id": 1736,
     "problem_id": "C1",
-    "rating": -1,
+    "rating": 1300,
     "time": 1665417833,
     "submission_id": 175429110
   },
@@ -16087,7 +16411,7 @@
     "handle": "eversun",
     "contest_id": 1736,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1665414937,
     "submission_id": 175401102
   },
