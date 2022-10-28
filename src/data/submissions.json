@@ -10359,6 +10359,15 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "cbass1127",
+    "contest_id": "group/yeHL59WDJ0/contest/401038",
+    "problem_id": "/group/yeHL59WDJ0/contest/401038/problem/K",
+    "rating": 0,
+    "time": 1666926540,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1743,
