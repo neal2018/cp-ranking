@@ -12123,6 +12123,15 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "columbia23",
+    "contest_id": "group/yeHL59WDJ0/contest/401039",
+    "problem_id": "/group/yeHL59WDJ0/contest/401039/problem/M",
+    "rating": 0,
+    "time": 1667347260,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1743,
