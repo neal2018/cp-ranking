@@ -14422,7 +14422,7 @@
     "handle": "leafeon",
     "contest_id": 1750,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1800,
     "time": 1667751100,
     "submission_id": 179619059
   },
@@ -14431,7 +14431,7 @@
     "handle": "leafeon",
     "contest_id": 1750,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1400,
     "time": 1667748559,
     "submission_id": 179607188
   },
@@ -14440,7 +14440,7 @@
     "handle": "leafeon",
     "contest_id": 1750,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1667747091,
     "submission_id": 179591452
   },
@@ -14449,7 +14449,7 @@
     "handle": "leafeon",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667746895,
     "submission_id": 179583709
   },
@@ -14872,7 +14872,7 @@
     "handle": "albertyangyhm",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667749011,
     "submission_id": 179609601
   },
@@ -15934,7 +15934,7 @@
     "handle": "sll2190",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668264461,
     "submission_id": 180621636
   },
@@ -16069,7 +16069,7 @@
     "handle": "harisvossos",
     "contest_id": 1750,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1667748653,
     "submission_id": 179607704
   },
@@ -16078,7 +16078,7 @@
     "handle": "harisvossos",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667746135,
     "submission_id": 179569814
   },
@@ -16924,7 +16924,7 @@
     "handle": "amayaqing",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668269098,
     "submission_id": 180647983
   },
@@ -16933,7 +16933,7 @@
     "handle": "amayaqing",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667749887,
     "submission_id": 179613952
   },
@@ -17950,7 +17950,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1748,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1400,
     "time": 1668270780,
     "submission_id": 180655675
   },
@@ -17959,7 +17959,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668268522,
     "submission_id": 180645201
   },
@@ -17968,7 +17968,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1750,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1667753447,
     "submission_id": 179631167
   },
@@ -17977,7 +17977,7 @@
     "handle": "devilmaycry_95",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667750832,
     "submission_id": 179618009
   },
@@ -18256,7 +18256,7 @@
     "handle": "afs2185",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668264329,
     "submission_id": 180619913
   },
@@ -20128,7 +20128,7 @@
     "handle": "bfay",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668264378,
     "submission_id": 180620679
   },
@@ -20605,7 +20605,7 @@
     "handle": "hz2716",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668264942,
     "submission_id": 180625660
   },
@@ -20713,7 +20713,7 @@
     "handle": "rwee1001",
     "contest_id": 1748,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1600,
     "time": 1668266407,
     "submission_id": 180634305
   },
@@ -20722,7 +20722,7 @@
     "handle": "rwee1001",
     "contest_id": 1748,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1400,
     "time": 1668265121,
     "submission_id": 180626873
   },
@@ -20731,7 +20731,7 @@
     "handle": "rwee1001",
     "contest_id": 1748,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1668263864,
     "submission_id": 180611628
   },
@@ -20740,7 +20740,7 @@
     "handle": "rwee1001",
     "contest_id": 1750,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1667749294,
     "submission_id": 179611102
   },
@@ -20749,7 +20749,7 @@
     "handle": "rwee1001",
     "contest_id": 1750,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1400,
     "time": 1667748676,
     "submission_id": 179607830
   },
@@ -20758,7 +20758,7 @@
     "handle": "rwee1001",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667745760,
     "submission_id": 179564228
   },
@@ -20866,7 +20866,7 @@
     "handle": "charm_y",
     "contest_id": 1750,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1667753347,
     "submission_id": 179628513
   },
