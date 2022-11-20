@@ -2,9 +2,11 @@ import datetime
 import json
 import os
 import time
+import re
 from typing import List, NamedTuple
 
 import requests
+from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
 START_DATE = datetime.datetime(2022, 9, 1)
@@ -121,6 +123,15 @@ class CFLogin:
     def __enter__(self):
         self.session = requests.session()
         dt = self.session.get(self.service_url).text
+        # check whether "Redirecting" is in the page
+        print(dt)
+        if "Redirecting" in dt:
+            rcpc = self.get_rcpc(dt)
+            self.session.cookies.set(
+                "rcpc", rcpc, domain="codeforces.com", path="/")
+            link = re.findall(r'href="(.+?)"', dt)[0]
+            dt = self.session.get(link).text
+            print(dt)
         raw_html = BeautifulSoup(dt, 'html.parser')
         csrf_token = raw_html.find_all(
             "span", {"class": "csrf-token"})[0]["data-csrf"]
@@ -144,6 +155,14 @@ class CFLogin:
             href = logout["href"]
             assert isinstance(href, str)
             self.session.get(self.BASE + href)
+
+    def get_rcpc(self, dt):
+        matched = re.findall(r'toNumbers\("(.+?)"\)', dt)
+        assert len(matched) == 3
+        key, iv, text = matched
+        block = AES.new(bytes.fromhex(key), AES.MODE_CBC, bytes.fromhex(iv))
+        rcpc = block.decrypt(bytes.fromhex(text)).hex()
+        return rcpc
 
 
 def get_icpc(handles: List[str], contests):
