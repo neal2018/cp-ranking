@@ -123,15 +123,14 @@ class CFLogin:
     def __enter__(self):
         self.session = requests.session()
         dt = self.session.get(self.service_url).text
-        # check whether "Redirecting" is in the page
-        print(dt)
+
         if "Redirecting" in dt:
             rcpc = self.get_rcpc(dt)
             self.session.cookies.set(
                 "rcpc", rcpc, domain="codeforces.com", path="/")
             link = re.findall(r'href="(.+?)"', dt)[0]
             dt = self.session.get(link).text
-            print(dt)
+
         raw_html = BeautifulSoup(dt, 'html.parser')
         csrf_token = raw_html.find_all(
             "span", {"class": "csrf-token"})[0]["data-csrf"]
