@@ -229,12 +229,12 @@ def get_icpc(handles: List[str], contests):
                                 solved[(uname, problem)] = timestamp
                             elif timestamp < solved[(uname, problem)]:
                                 solved[(uname, problem)] = timestamp
-                if not fetched_cnt:
-                    break
                 index += 1
                 time.sleep(1)
                 print(
-                    f"fetched total: {len(solved)} current page: {index}/{fetched_cnt}")
+                    f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
+                if not fetched_cnt:
+                    break
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
