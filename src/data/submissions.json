@@ -15651,6 +15651,15 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "Nea1",
+    "contest_id": "group/yeHL59WDJ0/contest/407248",
+    "problem_id": "/group/yeHL59WDJ0/contest/103102/problem/A",
+    "rating": 0,
+    "time": 1669096860,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1743,
