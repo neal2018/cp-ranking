@@ -16465,7 +16465,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "G",
-    "rating": -1,
+    "rating": 1700,
     "time": 1669043794,
     "submission_id": 181958567
   },
@@ -16474,7 +16474,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "F",
-    "rating": -1,
+    "rating": 1500,
     "time": 1669042972,
     "submission_id": 181943949
   },
@@ -16483,7 +16483,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "E",
-    "rating": -1,
+    "rating": 1100,
     "time": 1669042188,
     "submission_id": 181927064
   },
@@ -16492,7 +16492,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1000,
     "time": 1669041877,
     "submission_id": 181917536
   },
@@ -16501,7 +16501,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 800,
     "time": 1669041721,
     "submission_id": 181911577
   },
@@ -16510,7 +16510,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1669041543,
     "submission_id": 181903050
   },
@@ -16519,7 +16519,7 @@
     "handle": "Nea1",
     "contest_id": 1760,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1669041465,
     "submission_id": 181899132
   },
@@ -17707,7 +17707,7 @@
     "handle": "albertyangyhm",
     "contest_id": 1760,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1669043898,
     "submission_id": 181960278
   },
@@ -17716,7 +17716,7 @@
     "handle": "albertyangyhm",
     "contest_id": 1760,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1669043801,
     "submission_id": 181958674
   },
@@ -19822,7 +19822,7 @@
     "handle": "amayaqing",
     "contest_id": 1760,
     "problem_id": "E",
-    "rating": -1,
+    "rating": 1100,
     "time": 1669047405,
     "submission_id": 182007691
   },
@@ -19831,7 +19831,7 @@
     "handle": "amayaqing",
     "contest_id": 1760,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1000,
     "time": 1669044545,
     "submission_id": 181970565
   },
@@ -19840,7 +19840,7 @@
     "handle": "amayaqing",
     "contest_id": 1760,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 800,
     "time": 1669043971,
     "submission_id": 181961415
   },
@@ -19849,7 +19849,7 @@
     "handle": "amayaqing",
     "contest_id": 1760,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1669042326,
     "submission_id": 181930434
   },
@@ -19858,7 +19858,7 @@
     "handle": "amayaqing",
     "contest_id": 1760,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1669042139,
     "submission_id": 181925741
   },
