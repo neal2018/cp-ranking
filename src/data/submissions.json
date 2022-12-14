@@ -18000,6 +18000,15 @@
     "submission_id": 0
   },
   {
+    "platform": "icpc",
+    "handle": "crystalyst",
+    "contest_id": "group/yeHL59WDJ0/contest/407250",
+    "problem_id": "/group/yeHL59WDJ0/contest/407250/problem/D",
+    "rating": 0,
+    "time": 1671050520,
+    "submission_id": 0
+  },
+  {
     "platform": "codeforces",
     "handle": "askd",
     "contest_id": 1743,
