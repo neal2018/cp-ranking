@@ -21145,7 +21145,7 @@
     "handle": "eturok",
     "contest_id": 1766,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1670857982,
     "submission_id": 184935620
   },
@@ -22423,7 +22423,7 @@
     "handle": "amayaqing",
     "contest_id": 1771,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 900,
     "time": 1670777555,
     "submission_id": 184779102
   },
@@ -24349,7 +24349,7 @@
     "handle": "c-h-i-a-m-a-k-a",
     "contest_id": 1774,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671288859,
     "submission_id": 185652147
   },
@@ -25546,7 +25546,7 @@
     "handle": "AsterWei",
     "contest_id": 1774,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1600,
     "time": 1671296206,
     "submission_id": 185706612
   },
@@ -25555,7 +25555,7 @@
     "handle": "AsterWei",
     "contest_id": 1774,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1300,
     "time": 1671291669,
     "submission_id": 185678760
   },
@@ -25564,7 +25564,7 @@
     "handle": "AsterWei",
     "contest_id": 1774,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1500,
     "time": 1671289561,
     "submission_id": 185660118
   },
@@ -25573,7 +25573,7 @@
     "handle": "AsterWei",
     "contest_id": 1774,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671288511,
     "submission_id": 185647500
   },
@@ -25582,7 +25582,7 @@
     "handle": "AsterWei",
     "contest_id": 1767,
     "problem_id": "D",
-    "rating": -1,
+    "rating": 1500,
     "time": 1671207227,
     "submission_id": 185525387
   },
@@ -25591,7 +25591,7 @@
     "handle": "AsterWei",
     "contest_id": 1767,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 800,
     "time": 1671202763,
     "submission_id": 185490467
   },
@@ -25600,7 +25600,7 @@
     "handle": "AsterWei",
     "contest_id": 1767,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671202358,
     "submission_id": 185484493
   },
@@ -25609,7 +25609,7 @@
     "handle": "AsterWei",
     "contest_id": 1762,
     "problem_id": "C",
-    "rating": -1,
+    "rating": 1400,
     "time": 1671119033,
     "submission_id": 185341603
   },
@@ -25618,7 +25618,7 @@
     "handle": "AsterWei",
     "contest_id": 1762,
     "problem_id": "B",
-    "rating": -1,
+    "rating": 1100,
     "time": 1671116950,
     "submission_id": 185324854
   },
@@ -25627,7 +25627,7 @@
     "handle": "AsterWei",
     "contest_id": 1762,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671115689,
     "submission_id": 185309153
   },
@@ -25636,7 +25636,7 @@
     "handle": "AsterWei",
     "contest_id": 1766,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1670856239,
     "submission_id": 184913680
   },
@@ -26174,9 +26174,27 @@
   {
     "platform": "codeforces",
     "handle": "bfay",
-    "contest_id": 1762,
+    "contest_id": 1772,
     "problem_id": "B",
     "rating": -1,
+    "time": 1671375175,
+    "submission_id": 185821580
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bfay",
+    "contest_id": 1772,
+    "problem_id": "A",
+    "rating": -1,
+    "time": 1671374377,
+    "submission_id": 185807521
+  },
+  {
+    "platform": "codeforces",
+    "handle": "bfay",
+    "contest_id": 1762,
+    "problem_id": "B",
+    "rating": 1100,
     "time": 1671122970,
     "submission_id": 185364092
   },
@@ -26185,7 +26203,7 @@
     "handle": "bfay",
     "contest_id": 1762,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671116744,
     "submission_id": 185322587
   },
@@ -27211,7 +27229,7 @@
     "handle": "Kumiko_senpai",
     "contest_id": 1774,
     "problem_id": "A",
-    "rating": -1,
+    "rating": 800,
     "time": 1671289594,
     "submission_id": 185660437
   },
