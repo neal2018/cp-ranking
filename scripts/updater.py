@@ -9,7 +9,7 @@ import requests
 from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
-START_DATE = datetime.datetime(2022, 9, 1)
+START_DATE = datetime.datetime(2022, 12, 26)
 
 
 class Submission(NamedTuple):
