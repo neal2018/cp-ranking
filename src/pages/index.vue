@@ -53,7 +53,7 @@ const go = (username: string) => {
     </div>
     <div right border-1 max-w-sm p-2 self-end>
       <p text-sm text-left>
-        * Note: Currently only record points gained during live contests in Codeforces and AtCoder
+        * Note: Currently only record points gained during live contests in Codeforces and AtCoder. Feel free to send pull requests to improve this page.
       </p>
     </div>
   </div>
