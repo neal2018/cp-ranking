@@ -19,11 +19,15 @@ export const getPointFromRating = (rating: number, platform: string) => {
   return 0
 }
 
+export const getUpsolveMultiplierFromTimestamp = (submission_time: number, contest_end_time: number) => {
+  return submission_time < contest_end_time ? 1 : 0.5
+}
+
 const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-    && submission.platform === platform)
-      return acc + getPointFromRating(submission.rating, platform)
+      && submission.platform === platform)
+      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getPointFromRating(submission.rating, platform)
     return acc
   }, 0)
 }
@@ -31,7 +35,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
 const getPlatformUnknownCount = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-    && submission.platform === platform)
+      && submission.platform === platform)
       return acc + (submission.rating === -1 ? 1 : 0)
     return acc
   }, 0)

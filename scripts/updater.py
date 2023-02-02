@@ -9,9 +9,6 @@ import requests
 from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
-os.environ["CF_USERNAME"] = "cheetahbot"
-os.environ["CF_PASSWORD"] = "bottings5"
-
 START_DATE = datetime.datetime(2023, 1, 17)
 
 contests = {}
