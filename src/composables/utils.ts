@@ -3,30 +3,13 @@ import handles from '~/data/handles.json'
 
 export const getPointFromRating = (rating: number, platform: string) => {
   if (platform === 'codeforces') {
-    if (rating < 1000)
-      return 0
-    if (rating < 1500)
-      return 1
-    if (rating < 2000)
-      return 2
-    if (rating < 2500)
-      return 3
-    if (rating < 3000)
-      return 4
-    return 5
-  }
-  if (platform === 'atcoder') {
-    if (rating < 800)
-      return 0
     if (rating < 1200)
-      return 1
-    if (rating < 1600)
-      return 2
-    if (rating < 2000)
-      return 3
+      return 0
+    if (rating < 1900)
+      return 0.5
     if (rating < 2400)
-      return 4
-    return 5
+      return 1
+    return 2
   }
   if (platform === 'icpc') {
     if (rating === 1)
@@ -62,31 +45,26 @@ export const getPoints = (username: string) => {
   const codeforcesUnknownCount = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformUnknownCount(handle, 'codeforces')
   }, 0) ?? 0
-  const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
-    return acc + getPlatformPoints(handle, 'atcoder')
-  }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
   }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
     codeforcesUnknown: codeforcesUnknownCount,
-    atcoder: atcoderPoints,
     icpc: icpcPoints,
-    total: codeforcesPoints + atcoderPoints + icpcPoints,
+    total: codeforcesPoints + icpcPoints,
   }
 }
 
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, codeforcesUnknown, atcoder, icpc, total } = getPoints(handle.username)
+    const { codeforces, codeforcesUnknown, icpc, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
       codeforces,
       codeforcesUnknown,
-      atcoder,
       icpc,
       total,
     }

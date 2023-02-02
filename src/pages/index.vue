@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces', 'AtCoder', 'ICPC', 'Total']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'ICPC', 'Total']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -36,9 +36,6 @@ const go = (username: string) => {
             <p relative>
               {{ userData.codeforces }}<sup v-if="userData.codeforcesUnknown" text-gray-500 text-xs absolute p-1>+{{ userData.codeforcesUnknown }}?</sup>
             </p>
-          </td>
-          <td border-1>
-            {{ userData.atcoder }}
           </td>
           <td border-1 px-6>
             {{ userData.icpc.toFixed(1) }}
