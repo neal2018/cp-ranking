@@ -1,4 +1,10 @@
-[
+	{
+		"email_address": "Email",
+		"username": "Full Name",
+		"codeforces_handles": [
+			"Codeforces"
+		]
+	},
 	{
 		"email_address": "abh2177@columbia.edu",
 		"username": "Avigayi Helman",
@@ -1020,4 +1026,4 @@
 		"codeforces_handles": [
 			"czzy"
 		]
-	}]
+	},

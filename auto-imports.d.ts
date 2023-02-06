@@ -38,6 +38,7 @@ declare global {
   const getPointFromRating: typeof import('./src/composables/utils')['getPointFromRating']
   const getPoints: typeof import('./src/composables/utils')['getPoints']
   const getTableData: typeof import('./src/composables/utils')['getTableData']
+  const getUpsolveMultiplierFromTimestamp: typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -320,6 +321,7 @@ declare module 'vue' {
     readonly getPointFromRating: UnwrapRef<typeof import('./src/composables/utils')['getPointFromRating']>
     readonly getPoints: UnwrapRef<typeof import('./src/composables/utils')['getPoints']>
     readonly getTableData: UnwrapRef<typeof import('./src/composables/utils')['getTableData']>
+    readonly getUpsolveMultiplierFromTimestamp: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
