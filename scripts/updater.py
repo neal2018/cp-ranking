@@ -23,7 +23,6 @@ class Submission(NamedTuple):
     contest_id: str
     problem_id: str
     rating: int
-    time: float
     submission_id: int
     submission_time: int
     contest_end_time: int
@@ -69,7 +68,6 @@ def get_codeforces(handle: str) -> List[Submission]:
                 contest_id=submission['problem']['contestId'],
                 problem_id=submission['problem']['index'],
                 rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
-                time=submission['creationTimeSeconds'],
                 submission_id=submission['id'],
                 submission_time=submission['creationTimeSeconds'],
                 contest_end_time=contests[submission['contestId']]
@@ -78,6 +76,9 @@ def get_codeforces(handle: str) -> List[Submission]:
 
     url = f"https://codeforces.com/api/user.status?handle={handle}&from=1&count=100000"
     response = requests.get(url)
+    if not response.json().get("result"):
+        print(f"couldn't get results for {handle}")
+        return []
     submissions = response.json()["result"]
     return transform(unique(validate(submissions)))
 

@@ -20,7 +20,7 @@ export const getPointFromRating = (rating: number, platform: string) => {
 }
 
 export const getUpsolveMultiplierFromTimestamp = (submission_time: number, contest_end_time: number) => {
-  return submission_time < contest_end_time ? 1 : 0.5
+  return submission_time < contest_end_time ? 1 : (submission_time <= contest_end_time + 604800 ? 0.5 : 0)
 }
 
 const getPlatformPoints = (handle: string, platform: string) => {
