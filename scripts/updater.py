@@ -11,10 +11,6 @@ from bs4 import BeautifulSoup
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
-os.environ['CF_USERNAME'] = 'cheetahbot'
-os.environ['CF_PASSWORD'] = 'bottings5!'
-
-
 contests = {}
 
 class Submission(NamedTuple):
