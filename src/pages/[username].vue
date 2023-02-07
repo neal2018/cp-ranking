@@ -35,19 +35,17 @@ const getColor = (points: number) => {
 
 const getLast = (str: string) => str.substring(str.lastIndexOf('/') + 1, str.length)
 
+console.log("her")
 // get the user submission history from submission.json
 const handle = handles.find(handle => handle.username === props.username)!
+console.log(handle)
 const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) => handle.toLowerCase())
-const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
 
 const userCFSubmissions = submissions.filter(submission =>
   (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
 
-const userATsubmissions = submissions.filter(submission =>
-  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase())))
-
 const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
 </script>
 
 <template>
@@ -116,9 +114,6 @@ const userICPCsubmissions = submissions.filter(submission =>
     </div>
 
     <div>
-      <p text-2xl p-t-10>
-        AtCoder: {{ handle.atcoder_handles }}; {{ userPoints.atcoder }} Points
-      </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
           <th v-for="val in tableTitles" :key="val" border-1>
@@ -129,28 +124,8 @@ const userICPCsubmissions = submissions.filter(submission =>
           <td border-1>
             {{ userData.platform }}
           </td>
-          <td border-1>
-            <a :href="`https://atcoder.jp/users/${userData.handle}`" target="_blank">
-              {{ userData.handle }}
-            </a>
-          </td>
-          <td border-1>
-            <a :href="`https://atcoder.jp/contests/${userData.contest_id}`" target="_blank">
-              {{ userData.contest_id }}
-            </a>
-          </td>
-          <td border-1>
-            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/tasks/${userData.problem_id}`" target="_blank">
-              {{ userData.problem_id }}
-            </a>
-          </td>
           <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
             {{ userData.problem_id }}
-          </td>
-          <td border-1>
-            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`" target="_blank">
-              {{ formatTime(userData.time) }}
-            </a>
           </td>
           <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
             {{ .getPointFromProblemId(userData.problem_id, userData.platform) }}

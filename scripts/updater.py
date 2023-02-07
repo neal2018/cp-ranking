@@ -25,8 +25,8 @@ class Submission(NamedTuple):
     problem_id: str
     division: int
     submission_id: int
-    submission_time: int
-    contest_end_time: int
+    time: int
+    upsolved: bool
 
 
 def get_codeforces(handle: str) -> List[Submission]:
@@ -58,7 +58,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if not contests.get(submission['contestId']):
                 return False
-            if submission['creationTimeSeconds'] - contests[submission['contestId']] > 7200:
+            if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
                 return False
             if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION'}:
                 return False
@@ -84,8 +84,8 @@ def get_codeforces(handle: str) -> List[Submission]:
                 problem_id=submission['problem']['index'],
                 division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
-                submission_time=submission['creationTimeSeconds'],
-                contest_end_time=contests[submission['contestId']]
+                time=submission['creationTimeSeconds'],
+                upsolved=submission['creationTimeSeconds'] > contests[submission['contestId']]
             )
         return list(map(f, submissions))
 
@@ -249,10 +249,10 @@ def main():
 
     submissions = list()
     # handle icpc
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
-    print(f"fetched {len(submissions)} submissions from icpc")
+    # print("starting handling icpc")
+    # cf_handles = [handle["codeforces_handles"] for handle in handles]
+    # submissions.extend(get_icpc(cf_handles, icpc_contests))
+    # print(f"fetched {len(submissions)} submissions from icpc")
     print("starting handling codeforces")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:

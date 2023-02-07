@@ -47,15 +47,15 @@ export const getPartMultiplier = (problem_id: string, platform: string) => {
   return 1
 }
 
-export const getUpsolveMultiplierFromTimestamp = (submission_time: number, contest_end_time: number) => {
-  return submission_time < contest_end_time ? 1 : (submission_time <= contest_end_time + 604800 ? 0.5 : 0)
+export const getUpsolveMultiplier = (upsolved: boolean) => {
+  return upsolved ? 0.5 : 1
 }
 
 const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
       && submission.platform === platform)
-      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
+      return acc + getUpsolveMultiplier(submission.upsolved) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
     return acc
   }, 0)
 }

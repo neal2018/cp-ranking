@@ -37,7 +37,7 @@ declare global {
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getDivisionMultiplier: typeof import('./src/composables/utils')['getDivisionMultiplier']
   const getPartMultiplier: typeof import('./src/composables/utils')['getPartMultiplier']
-  const getPointFromIndex: typeof import('./src/composables/utils')['getPointFromIndex']
+  const getPointFromProblemId: typeof import('./src/composables/utils')['getPointFromProblemId']
   const getPoints: typeof import('./src/composables/utils')['getPoints']
   const getTableData: typeof import('./src/composables/utils')['getTableData']
   const getUpsolveMultiplierFromTimestamp: typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']
@@ -322,7 +322,7 @@ declare module 'vue' {
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getDivisionMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getDivisionMultiplier']>
     readonly getPartMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getPartMultiplier']>
-    readonly getPointFromIndex: UnwrapRef<typeof import('./src/composables/utils')['getPointFromIndex']>
+    readonly getPointFromProblemId: UnwrapRef<typeof import('./src/composables/utils')['getPointFromProblemId']>
     readonly getPoints: UnwrapRef<typeof import('./src/composables/utils')['getPoints']>
     readonly getTableData: UnwrapRef<typeof import('./src/composables/utils')['getTableData']>
     readonly getUpsolveMultiplierFromTimestamp: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']>
