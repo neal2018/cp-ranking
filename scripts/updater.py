@@ -4,6 +4,7 @@ import os
 import time
 import re
 from typing import List, NamedTuple
+from collections import defaultdict
 
 import requests
 from Crypto.Cipher import AES
@@ -11,14 +12,19 @@ from bs4 import BeautifulSoup
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
+os.environ["CF_USERNAME"] = "cheetahbot"
+os.environ["CF_PASSWORD"] = "bottings5"
+
 contests = {}
+divisions = {}
+solved = defaultdict(set)
 
 class Submission(NamedTuple):
     platform: str
     handle: str
     contest_id: str
-    problem_id: str
-    rating: int
+    index: str
+    division: int
     submission_id: int
     submission_time: int
     contest_end_time: int
@@ -28,7 +34,21 @@ def get_codeforces(handle: str) -> List[Submission]:
     url = f"https://codeforces.com/api/contest.list?gym=false"
     response = requests.get(url)
     for contest in response.json()['result']:
+        contest_id = contest['id']
+        contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
+        contest_name = contest['name'].lower()
+        if "div. 1" in contest_name:
+            divisions[contest_id] = 1
+        elif "div. 2" in contest_name:
+            divisions[contest_id] = 2
+        elif "div. 3" in contest_name:
+            divisions[contest_id] = 3
+        elif "div. 4" in contest_name:
+            divisions[contest_id] = 4
+        else:
+            divisions[contest_id] = 2
         contests[contest['id']] = contest['startTimeSeconds'] + contest['durationSeconds']
+        
     def validate(submissions):
         def f(submission):
             if submission['verdict'] != 'OK':
@@ -42,6 +62,10 @@ def get_codeforces(handle: str) -> List[Submission]:
             if submission['creationTimeSeconds'] - contests[submission['contestId']] > 7200:
                 return False
             if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION'}:
+                return False
+            if (problem_id := str(submission['contestId']) + " " + submission['problem']['index']) not in solved[handle]:
+                solved[handle].add(problem_id)
+            else:
                 return False
             return True
         return list(filter(f, submissions))
@@ -62,8 +86,8 @@ def get_codeforces(handle: str) -> List[Submission]:
                 handle=handle,
                 platform="codeforces",
                 contest_id=submission['problem']['contestId'],
-                problem_id=submission['problem']['index'],
-                rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
+                index=submission['problem']['index'],
+                division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
                 submission_time=submission['creationTimeSeconds'],
                 contest_end_time=contests[submission['contestId']]

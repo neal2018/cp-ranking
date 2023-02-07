@@ -1,22 +1,50 @@
 import submissions from '~/data/submissions.json'
 import handles from '~/data/handles.json'
 
-export const getPointFromRating = (rating: number, platform: string) => {
+export const getPointFromIndex = (index: string, platform: string) => {
   if (platform === 'codeforces') {
-    if (rating < 1200)
-      return 0
-    if (rating < 1900)
+    var letter = index[0]
+    if (letter === 'A')
+      return 0.25
+    if (letter === 'B')
       return 0.5
-    if (rating < 2400)
+    if (letter === 'C')
       return 1
-    return 2
+    if (letter === 'D')
+      return 1.5
+    if (letter === 'E')
+      return 2
+    if (letter === 'F')
+      return 4
+    if (letter === 'G')
+      return 6
+    return 8
   }
   if (platform === 'icpc') {
-    if (rating === 1)
-      return 1
-    return 0.8
+    return 1
   }
   return 0
+}
+
+export const getDivisionMultiplier = (division: int, platform: string) => {
+  if (platform === 'codeforces') {
+    if (division === 1)
+      return 4
+    if (division === 2)
+      return 1
+    if (division === 3)
+      return 0.25
+    if (division === 4)
+      return 0.125
+    return 1
+  }
+  return 1
+}
+
+export const getPartMultiplier = (index: string, platform: string) => {
+  if (platform === 'codeforces')
+    return (index.length > 1 ? 0.5 : 1)
+  return 1
 }
 
 export const getUpsolveMultiplierFromTimestamp = (submission_time: number, contest_end_time: number) => {
@@ -27,7 +55,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
       && submission.platform === platform)
-      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getPointFromRating(submission.rating, platform)
+      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.index, platform) * getPointFromIndex(submission.index, platform)
     return acc
   }, 0)
 }

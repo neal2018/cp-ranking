@@ -35,7 +35,9 @@ declare global {
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const getPointFromRating: typeof import('./src/composables/utils')['getPointFromRating']
+  const getDivisionMultiplier: typeof import('./src/composables/utils')['getDivisionMultiplier']
+  const getPartMultiplier: typeof import('./src/composables/utils')['getPartMultiplier']
+  const getPointFromIndex: typeof import('./src/composables/utils')['getPointFromIndex']
   const getPoints: typeof import('./src/composables/utils')['getPoints']
   const getTableData: typeof import('./src/composables/utils')['getTableData']
   const getUpsolveMultiplierFromTimestamp: typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']
@@ -318,7 +320,9 @@ declare module 'vue' {
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getPointFromRating: UnwrapRef<typeof import('./src/composables/utils')['getPointFromRating']>
+    readonly getDivisionMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getDivisionMultiplier']>
+    readonly getPartMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getPartMultiplier']>
+    readonly getPointFromIndex: UnwrapRef<typeof import('./src/composables/utils')['getPointFromIndex']>
     readonly getPoints: UnwrapRef<typeof import('./src/composables/utils')['getPoints']>
     readonly getTableData: UnwrapRef<typeof import('./src/composables/utils')['getTableData']>
     readonly getUpsolveMultiplierFromTimestamp: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']>
