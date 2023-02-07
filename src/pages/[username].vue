@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import handles from '~/data/handles.json'
 import submissions from '~/data/submissions.json'
-import { getTableData } from '~/composables/utils'
+import { getPointFromProblemId, getTableData } from '~/composables/utils'
 
 const props = defineProps<{ username: string }>()
 const router = useRouter()
@@ -96,9 +96,20 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
+            <p v-if="userData.problem_id === -1" text-fuchsia-600>
+              UNKNOWN
+            </p>
+            <p v-else :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+              {{ userData.problem_id }}
+            </p>
+          </td>
+          <td border-1>
             <a :href="`https://codeforces.com/contest/${userData.contest_id}/submission/${userData.submission_id}`" target="_blank">
               {{ formatTime(userData.time) }}
             </a>
+          </td>
+          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ userData.problem_id === -1 ? '?' : .getPointFromProblemId(userData.problem_id, userData.platform) }}
           </td>
         </tr>
       </table>
@@ -133,10 +144,16 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ userData.problem_id }}
             </a>
           </td>
+          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ userData.problem_id }}
+          </td>
           <td border-1>
             <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`" target="_blank">
               {{ formatTime(userData.time) }}
             </a>
+          </td>
+          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ .getPointFromProblemId(userData.problem_id, userData.platform) }}
           </td>
         </tr>
       </table>
@@ -171,8 +188,14 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ getLast(userData.problem_id) }}
             </a>
           </td>
+          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ userData.problem_id }}
+          </td>
           <td border-1>
             {{ formatTime(userData.time) }}
+          </td>
+          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ userData.problem_id === -1 ? '?' : .getPointFromProblemId(userData.problem_id, userData.platform) }}
           </td>
         </tr>
       </table>

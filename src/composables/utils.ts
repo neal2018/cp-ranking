@@ -1,9 +1,9 @@
 import submissions from '~/data/submissions.json'
 import handles from '~/data/handles.json'
 
-export const getPointFromIndex = (index: string, platform: string) => {
+export const getPointFromProblemId = (problem_id: string, platform: string) => {
   if (platform === 'codeforces') {
-    var letter = index[0]
+    var letter = problem_id[0]
     if (letter === 'A')
       return 0.25
     if (letter === 'B')
@@ -41,9 +41,9 @@ export const getDivisionMultiplier = (division: int, platform: string) => {
   return 1
 }
 
-export const getPartMultiplier = (index: string, platform: string) => {
+export const getPartMultiplier = (problem_id: string, platform: string) => {
   if (platform === 'codeforces')
-    return (index.length > 1 ? 0.5 : 1)
+    return (problem_id.length > 1 ? 0.5 : 1)
   return 1
 }
 
@@ -55,7 +55,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
       && submission.platform === platform)
-      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.index, platform) * getPointFromIndex(submission.index, platform)
+      return acc + getUpsolveMultiplierFromTimestamp(submission.submission_time, submission.contest_end_time) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
     return acc
   }, 0)
 }

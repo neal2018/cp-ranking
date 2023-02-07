@@ -10,17 +10,19 @@ import requests
 from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
+os.environ["CF_USERNAME"] = "cheetahbot"
+os.environ["CF_PASSWORD"] = "bottings5"
+
 START_DATE = datetime.datetime(2023, 1, 17)
 
 contests = {}
 divisions = {}
-solved = defaultdict(set)
 
 class Submission(NamedTuple):
     platform: str
     handle: str
     contest_id: str
-    index: str
+    problem_id: str
     division: int
     submission_id: int
     submission_time: int
@@ -60,10 +62,6 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION'}:
                 return False
-            if (problem_id := str(submission['contestId']) + " " + submission['problem']['index']) not in solved[handle]:
-                solved[handle].add(problem_id)
-            else:
-                return False
             return True
         return list(filter(f, submissions))
 
@@ -83,7 +81,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 handle=handle,
                 platform="codeforces",
                 contest_id=submission['problem']['contestId'],
-                index=submission['problem']['index'],
+                problem_id=submission['problem']['index'],
                 division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
                 submission_time=submission['creationTimeSeconds'],
