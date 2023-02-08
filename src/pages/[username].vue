@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import handles from '~/data/handles.json'
 import submissions from '~/data/submissions.json'
-import { getPointFromProblemId, getTableData } from '~/composables/utils'
+import { getPointFromRating, getTableData } from '~/composables/utils'
 
 const props = defineProps<{ username: string }>()
 const router = useRouter()
@@ -35,17 +35,19 @@ const getColor = (points: number) => {
 
 const getLast = (str: string) => str.substring(str.lastIndexOf('/') + 1, str.length)
 
-console.log("her")
 // get the user submission history from submission.json
 const handle = handles.find(handle => handle.username === props.username)!
-console.log(handle)
 const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) => handle.toLowerCase())
+const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
 
 const userCFSubmissions = submissions.filter(submission =>
   (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
 
+const userATsubmissions = submissions.filter(submission =>
+  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase())))
+
 const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
+  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 </script>
 
 <template>
@@ -94,11 +96,11 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
-            <p v-if="userData.problem_id === -1" text-fuchsia-600>
+            <p v-if="userData.rating === -1" text-fuchsia-600>
               UNKNOWN
             </p>
-            <p v-else :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-              {{ userData.problem_id }}
+            <p v-else :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+              {{ userData.rating }}
             </p>
           </td>
           <td border-1>
@@ -106,14 +108,17 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ formatTime(userData.time) }}
             </a>
           </td>
-          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-            {{ userData.problem_id === -1 ? '?' : .getPointFromProblemId(userData.problem_id, userData.platform) }}
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            {{ userData.rating === -1 ? '?' : getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
       </table>
     </div>
 
     <div>
+      <p text-2xl p-t-10>
+        AtCoder: {{ handle.atcoder_handles }}; {{ userPoints.atcoder }} Points
+      </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
           <th v-for="val in tableTitles" :key="val" border-1>
@@ -124,11 +129,31 @@ const userICPCsubmissions = submissions.filter(submission =>
           <td border-1>
             {{ userData.platform }}
           </td>
-          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-            {{ userData.problem_id }}
+          <td border-1>
+            <a :href="`https://atcoder.jp/users/${userData.handle}`" target="_blank">
+              {{ userData.handle }}
+            </a>
           </td>
-          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-            {{ .getPointFromProblemId(userData.problem_id, userData.platform) }}
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}`" target="_blank">
+              {{ userData.contest_id }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/tasks/${userData.problem_id}`" target="_blank">
+              {{ userData.problem_id }}
+            </a>
+          </td>
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            {{ userData.rating }}
+          </td>
+          <td border-1>
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`" target="_blank">
+              {{ formatTime(userData.time) }}
+            </a>
+          </td>
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            {{ getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
       </table>
@@ -163,14 +188,14 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ getLast(userData.problem_id) }}
             </a>
           </td>
-          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-            {{ userData.problem_id }}
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            {{ userData.rating }}
           </td>
           <td border-1>
             {{ formatTime(userData.time) }}
           </td>
-          <td border-1 :class="getColor(.getPointFromProblemId(userData.problem_id, userData.platform))">
-            {{ userData.problem_id === -1 ? '?' : .getPointFromProblemId(userData.problem_id, userData.platform) }}
+          <td border-1 :class="getColor(getPointFromRating(userData.rating, userData.platform))">
+            {{ userData.rating === -1 ? '?' : getPointFromRating(userData.rating, userData.platform) }}
           </td>
         </tr>
       </table>

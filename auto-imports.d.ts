@@ -40,7 +40,7 @@ declare global {
   const getPointFromProblemId: typeof import('./src/composables/utils')['getPointFromProblemId']
   const getPoints: typeof import('./src/composables/utils')['getPoints']
   const getTableData: typeof import('./src/composables/utils')['getTableData']
-  const getUpsolveMultiplierFromTimestamp: typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']
+  const getUpsolveMultiplier: typeof import('./src/composables/utils')['getUpsolveMultiplier']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -325,7 +325,7 @@ declare module 'vue' {
     readonly getPointFromProblemId: UnwrapRef<typeof import('./src/composables/utils')['getPointFromProblemId']>
     readonly getPoints: UnwrapRef<typeof import('./src/composables/utils')['getPoints']>
     readonly getTableData: UnwrapRef<typeof import('./src/composables/utils')['getTableData']>
-    readonly getUpsolveMultiplierFromTimestamp: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplierFromTimestamp']>
+    readonly getUpsolveMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplier']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
