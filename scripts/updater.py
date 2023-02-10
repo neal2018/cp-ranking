@@ -23,6 +23,7 @@ class Submission(NamedTuple):
     handle: str
     contest_id: str
     problem_id: str
+    rating: int
     division: int
     submission_id: int
     time: int
@@ -82,6 +83,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 platform="codeforces",
                 contest_id=submission['problem']['contestId'],
                 problem_id=submission['problem']['index'],
+                rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
                 division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
                 time=submission['creationTimeSeconds'],
