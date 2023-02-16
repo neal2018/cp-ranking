@@ -100,6 +100,51 @@ def get_codeforces(handle: str) -> List[Submission]:
     return transform(unique(validate(submissions)))
 
 
+def get_atcoder(handle: str) -> List[Submission]:
+    difficulties = requests.get(
+        "https://kenkoooo.com/atcoder/resources/problem-models.json").json()
+    contests = requests.get(
+        "https://kenkoooo.com/atcoder/resources/contests.json").json()
+    contests = {c['id']: c for c in contests}
+    submissions = requests.get(
+        f"https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user={handle}&from_second={int(START_DATE.timestamp())}").json()
+
+    def validate(submissions):
+        def f(submission):
+            if submission['result'] != 'AC':
+                return False
+            contest = contests[submission['contest_id']]
+            if submission['epoch_second'] > contest['start_epoch_second'] + contest['duration_second']:
+                return False
+            return True
+        return list(filter(f, submissions))
+
+    def unique(submissions):
+        res = list()
+        solved = set()
+        for s in submissions[::-1]:
+            key = s['problem_id']
+            if key not in solved:
+                solved.add(key)
+                res.append(s)
+        return res
+
+    def transform(submissions):
+        def f(submission) -> Submission:
+            return Submission(
+                handle=handle,
+                platform="atcoder",
+                contest_id=submission['contest_id'],
+                problem_id=submission['problem_id'],
+                rating=difficulties[submission['problem_id']]['difficulty'],
+                time=submission['epoch_second'],
+                submission_id=submission['id'],
+            )
+        return list(map(f, submissions))
+
+    return transform(unique(validate(submissions)))
+
+
 class CFLogin:
     BASE = "https://codeforces.com"
     service_url = f"{BASE}/enter"
@@ -255,10 +300,12 @@ def main():
     # cf_handles = [handle["codeforces_handles"] for handle in handles]
     # submissions.extend(get_icpc(cf_handles, icpc_contests))
     # print(f"fetched {len(submissions)} submissions from icpc")
-    print("starting handling codeforces")
+    print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
             submissions.extend(get_codeforces(cf_handle))
+        for ac_handle in handle["atcoder_handles"]:
+            submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
         time.sleep(1)
 

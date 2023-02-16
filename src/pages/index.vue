@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces', 'ICPC', 'Total']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'AtCoder', 'ICPC', 'Total']
 const tableData = getTableData()
 const router = useRouter()
 
