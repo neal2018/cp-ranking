@@ -1,46 +1,61 @@
 import submissions from '~/data/submissions.json'
 import handles from '~/data/handles.json'
 
-export const getPointFromRating = (rating: number, platform: string) => {
+export const getPointFromProblemId = (problem_id: string, platform: string) => {
   if (platform === 'codeforces') {
-    if (rating < 1000)
-      return 0
-    if (rating < 1500)
+    var letter = problem_id[0]
+    if (letter === 'A')
+      return 0.25
+    if (letter === 'B')
+      return 0.5
+    if (letter === 'C')
       return 1
-    if (rating < 2000)
+    if (letter === 'D')
+      return 1.5
+    if (letter === 'E')
       return 2
-    if (rating < 2500)
-      return 3
-    if (rating < 3000)
+    if (letter === 'F')
       return 4
-    return 5
-  }
-  if (platform === 'atcoder') {
-    if (rating < 800)
-      return 0
-    if (rating < 1200)
-      return 1
-    if (rating < 1600)
-      return 2
-    if (rating < 2000)
-      return 3
-    if (rating < 2400)
-      return 4
-    return 5
+    if (letter === 'G')
+      return 6
+    return 8
   }
   if (platform === 'icpc') {
-    if (rating === 1)
-      return 1
-    return 0.8
+    return 1
   }
   return 0
+}
+
+export const getDivisionMultiplier = (division: int, platform: string) => {
+  if (platform === 'codeforces') {
+    if (division === 1)
+      return 4
+    if (division === 2)
+      return 1
+    if (division === 3)
+      return 0.25
+    if (division === 4)
+      return 0.125
+    return 1
+  }
+  return 1
+}
+
+export const getPartMultiplier = (problem_id: string, platform: string) => {
+  if (platform === 'codeforces')
+    return (problem_id.length > 1 ? 0.5 : 1)
+  return 1
+}
+
+export const getUpsolveMultiplier = (upsolved: boolean) => {
+  return upsolved ? 0.5 : 1
 }
 
 const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-    && submission.platform === platform)
-      return acc + getPointFromRating(submission.rating, platform)
+      && submission.platform === platform)
+      return acc + getUpsolveMultiplier(submission.upsolved) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
     return acc
   }, 0)
 }
@@ -48,7 +63,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
 const getPlatformUnknownCount = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-    && submission.platform === platform)
+      && submission.platform === platform)
       return acc + (submission.rating === -1 ? 1 : 0)
     return acc
   }, 0)
@@ -56,14 +71,14 @@ const getPlatformUnknownCount = (handle: string, platform: string) => {
 
 export const getPoints = (username: string) => {
   const handle = handles.find(handle => handle.username === username)
+  const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
+    return acc + getPlatformPoints(handle, 'atcoder')
+  }, 0) ?? 0
   const codeforcesPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'codeforces')
   }, 0) ?? 0
   const codeforcesUnknownCount = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformUnknownCount(handle, 'codeforces')
-  }, 0) ?? 0
-  const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
-    return acc + getPlatformPoints(handle, 'atcoder')
   }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
@@ -73,7 +88,7 @@ export const getPoints = (username: string) => {
     codeforcesUnknown: codeforcesUnknownCount,
     atcoder: atcoderPoints,
     icpc: icpcPoints,
-    total: codeforcesPoints + atcoderPoints + icpcPoints,
+    total: codeforcesPoints + atcoderPoints, icpcPoints,
   }
 }
 

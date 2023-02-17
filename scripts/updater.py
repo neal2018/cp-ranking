@@ -4,13 +4,19 @@ import os
 import time
 import re
 from typing import List, NamedTuple
+from collections import defaultdict
 
 import requests
 from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
-START_DATE = datetime.datetime(2022, 12, 26)
+os.environ["CF_USERNAME"] = "cheetahbot"
+os.environ["CF_PASSWORD"] = "bottings5"
 
+START_DATE = datetime.datetime(2023, 1, 17)
+
+contests = {}
+divisions = {}
 
 class Submission(NamedTuple):
     platform: str
@@ -18,22 +24,44 @@ class Submission(NamedTuple):
     contest_id: str
     problem_id: str
     rating: int
-    time: float
+    division: int
     submission_id: int
+    time: int
+    upsolved: bool
 
 
 def get_codeforces(handle: str) -> List[Submission]:
+    url = f"https://codeforces.com/api/contest.list?gym=false"
+    response = requests.get(url)
+    for contest in response.json()['result']:
+        contest_id = contest['id']
+        contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
+        contest_name = contest['name'].lower()
+        if "div. 1" in contest_name:
+            divisions[contest_id] = 1
+        elif "div. 2" in contest_name:
+            divisions[contest_id] = 2
+        elif "div. 3" in contest_name:
+            divisions[contest_id] = 3
+        elif "div. 4" in contest_name:
+            divisions[contest_id] = 4
+        else:
+            divisions[contest_id] = 2
+        contests[contest['id']] = contest['startTimeSeconds'] + contest['durationSeconds']
+        
     def validate(submissions):
         def f(submission):
             if submission['verdict'] != 'OK':
                 return False
             if submission['creationTimeSeconds'] < START_DATE.timestamp():
                 return False
-            if 'contestId' not in submission:
+            if not submission.get('contestId'):
                 return False
-            if submission['contestId'] == 0:
+            if not contests.get(submission['contestId']):
                 return False
-            if submission['author']['participantType'] not in ('CONTESTANT', 'OUT_OF_COMPETITION'):
+            if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
+                return False
+            if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION'}:
                 return False
             return True
         return list(filter(f, submissions))
@@ -56,13 +84,18 @@ def get_codeforces(handle: str) -> List[Submission]:
                 contest_id=submission['problem']['contestId'],
                 problem_id=submission['problem']['index'],
                 rating=submission['problem']['rating'] if 'rating' in submission['problem'] else -1,
-                time=submission['creationTimeSeconds'],
+                division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
+                time=submission['creationTimeSeconds'],
+                upsolved=submission['creationTimeSeconds'] > contests[submission['contestId']]
             )
         return list(map(f, submissions))
 
     url = f"https://codeforces.com/api/user.status?handle={handle}&from=1&count=100000"
     response = requests.get(url)
+    if not response.json().get("result"):
+        print(f"couldn't get results for {handle}")
+        return []
     submissions = response.json()["result"]
     return transform(unique(validate(submissions)))
 
@@ -263,10 +296,10 @@ def main():
 
     submissions = list()
     # handle icpc
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
-    print(f"fetched {len(submissions)} submissions from icpc")
+    # print("starting handling icpc")
+    # cf_handles = [handle["codeforces_handles"] for handle in handles]
+    # submissions.extend(get_icpc(cf_handles, icpc_contests))
+    # print(f"fetched {len(submissions)} submissions from icpc")
     print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:

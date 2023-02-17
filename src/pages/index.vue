@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces', 'AtCoder', 'ICPC', 'Total']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'ICPC', 'Total']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -34,18 +34,15 @@ const go = (username: string) => {
           </td>
           <td border-1>
             <p relative>
-              {{ userData.codeforces }}<sup v-if="userData.codeforcesUnknown" text-gray-500 text-xs absolute p-1>+{{ userData.codeforcesUnknown }}?</sup>
+              {{ userData.codeforces }}
             </p>
-          </td>
-          <td border-1>
-            {{ userData.atcoder }}
           </td>
           <td border-1 px-6>
             {{ userData.icpc.toFixed(1) }}
           </td>
           <td border-1>
             <p relative px-6>
-              {{ userData.total.toFixed(1) }}<sup v-if="userData.codeforcesUnknown" text-gray-500 text-xs absolute p-1>+{{ userData.codeforcesUnknown }}?</sup>
+              {{ userData.total.toFixed(1) }}
             </p>
           </td>
         </tr>
@@ -53,7 +50,7 @@ const go = (username: string) => {
     </div>
     <div right border-1 max-w-sm p-2 self-end>
       <p text-sm text-left>
-        * Note: Currently only record points gained during live contests in Codeforces and AtCoder. Feel free to send pull requests to improve this page.
+        * Note: Currently only record points gained during live contests in Codeforces and during ICPC practice contests. Feel free to send pull requests to improve this page.
       </p>
     </div>
   </div>
