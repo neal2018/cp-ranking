@@ -61,7 +61,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
                 return False
-            if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION', 'PRACTICE'}:
+            if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION'}:
                 return False
             return True
         return list(filter(f, submissions))
@@ -87,7 +87,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
                 time=submission['creationTimeSeconds'],
-                upsolved=submission['creationTimeSeconds'] - 604800 > contests[submission['contestId']]
+                upsolved=submission['creationTimeSeconds'] > contests[submission['contestId']]
             )
         return list(map(f, submissions))
 
