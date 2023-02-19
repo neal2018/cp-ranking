@@ -51,11 +51,20 @@ export const getUpsolveMultiplier = (upsolved: boolean) => {
   return upsolved ? 0.5 : 1
 }
 
+const getParticipationPoints = (contest_id: number, upsolved: boolean, contests: Set<number>) => {
+  if (!contests.has(contest_id) && !upsolved) {
+    contests.add(contest_id)
+    return 0.5
+  }
+  return 0
+}
+
 const getPlatformPoints = (handle: string, platform: string) => {
+  const contests = new Set<number>()
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
       && submission.platform === platform)
-      return acc + getUpsolveMultiplier(submission.upsolved) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
+      return acc + getParticipationPoints(submission.contest_id, submission.upsolved, contests) + getUpsolveMultiplier(submission.upsolved) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
     return acc
   }, 0)
 }
