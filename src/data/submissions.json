@@ -3753,6 +3753,39 @@
   {
     "platform": "codeforces",
     "handle": "davidchang7636",
+    "contest_id": 1776,
+    "problem_id": "L",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 194231706,
+    "time": 1676812153,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
+    "contest_id": 1776,
+    "problem_id": "H",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 194223690,
+    "time": 1676808664,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
+    "contest_id": 1776,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 194216971,
+    "time": 1676806212,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
     "contest_id": 1795,
     "problem_id": "B",
     "rating": -1,
