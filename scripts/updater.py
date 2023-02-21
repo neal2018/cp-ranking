@@ -17,6 +17,11 @@ START_DATE = datetime.datetime(2023, 1, 17)
 
 contests = {}
 divisions = {}
+unrated_contests = set()
+
+with open("unrated_contests.txt") as f:
+    for contest in f:
+        unrated_contests.add(int(contest))
 
 class Submission(NamedTuple):
     platform: str
@@ -35,6 +40,8 @@ def get_codeforces(handle: str) -> List[Submission]:
     response = requests.get(url)
     for contest in response.json()['result']:
         contest_id = contest['id']
+        if contest_id in unrated_contests:
+            continue;
         contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
         contest_name = contest['name'].lower()
         if "div. 1" in contest_name:
