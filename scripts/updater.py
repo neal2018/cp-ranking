@@ -19,7 +19,7 @@ contests = {}
 divisions = {}
 unrated_contests = set()
 
-with open("unrated_contests.txt") as f:
+with open("./scripts/unrated_contests.txt") as f:
     for contest in f:
         unrated_contests.add(int(contest))
 
