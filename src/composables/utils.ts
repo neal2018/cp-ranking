@@ -48,14 +48,18 @@ export const getPartMultiplier = (problem_id: string, platform: string) => {
 }
 
 export const getUpsolveMultiplier = (upsolved: boolean) => {
-  return upsolved ? 0.5 : 1
+  return upsolved ? 1/16 : 1
+}
+
+export const getPointFromProblem = (upsolved: boolean, division: number, problem_id: string, platform: string) => {
+  return getUpsolveMultiplier(upsolved) * getDivisionMultiplier(division, platform) * getPartMultiplier(problem_id, platform) * getPointFromProblemId(problem_id, platform)
 }
 
 const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
       && submission.platform === platform)
-      return acc + getUpsolveMultiplier(submission.upsolved) * getDivisionMultiplier(submission.division, platform) * getPartMultiplier(submission.problem_id, platform) * getPointFromProblemId(submission.problem_id, platform)
+      return acc + getPointFromProblem(submission.upsolved, submission.division, submission.problem_id, platform)
     return acc
   }, 0)
 }
