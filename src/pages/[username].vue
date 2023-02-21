@@ -111,7 +111,7 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
-            <p >
+            <p>
               {{ userData.upsolved }}
             </p>
           </td>
