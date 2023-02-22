@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import handles from '~/data/handles.json'
 import submissions from '~/data/submissions.json'
-import { getPointFromProblemId, getTableData } from '~/composables/utils'
+import { getPointFromProblem, getTableData } from '~/composables/utils'
 
 const props = defineProps<{ username: string }>()
 const router = useRouter()
 
 const userPoints = getTableData().find(user => user.username === props.username)!
 
-const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Points']
+const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Division', 'Points']
 
 const formatTime = (s: number) => {
   return new Date(s * 1e3).toLocaleString('en-US', {
@@ -91,7 +91,8 @@ const userICPCsubmissions = submissions.filter(submission =>
             </a>
           </td>
           <td border-1>
-            <a :href="`https://codeforces.com/contest/${userData.contest_id}/problem/${userData.problem_id}`" target="_blank">
+            <a :href="`https://codeforces.com/contest/${userData.contest_id}/problem/${userData.problem_id}`"
+              target="_blank">
               {{ userData.problem_id }}
             </a>
           </td>
@@ -104,12 +105,21 @@ const userICPCsubmissions = submissions.filter(submission =>
             </p>
           </td>
           <td border-1>
-            <a :href="`https://codeforces.com/contest/${userData.contest_id}/submission/${userData.submission_id}`" target="_blank">
+            <a :href="`https://codeforces.com/contest/${userData.contest_id}/submission/${userData.submission_id}`"
+              target="_blank">
               {{ formatTime(userData.time) }}
             </a>
           </td>
-          <td border-1 :class="getColor(getPointFromProblemId(userData.rating, userData.platform))">
-            {{ userData.rating === -1 ? '?' : getPointFromProblemId(userData.rating, userData.platform) }}
+          <td border-1>
+            <p>
+              {{ userData.upsolved }}
+            </p>
+          </td>
+          <td border-1>
+            {{ userData.division }}
+          </td>
+          <td border-1>
+            {{ getPointFromProblem(userData.upsolved, userData.division, userData.problem_id, userData.platform) }}
           </td>
         </tr>
       </table>
@@ -148,12 +158,13 @@ const userICPCsubmissions = submissions.filter(submission =>
             {{ userData.rating }}
           </td>
           <td border-1>
-            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`" target="_blank">
+            <a :href="`https://atcoder.jp/contests/${userData.contest_id}/submissions/${userData.submission_id}`"
+              target="_blank">
               {{ formatTime(userData.time) }}
             </a>
           </td>
-          <td border-1 :class="getColor(getPointFromProblemId(userData.rating, userData.platform))">
-            {{ getPointFromProblemId(userData.rating, userData.platform) }}
+          <td border-1 :class="getColor(getPointFromProblemId(userData.problem_id, userData.platform))">
+            {{ getPointFromProblemId(userData.problem_id, userData.platform) }}
           </td>
         </tr>
       </table>
@@ -202,10 +213,7 @@ const userICPCsubmissions = submissions.filter(submission =>
     </div>
 
     <div>
-      <button
-        class="btn m-3 text-sm mt-8"
-        @click="router.back()"
-      >
+      <button class="btn m-3 text-sm mt-8" @click="router.back()">
         Back
       </button>
     </div>
@@ -213,7 +221,7 @@ const userICPCsubmissions = submissions.filter(submission =>
 </template>
 
 <style scoped>
-.first-black::first-letter{
+.first-black::first-letter {
   color: black;
 }
 </style>
