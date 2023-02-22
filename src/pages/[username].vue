@@ -58,16 +58,13 @@ const userICPCsubmissions = submissions.filter(submission =>
     <div>
       <p text-3xl>
         Rank: {{ userPoints.rank }}; Total: {{ userPoints.total }}
-        <span v-if="userPoints.codeforcesParticipation">
-          + {{ userPoints.codeforcesParticipation }}?
-        </span> Points
       </p>
     </div>
     <div>
       <p text-2xl p-t-10>
         Codeforces: {{ handle.codeforces_handles }}; {{ userPoints.codeforces }}
         <span v-if="userPoints.codeforcesParticipation">
-          + {{ userPoints.codeforcesParticipation }}?
+          + {{ userPoints.codeforcesParticipation }}
         </span> Points
       </p>
       <table border-1 m-auto m-y-5>
