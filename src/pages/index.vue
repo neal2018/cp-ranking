@@ -38,11 +38,11 @@ const go = (username: string) => {
             </p>
           </td>
           <td border-1 px-6>
-            {{ userData.icpc.toFixed(1) }}
+            {{ userData.icpc }}
           </td>
           <td border-1>
             <p relative px-6>
-              {{ userData.total.toFixed(1) }}
+              {{ userData.total }}
             </p>
           </td>
         </tr>
