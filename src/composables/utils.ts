@@ -68,7 +68,7 @@ const getPlatformParticipation = (handle: string, platform: string) => {
   const contests = new Set<number>()
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-      && submission.platform === platform && !contests.has(submission.contest_id)) {
+      && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
         contests.add(submission.contest_id)
         return acc + 0.5
       } 
