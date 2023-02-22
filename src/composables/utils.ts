@@ -48,7 +48,7 @@ export const getPartMultiplier = (problem_id: string, platform: string) => {
 }
 
 export const getUpsolveMultiplier = (upsolved: boolean) => {
-  return upsolved ? 1/16 : 1
+  return upsolved ? 0 : 1
 }
 
 export const getPointFromProblem = (upsolved: boolean, division: number, problem_id: string, platform: string) => {
