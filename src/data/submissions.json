@@ -6757,6 +6757,17 @@
     "platform": "codeforces",
     "handle": "rannn",
     "contest_id": 1795,
+    "problem_id": "B",
+    "rating": 900,
+    "division": 2,
+    "submission_id": 194635351,
+    "time": 1677128369,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "rannn",
+    "contest_id": 1795,
     "problem_id": "A",
     "rating": 800,
     "division": 2,
@@ -6972,6 +6983,17 @@
     "submission_id": 190012393,
     "time": 1674316407,
     "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "liangzhuang991123",
+    "contest_id": 1795,
+    "problem_id": "D",
+    "rating": 1600,
+    "division": 2,
+    "submission_id": 194617528,
+    "time": 1677101603,
+    "upsolved": true
   },
   {
     "platform": "codeforces",
