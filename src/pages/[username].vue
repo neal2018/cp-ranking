@@ -57,17 +57,14 @@ const userICPCsubmissions = submissions.filter(submission =>
     </p>
     <div>
       <p text-3xl>
-        Rank: {{ userPoints.rank }}; Total: {{ userPoints.total.toFixed(1) }}
-        <span v-if="userPoints.codeforcesUnknown">
-          + {{ userPoints.codeforcesUnknown }}?
-        </span> Points
+        Rank: {{ userPoints.rank }}; Total: {{ userPoints.total }}
       </p>
     </div>
     <div>
       <p text-2xl p-t-10>
         Codeforces: {{ handle.codeforces_handles }}; {{ userPoints.codeforces }}
-        <span v-if="userPoints.codeforcesUnknown">
-          + {{ userPoints.codeforcesUnknown }}?
+        <span v-if="userPoints.codeforcesParticipation">
+          + {{ userPoints.codeforcesParticipation }}
         </span> Points
       </p>
       <table border-1 m-auto m-y-5>
@@ -172,7 +169,7 @@ const userICPCsubmissions = submissions.filter(submission =>
 
     <div>
       <p text-2xl p-t-10>
-        ICPC: {{ handle.codeforces_handles }}; {{ userPoints.icpc.toFixed(1) }} Points
+        ICPC: {{ handle.codeforces_handles }}; {{ userPoints.icpc }} Points
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>

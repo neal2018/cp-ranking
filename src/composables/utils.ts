@@ -64,11 +64,14 @@ const getPlatformPoints = (handle: string, platform: string) => {
   }, 0)
 }
 
-const getPlatformUnknownCount = (handle: string, platform: string) => {
+const getPlatformParticipation = (handle: string, platform: string) => {
+  const contests = new Set<number>()
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-      && submission.platform === platform)
-      return acc + (submission.rating === -1 ? 1 : 0)
+      && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
+        contests.add(submission.contest_id)
+        return acc + 0.5
+      } 
     return acc
   }, 0)
 }
@@ -81,30 +84,30 @@ export const getPoints = (username: string) => {
   const codeforcesPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'codeforces')
   }, 0) ?? 0
-  const codeforcesUnknownCount = handle?.codeforces_handles.reduce((acc, handle) => {
-    return acc + getPlatformUnknownCount(handle, 'codeforces')
+  const codeforcesParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
+    return acc + getPlatformParticipation(handle, 'codeforces')
   }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
   }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
-    codeforcesUnknown: codeforcesUnknownCount,
+    codeforcesParticipation: codeforcesParticipation,
     atcoder: atcoderPoints,
     icpc: icpcPoints,
-    total: codeforcesPoints + atcoderPoints, icpcPoints,
+    total: codeforcesPoints + + codeforcesParticipation, atcoderPoints, icpcPoints,
   }
 }
 
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, codeforcesUnknown, atcoder, icpc, total } = getPoints(handle.username)
+    const { codeforces, codeforcesParticipation, atcoder, icpc, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
       codeforces,
-      codeforcesUnknown,
+      codeforcesParticipation,
       atcoder,
       icpc,
       total,
