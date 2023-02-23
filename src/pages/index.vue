@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces + Participation', 'ICPC', 'Total Live Points']
+const tableTitles = ['Rank', 'User', 'Codeforces + Participation', 'ICPC', 'Zealots', 'Total Live Points', 'ICPC Participation']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -40,10 +40,16 @@ const go = (username: string) => {
           <td border-1 px-6>
             {{ userData.icpc }}
           </td>
+          <td border-1 px-6>
+            {{ userData.icpc }}
+          </td>
           <td border-1>
             <p relative px-6>
               {{ userData.total }}
             </p>
+          </td>
+          <td border-1 px-6>
+            {{ userData.icpc }}
           </td>
         </tr>
       </table>
