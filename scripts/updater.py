@@ -246,12 +246,16 @@ def get_icpc(handles: List[str], contests):
             need_break = False
             while not need_break and index <= 50:
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
+                print(submission_url)
                 data = cf.session.get(submission_url).text
+                # print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
                 data = data[data.find(start):]
                 fetched_cnt = 0
+                # print(data)
                 while data.find(profile_str) != -1:
+                    print("this ran")
                     data, tm = get_token(data, time_str, "<")
                     data, team = get_token(data, team_str, team_end_str)
                     usernames = get_usernames(team)
