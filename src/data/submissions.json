@@ -596,6 +596,39 @@
   {
     "platform": "codeforces",
     "handle": "yxu18yxu18",
+    "contest_id": 1794,
+    "problem_id": "C",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196334877,
+    "time": 1678164405,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yxu18yxu18",
+    "contest_id": 1794,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196332762,
+    "time": 1678162392,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yxu18yxu18",
+    "contest_id": 1794,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196332501,
+    "time": 1678162112,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "yxu18yxu18",
     "contest_id": 1796,
     "problem_id": "C",
     "rating": 1600,
@@ -691,6 +724,17 @@
     "submission_id": 194934544,
     "time": 1677335860,
     "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "to2372",
+    "contest_id": 1796,
+    "problem_id": "B",
+    "rating": 1000,
+    "division": 2,
+    "submission_id": 196336052,
+    "time": 1678165387,
+    "upsolved": true
   },
   {
     "platform": "codeforces",
@@ -8032,6 +8076,39 @@
   {
     "platform": "codeforces",
     "handle": "zzz27",
+    "contest_id": 1800,
+    "problem_id": "E1",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196326967,
+    "time": 1678154088,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "zzz27",
+    "contest_id": 1800,
+    "problem_id": "E2",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196326957,
+    "time": 1678154075,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "zzz27",
+    "contest_id": 1800,
+    "problem_id": "D",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196326669,
+    "time": 1678153604,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "zzz27",
     "contest_id": 1799,
     "problem_id": "C",
     "rating": -1,
@@ -11608,6 +11685,17 @@
     "platform": "codeforces",
     "handle": "Wen23Sp",
     "contest_id": 1796,
+    "problem_id": "C",
+    "rating": 1600,
+    "division": 2,
+    "submission_id": 196303874,
+    "time": 1678130124,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Wen23Sp",
+    "contest_id": 1796,
     "problem_id": "B",
     "rating": 1000,
     "division": 2,
@@ -11871,6 +11959,61 @@
   {
     "platform": "codeforces",
     "handle": "Angelawqy",
+    "contest_id": 1800,
+    "problem_id": "E1",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196337842,
+    "time": 1678166840,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Angelawqy",
+    "contest_id": 1800,
+    "problem_id": "D",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196334104,
+    "time": 1678163710,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Angelawqy",
+    "contest_id": 1800,
+    "problem_id": "C2",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196333807,
+    "time": 1678163448,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Angelawqy",
+    "contest_id": 1794,
+    "problem_id": "C",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196333670,
+    "time": 1678163313,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Angelawqy",
+    "contest_id": 1796,
+    "problem_id": "A",
+    "rating": 800,
+    "division": 2,
+    "submission_id": 196333573,
+    "time": 1678163222,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Angelawqy",
     "contest_id": 1794,
     "problem_id": "B",
     "rating": -1,
@@ -12009,6 +12152,105 @@
     "division": 2,
     "submission_id": 194052124,
     "time": 1676671242,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "E2",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196333398,
+    "time": 1678163061,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "E1",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196333363,
+    "time": 1678163035,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "D",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196333184,
+    "time": 1678162848,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "C2",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196332731,
+    "time": 1678162365,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "C1",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196332707,
+    "time": 1678162344,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196331955,
+    "time": 1678161515,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1800,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 3,
+    "submission_id": 196331026,
+    "time": 1678160483,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1796,
+    "problem_id": "C",
+    "rating": 1600,
+    "division": 2,
+    "submission_id": 196330432,
+    "time": 1678159772,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1796,
+    "problem_id": "B",
+    "rating": 1000,
+    "division": 2,
+    "submission_id": 196329603,
+    "time": 1678158496,
     "upsolved": true
   },
   {
