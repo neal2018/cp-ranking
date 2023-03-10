@@ -9374,6 +9374,17 @@
   {
     "platform": "codeforces",
     "handle": "rannn",
+    "contest_id": 1794,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196759773,
+    "time": 1678437283,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "rannn",
     "contest_id": 1800,
     "problem_id": "A",
     "rating": -1,
@@ -11905,6 +11916,17 @@
     "platform": "codeforces",
     "handle": "Wen23Sp",
     "contest_id": 1794,
+    "problem_id": "D",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196754544,
+    "time": 1678434239,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Wen23Sp",
+    "contest_id": 1794,
     "problem_id": "C",
     "rating": -1,
     "division": 2,
@@ -12388,6 +12410,28 @@
   {
     "platform": "codeforces",
     "handle": "harrysun23w",
+    "contest_id": 1794,
+    "problem_id": "C",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196716210,
+    "time": 1678395909,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
+    "contest_id": 1794,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196715965,
+    "time": 1678395721,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "harrysun23w",
     "contest_id": 1800,
     "problem_id": "E2",
     "rating": -1,
@@ -12725,6 +12769,28 @@
     "submission_id": 190516096,
     "time": 1674658605,
     "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Hharry",
+    "contest_id": 1802,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196731494,
+    "time": 1678416900,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "Hharry",
+    "contest_id": 1802,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 196729706,
+    "time": 1678414394,
+    "upsolved": true
   },
   {
     "platform": "codeforces",
