@@ -8,7 +8,8 @@ const router = useRouter()
 
 const userPoints = getTableData().find(user => user.username === props.username)!
 
-const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Division', 'Points']
+const codeforcesTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Division', 'Points']
+const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Points']
 
 const formatTime = (s: number) => {
   return new Date(s * 1e3).toLocaleString('en-US', {
@@ -69,7 +70,7 @@ const userICPCsubmissions = submissions.filter(submission =>
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
-          <th v-for="val in tableTitles" :key="val" border-1>
+          <th v-for="val in codeforcesTitles" :key="val" border-1>
             {{ val }}
           </th>
         </tr>

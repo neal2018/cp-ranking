@@ -11,9 +11,9 @@ from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
-os.environ["CF_PASSWORD"] = "bottings5"
+os.environ["CF_PASSWORD"] = "bottings5!"
 
-START_DATE = datetime.datetime(2023, 1, 17)
+START_DATE = datetime.datetime(2022, 9, 1)
 
 contests = {}
 divisions = {}
@@ -161,6 +161,7 @@ class CFLogin:
         self.password = password
 
     def __enter__(self):
+        print('entered')
         self.session = requests.session()
         dt = self.session.get(self.service_url).text
 
@@ -251,11 +252,12 @@ def get_icpc(handles: List[str], contests):
                 # print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
+                # print(data)
                 data = data[data.find(start):]
                 fetched_cnt = 0
                 # print(data)
                 while data.find(profile_str) != -1:
-                    print("this ran")
+                    # print("this ran")
                     data, tm = get_token(data, time_str, "<")
                     data, team = get_token(data, team_str, team_end_str)
                     usernames = get_usernames(team)
@@ -285,6 +287,8 @@ def get_icpc(handles: List[str], contests):
                     platform="icpc",
                     contest_id=contest_name,
                     problem_id=problem,
+                    division=0,
+                    upsolved=False, # for now, figure this out later
                     rating=int(timestamp <= contest_end.timestamp()),
                     time=timestamp,
                     submission_id=0,
