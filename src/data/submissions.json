@@ -2378,6 +2378,17 @@
   {
     "platform": "codeforces",
     "handle": "witcounsel",
+    "contest_id": 1802,
+    "problem_id": "A",
+    "rating": 800,
+    "division": 2,
+    "submission_id": 197554650,
+    "time": 1678903730,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "witcounsel",
     "contest_id": 1789,
     "problem_id": "B",
     "rating": 800,
@@ -6840,6 +6851,39 @@
     "submission_id": 190562128,
     "time": 1674663750,
     "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
+    "contest_id": 1802,
+    "problem_id": "E",
+    "rating": 1900,
+    "division": 2,
+    "submission_id": 197548681,
+    "time": 1678900985,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
+    "contest_id": 1801,
+    "problem_id": "C",
+    "rating": 1900,
+    "division": 1,
+    "submission_id": 197548528,
+    "time": 1678900920,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "davidchang7636",
+    "contest_id": 1801,
+    "problem_id": "B",
+    "rating": 1800,
+    "division": 1,
+    "submission_id": 197523187,
+    "time": 1678889863,
+    "upsolved": true
   },
   {
     "platform": "codeforces",
@@ -11684,6 +11728,17 @@
   {
     "platform": "codeforces",
     "handle": "czzy",
+    "contest_id": 1804,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 1,
+    "submission_id": 197539763,
+    "time": 1678897209,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "czzy",
     "contest_id": 1800,
     "problem_id": "B",
     "rating": 1000,
@@ -13374,6 +13429,39 @@
     "submission_id": 194964163,
     "time": 1677340515,
     "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "BlankR",
+    "contest_id": 1802,
+    "problem_id": "C",
+    "rating": 1600,
+    "division": 2,
+    "submission_id": 197469705,
+    "time": 1678863437,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "BlankR",
+    "contest_id": 1802,
+    "problem_id": "B",
+    "rating": 1000,
+    "division": 2,
+    "submission_id": 197461265,
+    "time": 1678857030,
+    "upsolved": true
+  },
+  {
+    "platform": "codeforces",
+    "handle": "BlankR",
+    "contest_id": 1802,
+    "problem_id": "A",
+    "rating": 800,
+    "division": 2,
+    "submission_id": 197460717,
+    "time": 1678856521,
+    "upsolved": true
   },
   {
     "platform": "codeforces",
