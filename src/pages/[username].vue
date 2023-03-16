@@ -8,8 +8,9 @@ const router = useRouter()
 
 const userPoints = getTableData().find(user => user.username === props.username)!
 
-const codeforcesTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Division', 'Points']
-const tableTitles = ['Platform', 'Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Points']
+const codeforcesTitles = ['Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Division', 'Points']
+const icpcTitles = ['Handle', 'Contest ID', 'Problem ID', 'Solved Time', 'Upsolved', 'Points']
+const tableTitles = ['Handle', 'Contest ID', 'Problem ID', 'Rating', 'Solved Time', 'Upsolved', 'Points']
 
 const formatTime = (s: number) => {
   return new Date(s * 1e3).toLocaleString('en-US', {
@@ -76,9 +77,6 @@ const userICPCsubmissions = submissions.filter(submission =>
         </tr>
         <tr v-for="(userData, index) in userCFSubmissions" :key="index" border-1>
           <td border-1>
-            {{ userData.platform }}
-          </td>
-          <td border-1>
             <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
               {{ userData.handle }}
             </a>
@@ -135,9 +133,6 @@ const userICPCsubmissions = submissions.filter(submission =>
         </tr>
         <tr v-for="(userData, index) in userATsubmissions" :key="index" border-1>
           <td border-1>
-            {{ userData.platform }}
-          </td>
-          <td border-1>
             <a :href="`https://atcoder.jp/users/${userData.handle}`" target="_blank">
               {{ userData.handle }}
             </a>
@@ -174,14 +169,11 @@ const userICPCsubmissions = submissions.filter(submission =>
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
-          <th v-for="val in tableTitles" :key="val" border-1>
+          <th v-for="val in icpcTitles" :key="val" border-1>
             {{ val }}
           </th>
         </tr>
         <tr v-for="(userData, index) in userICPCsubmissions" :key="index" border-1>
-          <td border-1>
-            {{ userData.platform }}
-          </td>
           <td border-1>
             <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
               {{ userData.handle }}
@@ -197,14 +189,14 @@ const userICPCsubmissions = submissions.filter(submission =>
               {{ getLast(userData.problem_id) }}
             </a>
           </td>
-          <td border-1 :class="getColor(getPointFromProblemId(userData.rating, userData.platform))">
-            {{ userData.rating }}
-          </td>
           <td border-1>
             {{ formatTime(userData.time) }}
           </td>
-          <td border-1 :class="getColor(getPointFromProblemId(userData.rating, userData.platform))">
-            {{ userData.rating === -1 ? '?' : getPointFromProblemId(userData.rating, userData.platform) }}
+          <td border-1>
+            {{ userData.upsolved }}
+          </td>
+          <td border-1>
+            {{ getPointFromProblemId("", "icpc") }}
           </td>
         </tr>
       </table>

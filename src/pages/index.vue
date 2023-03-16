@@ -49,7 +49,7 @@ const go = (username: string) => {
             </p>
           </td>
           <td border-1 px-6>
-            {{ userData.icpc }}
+            {{ userData.icpcParticipation }}/55
           </td>
         </tr>
       </table>

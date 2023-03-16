@@ -161,7 +161,6 @@ class CFLogin:
         self.password = password
 
     def __enter__(self):
-        print('entered')
         self.session = requests.session()
         dt = self.session.get(self.service_url).text
 
@@ -241,7 +240,7 @@ def get_icpc(handles: List[str], contests):
                 contest["start"], "%b/%d/%Y %H:%M")
             contest_end = datetime.datetime.strptime(
                 contest["end"], "%b/%d/%Y %H:%M")
-
+            contest_multiplier = contest["multiplier"]
             solved = {}
             index = 1
             need_break = False
@@ -259,11 +258,12 @@ def get_icpc(handles: List[str], contests):
                 while data.find(profile_str) != -1:
                     # print("this ran")
                     data, tm = get_token(data, time_str, "<")
-                    data, team = get_token(data, team_str, team_end_str)
+                    data, team = get_token(data, team_str, team_end_str) 
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
                     dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+    
                     fetched_cnt += 1
                     if dt < contest_start:
                         need_break = True
@@ -287,9 +287,9 @@ def get_icpc(handles: List[str], contests):
                     platform="icpc",
                     contest_id=contest_name,
                     problem_id=problem,
-                    division=0,
-                    upsolved=False, # for now, figure this out later
-                    rating=int(timestamp <= contest_end.timestamp()),
+                    division=contest_multiplier,
+                    upsolved=(timestamp > contest_end.timestamp()),
+                    rating=int(timestamp <= contest_end.timestamp() + 604800),
                     time=timestamp,
                     submission_id=0,
                 ))
