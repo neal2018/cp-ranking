@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 os.environ["CF_USERNAME"] = "cheetahbot"
 os.environ["CF_PASSWORD"] = "bottings5!"
 
-START_DATE = datetime.datetime(2022, 9, 1)
+START_DATE = datetime.datetime(2023, 1, 17)
 
 contests = {}
 divisions = {}
@@ -44,10 +44,10 @@ def get_codeforces(handle: str) -> List[Submission]:
             continue;
         contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
         contest_name = contest['name'].lower()
-        if "div. 1" in contest_name:
-            divisions[contest_id] = 1
-        elif "div. 2" in contest_name:
+        if "div. 2" in contest_name:
             divisions[contest_id] = 2
+        elif "div. 1" in contest_name:
+            divisions[contest_id] = 1
         elif "div. 3" in contest_name:
             divisions[contest_id] = 3
         elif "div. 4" in contest_name:
@@ -246,24 +246,18 @@ def get_icpc(handles: List[str], contests):
             need_break = False
             while not need_break and index <= 50:
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
-                print(submission_url)
                 data = cf.session.get(submission_url).text
-                # print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
-                # print(data)
                 data = data[data.find(start):]
                 fetched_cnt = 0
-                # print(data)
                 while data.find(profile_str) != -1:
-                    # print("this ran")
                     data, tm = get_token(data, time_str, "<")
                     data, team = get_token(data, team_str, team_end_str) 
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
                     dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
-    
                     fetched_cnt += 1
                     if dt < contest_start:
                         need_break = True
@@ -316,13 +310,13 @@ def main():
     submissions.extend(get_icpc(cf_handles, icpc_contests))
     print(f"fetched {len(submissions)} submissions from icpc")
     print("starting handling codeforces and atcoder")
-    # for handle in handles:
-    #     for cf_handle in handle["codeforces_handles"]:
-    #         submissions.extend(get_codeforces(cf_handle))
-    #     for ac_handle in handle["atcoder_handles"]:
-    #         submissions.extend(get_atcoder(ac_handle))
-    #     print(f"done {handle}")
-    #     time.sleep(1)
+    for handle in handles:
+        for cf_handle in handle["codeforces_handles"]:
+            submissions.extend(get_codeforces(cf_handle))
+        for ac_handle in handle["atcoder_handles"]:
+            submissions.extend(get_atcoder(ac_handle))
+        print(f"done {handle}")
+        time.sleep(1)
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
