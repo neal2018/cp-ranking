@@ -21,12 +21,12 @@ export const getPointFromProblemId = (problem_id: string, platform: string) => {
     return 8
   }
   if (platform === 'icpc') {
-    return 1
+    return 0.5
   }
   return 0
 }
 
-export const getDivisionMultiplier = (division: int, platform: string) => {
+export const getDivisionMultiplier = (division: number, platform: string) => {
   if (platform === 'codeforces') {
     if (division === 1)
       return 4
@@ -66,14 +66,25 @@ const getPlatformPoints = (handle: string, platform: string) => {
 
 const getPlatformParticipation = (handle: string, platform: string) => {
   const contests = new Set<number>()
-  return submissions.reduce((acc, submission) => {
-    if (submission.handle.toLowerCase() === handle.toLowerCase()
-      && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
+  if (platform === 'codeforces')
+    return submissions.reduce((acc, submission) => {
+      if (submission.handle.toLowerCase() === handle.toLowerCase()
+        && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
         contests.add(submission.contest_id)
         return acc + 0.5
-      } 
-    return acc
-  }, 0)
+      }
+      return acc
+    }, 0)
+  if (platform === 'icpc')
+    return submissions.reduce((acc, submission) => {
+      if (submission.handle.toLowerCase() === handle.toLowerCase()
+        && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
+        contests.add(submission.contest_id)
+        return acc + (acc >= 55 ? 1 : 5 * submission.division)
+      }
+      return acc
+    }, 0)
+  return 0
 }
 
 export const getPoints = (username: string) => {
@@ -90,19 +101,23 @@ export const getPoints = (username: string) => {
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
   }, 0) ?? 0
+  const icpcParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
+    return acc + getPlatformParticipation(handle, 'icpc')
+  }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
     codeforcesParticipation: codeforcesParticipation,
     atcoder: atcoderPoints,
     icpc: icpcPoints,
-    total: codeforcesPoints + + codeforcesParticipation, atcoderPoints, icpcPoints,
+    icpcParticipation: icpcParticipation,
+    total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
   }
 }
 
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, codeforcesParticipation, atcoder, icpc, total } = getPoints(handle.username)
+    const { codeforces, codeforcesParticipation, atcoder, icpc, icpcParticipation, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
@@ -110,6 +125,7 @@ export const getTableData = () => {
       codeforcesParticipation,
       atcoder,
       icpc,
+      icpcParticipation,
       total,
     }
   })

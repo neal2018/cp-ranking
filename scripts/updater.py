@@ -11,7 +11,7 @@ from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
-os.environ["CF_PASSWORD"] = "bottings5"
+os.environ["CF_PASSWORD"] = "bottings5!"
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
@@ -44,10 +44,10 @@ def get_codeforces(handle: str) -> List[Submission]:
             continue;
         contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
         contest_name = contest['name'].lower()
-        if "div. 1" in contest_name:
-            divisions[contest_id] = 1
-        elif "div. 2" in contest_name:
+        if "div. 2" in contest_name:
             divisions[contest_id] = 2
+        elif "div. 1" in contest_name:
+            divisions[contest_id] = 1
         elif "div. 3" in contest_name:
             divisions[contest_id] = 3
         elif "div. 4" in contest_name:
@@ -240,7 +240,7 @@ def get_icpc(handles: List[str], contests):
                 contest["start"], "%b/%d/%Y %H:%M")
             contest_end = datetime.datetime.strptime(
                 contest["end"], "%b/%d/%Y %H:%M")
-
+            contest_multiplier = contest["multiplier"]
             solved = {}
             index = 1
             need_break = False
@@ -253,7 +253,7 @@ def get_icpc(handles: List[str], contests):
                 fetched_cnt = 0
                 while data.find(profile_str) != -1:
                     data, tm = get_token(data, time_str, "<")
-                    data, team = get_token(data, team_str, team_end_str)
+                    data, team = get_token(data, team_str, team_end_str) 
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
@@ -281,7 +281,9 @@ def get_icpc(handles: List[str], contests):
                     platform="icpc",
                     contest_id=contest_name,
                     problem_id=problem,
-                    rating=int(timestamp <= contest_end.timestamp()),
+                    division=contest_multiplier,
+                    upsolved=(timestamp > contest_end.timestamp()),
+                    rating=int(timestamp <= contest_end.timestamp() + 604800),
                     time=timestamp,
                     submission_id=0,
                 ))
@@ -303,10 +305,10 @@ def main():
 
     submissions = list()
     # handle icpc
-    # print("starting handling icpc")
-    # cf_handles = [handle["codeforces_handles"] for handle in handles]
-    # submissions.extend(get_icpc(cf_handles, icpc_contests))
-    # print(f"fetched {len(submissions)} submissions from icpc")
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_icpc(cf_handles, icpc_contests))
+    print(f"fetched {len(submissions)} submissions from icpc")
     print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
