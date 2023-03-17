@@ -120,7 +120,7 @@ export const getPoints = (username: string) => {
     icpc: icpcPoints,
     icpcParticipation: icpcParticipation,
     zealots: zealotsPoints.toFixed(1),
-    total: (codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints + zealotsPoints).toFixed(1),
+    total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
   }
 }
 
