@@ -199,7 +199,7 @@ const userICPCsubmissions = submissions.filter(submission =>
             {{ userData.upsolved }}
           </td>
           <td border-1>
-            {{ getPointFromProblemId("", "icpc") }}
+            {{ getPointFromProblem(userData.upsolved, 0, "", "icpc") }}
           </td>
         </tr>
       </table>
@@ -238,7 +238,7 @@ const userICPCsubmissions = submissions.filter(submission =>
             {{ userData.upsolved }}
           </td>
           <td border-1>
-            {{ getPointFromProblemId("", "icpc") }}
+            {{ getPointFromProblem(userData.upsolved, 0, "", "zealots") }}
           </td>
         </tr>
       </table>
