@@ -204,7 +204,7 @@ class CFLogin:
         return rcpc
 
 
-def get_icpc(handles: List[str], contests):
+def get_group(handles: List[str], group, contests):
 
     profile_str = "href=\"/profile/"
     team_str = "<td class=\\status-party-cell\""
@@ -278,7 +278,7 @@ def get_icpc(handles: List[str], contests):
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
-                    platform="icpc",
+                    platform=group,
                     contest_id=contest_name,
                     problem_id=problem,
                     division=contest_multiplier,
@@ -302,13 +302,11 @@ def main():
     data_path = os.path.join(base_path, "src", "data")
     handles = read_json(os.path.join(data_path, "handles.json"))
     icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
+    zealots_contests = read_json(os.path.join(data_path, "zealots.json"))
 
     submissions = list()
-    # handle icpc
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_icpc(cf_handles, icpc_contests))
-    print(f"fetched {len(submissions)} submissions from icpc")
+
+    # handle codeforces and atcoder
     print("starting handling codeforces and atcoder")
     for handle in handles:
         for cf_handle in handle["codeforces_handles"]:
@@ -317,6 +315,18 @@ def main():
             submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
         time.sleep(1)
+
+    # handle icpc
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_group(cf_handles, "icpc", icpc_contests))
+    print(f"fetched {len(submissions)} submissions from icpc")
+
+    # handle zealots
+    print("starting handling zealots")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
+    print(f"fetched {len(submissions)} submissions from icpc")
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))

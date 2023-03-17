@@ -23,6 +23,9 @@ export const getPointFromProblemId = (problem_id: string, platform: string) => {
   if (platform === 'icpc') {
     return 0.5
   }
+  if (platform === 'zealots') {
+    return 0.1
+  }
   return 0
 }
 
@@ -47,12 +50,15 @@ export const getPartMultiplier = (problem_id: string, platform: string) => {
   return 1
 }
 
-export const getUpsolveMultiplier = (upsolved: boolean) => {
-  return upsolved ? 0 : 1
+export const getUpsolveMultiplier = (upsolved: boolean, platform: string) => {
+  if (platform === 'codeforces' || platform === 'icpc') {
+    return upsolved ? 0.5 : 1
+  }
+  return 1
 }
 
 export const getPointFromProblem = (upsolved: boolean, division: number, problem_id: string, platform: string) => {
-  return getUpsolveMultiplier(upsolved) * getDivisionMultiplier(division, platform) * getPartMultiplier(problem_id, platform) * getPointFromProblemId(problem_id, platform)
+  return getUpsolveMultiplier(upsolved, platform) * getDivisionMultiplier(division, platform) * getPartMultiplier(problem_id, platform) * getPointFromProblemId(problem_id, platform)
 }
 
 const getPlatformPoints = (handle: string, platform: string) => {
@@ -100,7 +106,10 @@ export const getPoints = (username: string) => {
   }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
-  }, 0) ?? 0
+  }, 0) ?? 0  
+  const zealotsPoints = handle?.codeforces_handles.reduce((acc, handle) => {
+    return acc + getPlatformPoints(handle, 'zealots')
+  }, 0) ?? 0  
   const icpcParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformParticipation(handle, 'icpc')
   }, 0) ?? 0
@@ -110,14 +119,15 @@ export const getPoints = (username: string) => {
     atcoder: atcoderPoints,
     icpc: icpcPoints,
     icpcParticipation: icpcParticipation,
-    total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
+    zealots: zealotsPoints.toFixed(1),
+    total: (codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints + zealotsPoints).toFixed(1),
   }
 }
 
 export const getTableData = () => {
   const tableData = handles.map((handle) => {
     // TODO: improve time complexity
-    const { codeforces, codeforcesParticipation, atcoder, icpc, icpcParticipation, total } = getPoints(handle.username)
+    const { codeforces, codeforcesParticipation, atcoder, icpc, icpcParticipation, zealots, total } = getPoints(handle.username)
     return {
       rank: 0,
       username: handle.username,
@@ -126,6 +136,7 @@ export const getTableData = () => {
       atcoder,
       icpc,
       icpcParticipation,
+      zealots,
       total,
     }
   })
