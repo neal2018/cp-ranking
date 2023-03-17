@@ -54,6 +54,9 @@ export const getUpsolveMultiplier = (upsolved: boolean, platform: string) => {
   if (platform === 'codeforces' || platform === 'icpc') {
     return upsolved ? 0.5 : 1
   }
+  if (platform === 'zealots') {
+    return upsolved ? 0 : 1
+  }
   return 1
 }
 
