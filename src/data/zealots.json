@@ -1,0 +1,428 @@
+[
+    {
+        "name": "group/hosRkEuluH/contest/422114",
+        "start": "Jan/17/2023 08:00",
+        "end": "Jan/18/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/422424",
+        "start": "Jan/18/2023 08:00",
+        "end": "Jan/19/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/422674",
+        "start": "Jan/19/2023 08:00",
+        "end": "Jan/20/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/422778",
+        "start": "Jan/20/2023 08:00",
+        "end": "Jan/21/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/422979",
+        "start": "Jan/21/2023 11:00",
+        "end": "Jan/22/2023 10:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423079",
+        "start": "Jan/22/2023 11:00",
+        "end": "Jan/23/2023 10:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423204",
+        "start": "Jan/23/2023 11:00",
+        "end": "Jan/24/2023 10:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423351",
+        "start": "Jan/24/2023 08:00",
+        "end": "Jan/25/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423573",
+        "start": "Jan/25/2023 08:00",
+        "end": "Jan/26/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423737",
+        "start": "Jan/26/2023 08:00",
+        "end": "Jan/27/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/423838",
+        "start": "Jan/27/2023 08:00",
+        "end": "Jan/28/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424035",
+        "start": "Jan/28/2023 08:00",
+        "end": "Jan/29/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424192",
+        "start": "Jan/29/2023 08:00",
+        "end": "Jan/30/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424519",
+        "start": "Jan/30/2023 08:00",
+        "end": "Jan/31/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424520",
+        "start": "Jan/30/2023 08:00",
+        "end": "Jan/31/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424720",
+        "start": "Jan/31/2023 08:00",
+        "end": "Feb/1/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424723",
+        "start": "Jan/31/2023 08:00",
+        "end": "Feb/1/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424899",
+        "start": "Feb/1/2023 08:00",
+        "end": "Feb/2/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/424900",
+        "start": "Feb/1/2023 08:00",
+        "end": "Feb/2/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425058",
+        "start": "Feb/2/2023 08:00",
+        "end": "Feb/3/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425060",
+        "start": "Feb/2/2023 08:00",
+        "end": "Feb/3/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425252",
+        "start": "Feb/3/2023 08:00",
+        "end": "Feb/4/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425253",
+        "start": "Feb/3/2023 08:00",
+        "end": "Feb/4/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425444",
+        "start": "Feb/4/2023 08:00",
+        "end": "Feb/5/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425445",
+        "start": "Feb/4/2023 08:00",
+        "end": "Feb/5/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425646",
+        "start": "Feb/5/2023 08:00",
+        "end": "Feb/6/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425647",
+        "start": "Feb/5/2023 08:00",
+        "end": "Feb/6/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425870",
+        "start": "Feb/6/2023 08:00",
+        "end": "Feb/7/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425871",
+        "start": "Feb/6/2023 08:00",
+        "end": "Feb/7/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425888",
+        "start": "Feb/7/2023 08:00",
+        "end": "Feb/8/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/425891",
+        "start": "Feb/7/2023 08:00",
+        "end": "Feb/8/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426243",
+        "start": "Feb/8/2023 08:00",
+        "end": "Feb/9/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426244",
+        "start": "Feb/8/2023 08:00",
+        "end": "Feb/9/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426380",
+        "start": "Feb/9/2023 08:00",
+        "end": "Feb/10/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426382",
+        "start": "Feb/9/2023 08:00",
+        "end": "Feb/10/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426725",
+        "start": "Feb/10/2023 08:00",
+        "end": "Feb/11/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/426918",
+        "start": "Feb/11/2023 08:00",
+        "end": "Feb/12/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427194",
+        "start": "Feb/12/2023 08:00",
+        "end": "Feb/13/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427239",
+        "start": "Feb/13/2023 08:00",
+        "end": "Feb/14/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427414",
+        "start": "Feb/14/2023 08:00",
+        "end": "Feb/15/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427769",
+        "start": "Feb/15/2023 08:00",
+        "end": "Feb/16/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427770",
+        "start": "Feb/16/2023 08:00",
+        "end": "Feb/17/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/427984",
+        "start": "Feb/17/2023 08:00",
+        "end": "Feb/18/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/428244",
+        "start": "Feb/18/2023 08:00",
+        "end": "Feb/19/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/428389",
+        "start": "Feb/19/2023 08:00",
+        "end": "Feb/20/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/428612",
+        "start": "Feb/20/2023 08:00",
+        "end": "Feb/21/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/428675",
+        "start": "Feb/21/2023 08:00",
+        "end": "Feb/22/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/428941",
+        "start": "Feb/22/2023 08:00",
+        "end": "Feb/23/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/429081",
+        "start": "Feb/23/2023 08:00",
+        "end": "Feb/24/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/429268",
+        "start": "Feb/24/2023 08:00",
+        "end": "Feb/25/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/429351",
+        "start": "Feb/25/2023 08:00",
+        "end": "Feb/26/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/429704",
+        "start": "Feb/27/2023 08:00",
+        "end": "Feb/28/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/429870",
+        "start": "Feb/28/2023 08:00",
+        "end": "Mar/1/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/430037",
+        "start": "Mar/1/2023 08:00",
+        "end": "Mar/2/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/430218",
+        "start": "Mar/2/2023 08:00",
+        "end": "Mar/3/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/430370",
+        "start": "Mar/3/2023 08:00",
+        "end": "Mar/4/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/430624",
+        "start": "Mar/4/2023 08:00",
+        "end": "Mar/5/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/430809",
+        "start": "Mar/5/2023 08:00",
+        "end": "Mar/6/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431059",
+        "start": "Mar/6/2023 08:00",
+        "end": "Mar/7/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431059",
+        "start": "Mar/6/2023 08:00",
+        "end": "Mar/7/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431246",
+        "start": "Mar/7/2023 08:00",
+        "end": "Mar/8/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431340",
+        "start": "Mar/8/2023 08:00",
+        "end": "Mar/9/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431545",
+        "start": "Mar/9/2023 08:00",
+        "end": "Mar/10/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/431838",
+        "start": "Mar/10/2023 08:00",
+        "end": "Mar/11/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432156",
+        "start": "Mar/11/2023 08:00",
+        "end": "Mar/12/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432333",
+        "start": "Mar/12/2023 08:00",
+        "end": "Mar/13/2023 07:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432485",
+        "start": "Mar/13/2023 07:00",
+        "end": "Mar/14/2023 06:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432762",
+        "start": "Mar/14/2023 07:00",
+        "end": "Mar/15/2023 06:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432959",
+        "start": "Mar/15/2023 07:00",
+        "end": "Mar/16/2023 06:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/433210",
+        "start": "Mar/16/2023 07:00",
+        "end": "Mar/17/2023 06:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/433518",
+        "start": "Mar/17/2023 07:00",
+        "end": "Mar/18/2023 06:59",
+        "multiplier": 1.0
+    }
+]

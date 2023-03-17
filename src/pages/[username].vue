@@ -50,6 +50,9 @@ const userATsubmissions = submissions.filter(submission =>
 
 const userICPCsubmissions = submissions.filter(submission =>
   (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+
+  const userZealotssubmissions = submissions.filter(submission =>
+  (submission.platform === 'zealots' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 </script>
 
 <template>
@@ -174,6 +177,45 @@ const userICPCsubmissions = submissions.filter(submission =>
           </th>
         </tr>
         <tr v-for="(userData, index) in userICPCsubmissions" :key="index" border-1>
+          <td border-1>
+            <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
+              {{ userData.handle }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com/${userData.contest_id}`" target="_blank">
+              {{ getLast(userData.contest_id as string) }}
+            </a>
+          </td>
+          <td border-1>
+            <a :href="`https://codeforces.com${userData.problem_id}`" target="_blank">
+              {{ getLast(userData.problem_id) }}
+            </a>
+          </td>
+          <td border-1>
+            {{ formatTime(userData.time) }}
+          </td>
+          <td border-1>
+            {{ userData.upsolved }}
+          </td>
+          <td border-1>
+            {{ getPointFromProblemId("", "icpc") }}
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <p text-2xl p-t-10>
+        Zealots: {{ handle.codeforces_handles }}; {{ userPoints.zealots }} Points
+      </p>
+      <table border-1 m-auto m-y-5>
+        <tr border-1>
+          <th v-for="val in icpcTitles" :key="val" border-1>
+            {{ val }}
+          </th>
+        </tr>
+        <tr v-for="(userData, index) in userZealotssubmissions" :key="index" border-1>
           <td border-1>
             <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
               {{ userData.handle }}

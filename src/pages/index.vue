@@ -41,7 +41,7 @@ const go = (username: string) => {
             {{ userData.icpc }}
           </td>
           <td border-1 px-6>
-            0
+            {{ userData.zealots }}%
           </td>
           <td border-1>
             <p relative px-6>
