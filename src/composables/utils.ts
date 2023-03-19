@@ -87,9 +87,10 @@ const getPlatformParticipation = (handle: string, platform: string) => {
   if (platform === 'icpc')
     return submissions.reduce((acc, submission) => {
       if (submission.handle.toLowerCase() === handle.toLowerCase()
-        && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
-        contests.add(submission.contest_id)
-        return acc + (acc >= 55 ? 1 : 5 * submission.division)
+        && submission.platform === platform && !submission.upsolved && !contests.has(submission.submission_id)) {
+        contests.add(submission.submission_id)
+        console.log(handle, submission.contest_id, acc + submission.division * (acc >= 55 ? 1 : 5))
+        return acc + submission.division * (acc >= 55 ? 1 : 5)
       }
       return acc
     }, 0)
