@@ -244,7 +244,9 @@ def get_group(handles: List[str], group, contests):
             solved = {}
             index = 1
             need_break = False
+            prev = set()
             while not need_break and index <= 50:
+                curr = set()
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
                 soup = BeautifulSoup(data, 'html.parser')
@@ -258,6 +260,7 @@ def get_group(handles: List[str], group, contests):
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
                     dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+                    curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
                     if dt < contest_start:
                         need_break = True
@@ -273,8 +276,9 @@ def get_group(handles: List[str], group, contests):
                 time.sleep(1)
                 print(
                     f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
-                if not fetched_cnt:
+                if not fetched_cnt or curr == prev:
                     break
+                prev = curr
             for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
@@ -285,7 +289,7 @@ def get_group(handles: List[str], group, contests):
                     upsolved=(timestamp > contest_end.timestamp()),
                     rating=int(timestamp <= contest_end.timestamp() + 604800),
                     time=timestamp,
-                    submission_id=0,
+                    submission_id=contest_start.timestamp(),
                 ))
             print(f"done {contest_name}")
         return submissions

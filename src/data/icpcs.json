@@ -24,21 +24,15 @@
         "multiplier": 1.0
     },
     {
-        "name": "group/yeHL59WDJ0/contest/407259",
-        "start": "Jan/29/2023 20:00",
-        "end": "Jan/30/2023 01:00",
-        "multiplier": 1.0
-    },
-    {
         "name": "group/yeHL59WDJ0/contest/424193",
         "start": "Jan/28/2023 20:00",
         "end": "Jan/29/2023 01:00",
         "multiplier": 1.0
     },
     {
-        "name": "group/yeHL59WDJ0/contest/407260",
-        "start": "Feb/5/2023 20:00",
-        "end": "Feb/6/2023 01:00",
+        "name": "group/yeHL59WDJ0/contest/407259",
+        "start": "Jan/29/2023 20:00",
+        "end": "Jan/30/2023 01:00",
         "multiplier": 1.0
     },
     {
@@ -46,6 +40,12 @@
         "start": "Feb/2/2023 03:00",
         "end": "Feb/2/2023 05:30",
         "multiplier": 0.5
+    },
+    {
+        "name": "group/yeHL59WDJ0/contest/407260",
+        "start": "Feb/5/2023 20:00",
+        "end": "Feb/6/2023 01:00",
+        "multiplier": 1.0
     },
     {
         "name": "group/yeHL59WDJ0/contest/426379",
@@ -72,15 +72,21 @@
         "multiplier": 1.0
     },
     {
+        "name": "group/y0E4s9mhws/contest/427924",
+        "start": "Feb/16/2023 03:00",
+        "end": "Feb/16/2023 05:30",
+        "multiplier": 0.5
+    },
+    {
         "name": "group/yeHL59WDJ0/contest/428373",
         "start": "Feb/18/2023 20:00",
         "end": "Feb/19/2023 01:00",
         "multiplier": 1.0
     },
     {
-        "name": "group/yeHL59WDJ0/contest/428373",
+        "name": "group/y0E4s9mhws/contest/429080",
         "start": "Feb/23/2023 03:00",
-        "end": "Feb/24/2023 05:30",
+        "end": "Feb/23/2023 05:30",
         "multiplier": 0.5
     },
     {
@@ -96,6 +102,12 @@
         "multiplier": 1.0
     },
     {
+        "name": "group/y0E4s9mhws/contest/430217",
+        "start": "Mar/2/2023 03:00",
+        "end": "Mar/2/2023 05:30",
+        "multiplier": 0.5
+    },
+    {
         "name": "group/yeHL59WDJ0/contest/430783",
         "start": "Mar/4/2023 20:00",
         "end": "Mar/5/2023 01:00",
@@ -108,9 +120,39 @@
         "multiplier": 1.0
     },
     {
+        "name": "group/y0E4s9mhws/contest/431544",
+        "start": "Mar/9/2023 03:00",
+        "end": "Mar/9/2023 05:30",
+        "multiplier": 0.5
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432211",
+        "start": "Mar/11/2023 20:00",
+        "end": "Mar/12/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432212",
+        "start": "Mar/11/2023 20:00",
+        "end": "Mar/12/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/432214",
+        "start": "Mar/11/2023 20:00",
+        "end": "Mar/12/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
         "name": "group/yeHL59WDJ0/contest/431547",
         "start": "Mar/12/2023 20:00",
         "end": "Mar/13/2023 01:00",
         "multiplier": 1.0
+    },
+    {
+        "name": "group/y0E4s9mhws/contest/432960",
+        "start": "Mar/17/2023 03:00",
+        "end": "Mar/17/2023 05:30",
+        "multiplier": 0.5
     }
 ]
