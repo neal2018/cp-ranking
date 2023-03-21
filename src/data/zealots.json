@@ -436,5 +436,17 @@
         "start": "Mar/19/2023 07:00",
         "end": "Mar/20/2023 06:59",
         "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/434043",
+        "start": "Mar/20/2023 07:00",
+        "end": "Mar/21/2023 06:59",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/434338",
+        "start": "Mar/21/2023 07:00",
+        "end": "Mar/22/2023 06:59",
+        "multiplier": 1.0
     }
 ]
