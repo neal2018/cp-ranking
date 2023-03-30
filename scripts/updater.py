@@ -267,19 +267,20 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     if dt < contest_start:
                         need_break = True
                         break
+                    is_solved = verdict == 'OK'
+                    if not allow_unsolved and not is_solved:
+                        continue
                     for uname in usernames:
-                        if not allow_unsolved and verdict != 'OK':
-                            continue
                         if uname.lower() in all_handles:
                             timestamp = int(datetime.datetime.timestamp(dt))
-                            is_solved = verdict == 'OK'
                             if (uname, problem) not in solved:
                                 solved[(uname, problem)] = (timestamp, is_solved)
-                            elif timestamp > solved[(uname, problem)][0]:
-                                if is_solved:
+                            elif timestamp > solved[(uname, problem)][0] or (is_solved and not solved[(uname, problem)][1]):
+                                # second condition is for the edge case where first submission AC, second WA.
+                                # need to count the first submission in that case, and submissions are not sorted by timestamp
+                                if is_solved or not solved[(uname, problem)][1]:
                                     solved[(uname, problem)] = (timestamp, is_solved)
-                                elif not solved[(uname, problem)][1]:
-                                    solved[(uname, problem)] = (timestamp, is_solved)
+
                 index += 1
                 time.sleep(1)
                 print(
