@@ -74,7 +74,7 @@ export const getPointFromProblem = (upsolved: boolean, division: number, problem
 const getPlatformPoints = (handle: string, platform: string) => {
   return submissions.reduce((acc, submission) => {
     if (submission.handle.toLowerCase() === handle.toLowerCase()
-      && submission.platform === platform)
+      && submission.platform === platform && submission.solved)
       return acc + getPointFromProblem(submission.upsolved, submission.division, submission.problem_id, platform)
     return acc
   }, 0)
