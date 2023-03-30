@@ -32,7 +32,6 @@ class Submission(NamedTuple):
     division: int
     submission_id: int
     time: int
-    solved: bool
     upsolved: bool
 
 
@@ -95,7 +94,6 @@ def get_codeforces(handle: str) -> List[Submission]:
                 division=divisions[submission['problem']['contestId']],
                 submission_id=submission['id'],
                 time=submission['creationTimeSeconds'],
-                solved=True,
                 upsolved=submission['creationTimeSeconds'] > contests[submission['contestId']]
             )
         return list(map(f, submissions))
@@ -206,7 +204,7 @@ class CFLogin:
         return rcpc
 
 
-def get_group(handles: List[str], group, contests, allow_unsolved=False):
+def get_group(handles: List[str], group, contests):
 
     profile_str = "href=\"/profile/"
     team_str = "<td class=\\status-party-cell\""
@@ -268,18 +266,12 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                         need_break = True
                         break
                     for uname in usernames:
-                        if not allow_unsolved and verdict != 'OK':
-                            continue
-                        if uname.lower() in all_handles:
+                        if verdict == "OK" and uname.lower() in all_handles:
                             timestamp = int(datetime.datetime.timestamp(dt))
-                            is_solved = verdict == 'OK'
                             if (uname, problem) not in solved:
-                                solved[(uname, problem)] = (timestamp, is_solved)
-                            elif timestamp > solved[(uname, problem)][0]:
-                                if is_solved:
-                                    solved[(uname, problem)] = (timestamp, is_solved)
-                                elif not solved[(uname, problem)][1]:
-                                    solved[(uname, problem)] = (timestamp, is_solved)
+                                solved[(uname, problem)] = timestamp
+                            elif timestamp < solved[(uname, problem)]:
+                                solved[(uname, problem)] = timestamp
                 index += 1
                 time.sleep(1)
                 print(
@@ -287,14 +279,13 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 if not fetched_cnt or curr == prev:
                     break
                 prev = curr
-            for (uname, problem), (timestamp, is_solved) in sorted(solved.items(), key=lambda x: x[1]):
+            for [uname, problem], timestamp in sorted(solved.items(), key=lambda x: x[1]):
                 submissions.append(Submission(
                     handle=uname,
                     platform=group,
                     contest_id=contest_name,
                     problem_id=problem,
                     division=contest_multiplier,
-                    solved=is_solved,
                     upsolved=(timestamp > contest_end.timestamp()),
                     rating=int(timestamp <= contest_end.timestamp() + 604800),
                     time=timestamp,
@@ -332,7 +323,7 @@ def main():
     # handle icpc
     print("starting handling icpc")
     cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
+    submissions.extend(get_group(cf_handles, "icpc", icpc_contests))
     print(f"fetched {len(submissions)} submissions from icpc")
 
     # handle zealots

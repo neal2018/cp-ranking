@@ -60,13 +60,6 @@ export const getUpsolveMultiplier = (upsolved: boolean, platform: string) => {
   return 1
 }
 
-export const getSolvedMultiplier = (solved: boolean, platform: string) => {
-  if (platform === 'icpc')
-    return solved ? 1 : 0.5
-  return solved ? 1 : 0
-
-}
-
 export const getPointFromProblem = (upsolved: boolean, division: number, problem_id: string, platform: string) => {
   return getUpsolveMultiplier(upsolved, platform) * getDivisionMultiplier(division, platform) * getPartMultiplier(problem_id, platform) * getPointFromProblemId(problem_id, platform)
 }
@@ -81,7 +74,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
 }
 
 const getPlatformParticipation = (handle: string, platform: string) => {
-  const contests = new Set<string>()
+  const contests = new Set<number>()
   if (platform === 'codeforces')
     return submissions.reduce((acc, submission) => {
       if (submission.handle.toLowerCase() === handle.toLowerCase()
@@ -91,25 +84,16 @@ const getPlatformParticipation = (handle: string, platform: string) => {
       }
       return acc
     }, 0)
-  if (platform === 'icpc') {
-    const has_solved_solution = new Map<string, boolean>()
-    submissions.forEach((submission) => {
-      if (submission.handle.toLowerCase() === handle.toLowerCase())
-        if (!has_solved_solution.has(submission.contest_id))
-          has_solved_solution.set(submission.contest_id, submission.solved)
-        else
-          has_solved_solution.set(submission.contest_id, has_solved_solution.get(submission.contest_id) || submission.solved)
-    })
+  if (platform === 'icpc')
     return submissions.reduce((acc, submission) => {
       if (submission.handle.toLowerCase() === handle.toLowerCase()
-        && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
-        contests.add(submission.contest_id)
-        return acc + submission.division * getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform) * (acc >= 55 ? 1 : 5)
+        && submission.platform === platform && !submission.upsolved && !contests.has(submission.submission_id)) {
+        contests.add(submission.submission_id)
+        console.log(handle, submission.contest_id, acc + submission.division * (acc >= 55 ? 1 : 5))
+        return acc + submission.division * (acc >= 55 ? 1 : 5)
       }
       return acc
     }, 0)
-    return 0
-  }
   return 0
 }
 
@@ -126,10 +110,10 @@ export const getPoints = (username: string) => {
   }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
-  }, 0) ?? 0
+  }, 0) ?? 0  
   const zealotsPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'zealots')
-  }, 0) ?? 0
+  }, 0) ?? 0  
   const icpcParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformParticipation(handle, 'icpc')
   }, 0) ?? 0
