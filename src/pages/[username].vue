@@ -49,9 +49,9 @@ const userATsubmissions = submissions.filter(submission =>
   (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase())))
 
 const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+  (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 
-  const userZealotssubmissions = submissions.filter(submission =>
+const userZealotssubmissions = submissions.filter(submission =>
   (submission.platform === 'zealots' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 </script>
 
