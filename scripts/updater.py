@@ -3,6 +3,7 @@ import json
 import os
 import time
 import re
+import pytz
 from typing import List, NamedTuple
 from collections import defaultdict
 
@@ -12,6 +13,8 @@ from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
 os.environ["CF_PASSWORD"] = "bottings5!"
+new_york_tz = pytz.timezone('America/New_York')
+moscow_tz = pytz.timezone('Europe/Moscow')
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
@@ -239,9 +242,9 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
         for contest in contests:
             contest_name = contest["name"]
             contest_start = datetime.datetime.strptime(
-                contest["start"], "%b/%d/%Y %H:%M")
+                contest["start"], "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
             contest_end = datetime.datetime.strptime(
-                contest["end"], "%b/%d/%Y %H:%M")
+                contest["end"], "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
             contest_multiplier = contest["multiplier"]
             solved = defaultdict(lambda: [None, None]) # store (wa, ac)
             index = 1
@@ -261,7 +264,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
-                    dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+                    dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
                     if dt < contest_start:
@@ -332,15 +335,15 @@ def main():
 
     submissions = list()
 
-    # # handle codeforces and atcoder
-    # print("starting handling codeforces and atcoder")
-    # for handle in handles:
-    #     for cf_handle in handle["codeforces_handles"]:
-    #         submissions.extend(get_codeforces(cf_handle))
-    #     for ac_handle in handle["atcoder_handles"]:
-    #         submissions.extend(get_atcoder(ac_handle))
-    #     print(f"done {handle}")
-    #     time.sleep(1)
+    # handle codeforces and atcoder
+    print("starting handling codeforces and atcoder")
+    for handle in handles:
+        for cf_handle in handle["codeforces_handles"]:
+            submissions.extend(get_codeforces(cf_handle))
+        for ac_handle in handle["atcoder_handles"]:
+            submissions.extend(get_atcoder(ac_handle))
+        print(f"done {handle}")
+        time.sleep(1)
 
     # handle icpc
     print("starting handling icpc")
@@ -348,11 +351,11 @@ def main():
     submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
     print(f"fetched {len(submissions)} submissions from icpc")
 
-    # # handle zealots
-    # print("starting handling zealots")
-    # cf_handles = [handle["codeforces_handles"] for handle in handles]
-    # submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
-    # print(f"fetched {len(submissions)} submissions from icpc")
+    # handle zealots
+    print("starting handling zealots")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
+    print(f"fetched {len(submissions)} submissions from icpc")
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
