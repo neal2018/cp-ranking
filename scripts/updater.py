@@ -3,6 +3,7 @@ import json
 import os
 import time
 import re
+import pytz
 from typing import List, NamedTuple
 from collections import defaultdict
 
@@ -12,6 +13,8 @@ from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
 os.environ["CF_PASSWORD"] = "bottings5!"
+moscow_tz = pytz.timezone('Europe/Moscow')
+utc_tz = pytz.timezone('UTC')
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
@@ -238,12 +241,12 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
         submissions = list()
         for contest in contests:
             contest_name = contest["name"]
-            contest_start = datetime.datetime.strptime(
-                contest["start"], "%b/%d/%Y %H:%M")
-            contest_end = datetime.datetime.strptime(
-                contest["end"], "%b/%d/%Y %H:%M")
+            contest_start = moscow_tz.localize(datetime.datetime.strptime(
+                contest["start"], "%b/%d/%Y %H:%M")).astimezone(utc_tz)
+            contest_end = moscow_tz.localize(datetime.datetime.strptime(
+                contest["end"], "%b/%d/%Y %H:%M")).astimezone(utc_tz)
             contest_multiplier = contest["multiplier"]
-            solved = {}
+            solved = defaultdict(lambda: [None, None]) # store (wa, ac)
             index = 1
             need_break = False
             prev = set()
@@ -261,7 +264,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
-                    dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")
+                    dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
                     if dt < contest_start:
@@ -272,15 +275,12 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                         continue
                     for uname in usernames:
                         if uname.lower() in all_handles:
-                            timestamp = int(datetime.datetime.timestamp(dt))
-                            if (uname, problem) not in solved:
-                                solved[(uname, problem)] = (timestamp, is_solved)
-                            elif timestamp > solved[(uname, problem)][0] or (is_solved and not solved[(uname, problem)][1]):
-                                # second condition is for the edge case where first submission AC, second WA.
-                                # need to count the first submission in that case, and submissions are not sorted by timestamp
-                                if is_solved or not solved[(uname, problem)][1]:
-                                    solved[(uname, problem)] = (timestamp, is_solved)
-
+                            timestamp = int(dt.timestamp())
+                            if solved[(uname, problem)][int(is_solved)] is None:
+                                solved[(uname, problem)][int(is_solved)] = timestamp
+                            elif timestamp < solved[(uname, problem)][int(is_solved)]:
+                                solved[(uname, problem)][int(is_solved)] = timestamp
+                
                 index += 1
                 time.sleep(1)
                 print(
@@ -288,19 +288,34 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 if not fetched_cnt or curr == prev:
                     break
                 prev = curr
-            for (uname, problem), (timestamp, is_solved) in sorted(solved.items(), key=lambda x: x[1]):
-                submissions.append(Submission(
-                    handle=uname,
-                    platform=group,
-                    contest_id=contest_name,
-                    problem_id=problem,
-                    division=contest_multiplier,
-                    solved=is_solved,
-                    upsolved=(timestamp > contest_end.timestamp()),
-                    rating=int(timestamp <= contest_end.timestamp() + 604800),
-                    time=timestamp,
-                    submission_id=contest_start.timestamp(),
-                ))
+            # print(solved.items())
+            for (uname, problem), (wa_timestamp, ac_timestamp) in sorted(solved.items(), key=lambda x: min([y for y in x[1] if y is not None])):
+                if wa_timestamp is not None and allow_unsolved:
+                    submissions.append(Submission(
+                        handle=uname,
+                        platform=group,
+                        contest_id=contest_name,
+                        problem_id=problem,
+                        division=contest_multiplier,
+                        solved=False,
+                        upsolved=(wa_timestamp > contest_end.timestamp()),
+                        rating=int(wa_timestamp <= contest_end.timestamp() + 604800),
+                        time=wa_timestamp,
+                        submission_id=contest_start.timestamp(),
+                    ))
+                if ac_timestamp is not None:
+                    submissions.append(Submission(
+                        handle=uname,
+                        platform=group,
+                        contest_id=contest_name,
+                        problem_id=problem,
+                        division=contest_multiplier,
+                        solved=True,
+                        upsolved=(ac_timestamp > contest_end.timestamp()),
+                        rating=int(ac_timestamp <= contest_end.timestamp() + 604800),
+                        time=ac_timestamp,
+                        submission_id=contest_start.timestamp(),
+                    ))
             print(f"done {contest_name}")
         return submissions
 
