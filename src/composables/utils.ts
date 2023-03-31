@@ -80,6 +80,13 @@ const getPlatformPoints = (handle: string, platform: string) => {
   }, 0)
 }
 
+// const formatTime = (s: number) => {
+//   return new Date(s * 1e3).toLocaleString('en-US', {
+//     timeZone: 'America/New_York',
+//     hour12: false,
+//   }).replace(', ', ' ').slice(0, -3)
+// }
+
 const getPlatformParticipation = (handle: string, platform: string) => {
   const contests = new Set<string>()
   if (platform === 'codeforces')
@@ -104,6 +111,7 @@ const getPlatformParticipation = (handle: string, platform: string) => {
       if (submission.handle.toLowerCase() === handle.toLowerCase()
         && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
         contests.add(submission.contest_id)
+        // console.log(handle, formatTime(submission.time), acc + submission.division *getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform)* (acc >= 55 ? 1 : 5))
         return acc + submission.division * getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform) * (acc >= 55 ? 1 : 5)
       }
       return acc
