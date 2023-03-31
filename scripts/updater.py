@@ -13,8 +13,8 @@ from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
 os.environ["CF_PASSWORD"] = "bottings5!"
-new_york_tz = pytz.timezone('America/New_York')
 moscow_tz = pytz.timezone('Europe/Moscow')
+utc_tz = pytz.timezone('UTC')
 
 START_DATE = datetime.datetime(2023, 1, 17)
 
@@ -241,10 +241,10 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
         submissions = list()
         for contest in contests:
             contest_name = contest["name"]
-            contest_start = datetime.datetime.strptime(
-                contest["start"], "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
-            contest_end = datetime.datetime.strptime(
-                contest["end"], "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
+            contest_start = moscow_tz.localize(datetime.datetime.strptime(
+                contest["start"], "%b/%d/%Y %H:%M")).astimezone(utc_tz)
+            contest_end = moscow_tz.localize(datetime.datetime.strptime(
+                contest["end"], "%b/%d/%Y %H:%M")).astimezone(utc_tz)
             contest_multiplier = contest["multiplier"]
             solved = defaultdict(lambda: [None, None]) # store (wa, ac)
             index = 1
@@ -264,7 +264,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     usernames = get_usernames(team)
                     data, problem = get_token(data, problem_str, "\"")
                     data, verdict = get_token(data, verdict_str, "\"")
-                    dt = datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M").replace(tzinfo=moscow_tz).astimezone(new_york_tz)
+                    dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
                     if dt < contest_start:
@@ -275,7 +275,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                         continue
                     for uname in usernames:
                         if uname.lower() in all_handles:
-                            timestamp = int(datetime.datetime.timestamp(dt))
+                            timestamp = int(dt.timestamp())
                             if solved[(uname, problem)][int(is_solved)] is None:
                                 solved[(uname, problem)][int(is_solved)] = timestamp
                             elif timestamp < solved[(uname, problem)][int(is_solved)]:
