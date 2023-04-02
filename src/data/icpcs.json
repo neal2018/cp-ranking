@@ -214,5 +214,29 @@
         "start": "Mar/30/2023 02:00",
         "end": "Mar/30/2023 04:30",
         "multiplier": 0.5
+    },
+    {
+        "name": "group/yeHL59WDJ0/contest/436301",
+        "start": "Apr/1/2023 20:00",
+        "end": "Apr/2/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/436656",
+        "start": "Apr/2/2023 20:00",
+        "end": "Apr/3/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/436661",
+        "start": "Apr/2/2023 20:00",
+        "end": "Apr/3/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/436662",
+        "start": "Apr/2/2023 20:00",
+        "end": "Apr/3/2023 01:00",
+        "multiplier": 1.0
     }
 ]
