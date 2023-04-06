@@ -238,5 +238,11 @@
         "start": "Apr/2/2023 20:00",
         "end": "Apr/3/2023 01:00",
         "multiplier": 1.0
+    },
+    {
+        "name": "group/y0E4s9mhws/contest/437145",
+        "start": "Apr/6/2023 02:00",
+        "end": "Apr/6/2023 04:30",
+        "multiplier": 0.5
     }
 ]
