@@ -343,7 +343,7 @@ def main():
         for ac_handle in handle["atcoder_handles"]:
             submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
-        time.sleep(1)
+        time.sleep(2)
 
     # handle icpc
     print("starting handling icpc")
