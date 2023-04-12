@@ -290,7 +290,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 prev = curr
             # print(solved.items())
             for (uname, problem), (wa_timestamp, ac_timestamp) in sorted(solved.items(), key=lambda x: min([y for y in x[1] if y is not None])):
-                if wa_timestamp is not None and allow_unsolved:
+                if wa_timestamp is not None and allow_unsolved and wa_timestamp <= contest_end.timestamp():
                     submissions.append(Submission(
                         handle=uname,
                         platform=group,
@@ -303,7 +303,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                         time=wa_timestamp,
                         submission_id=contest_start.timestamp(),
                     ))
-                if ac_timestamp is not None:
+                if ac_timestamp is not None and ac_timestamp <= contest_end.timestamp() + 604800:
                     submissions.append(Submission(
                         handle=uname,
                         platform=group,
