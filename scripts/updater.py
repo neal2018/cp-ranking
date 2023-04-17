@@ -72,7 +72,7 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
                 return False
-            if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION', 'PRACTICE'}:
+            if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION', 'PRACTICE', 'VIRTUAL'}:
                 return False
             return True
         return list(filter(f, submissions))
