@@ -87,7 +87,7 @@ const getPlatformPoints = (handle: string, platform: string) => {
 //   }).replace(', ', ' ').slice(0, -3)
 // }
 
-const getPlatformParticipation = (handle: string, platform: string) => {
+const getPlatformParticipation = (handle: string, platform: string, prev_acc: number) => {
   const contests = new Set<string>()
   if (platform === 'codeforces')
     return submissions.reduce((acc, submission) => {
@@ -115,7 +115,7 @@ const getPlatformParticipation = (handle: string, platform: string) => {
         return acc + submission.division * getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform) * (acc >= 55 ? 1 : 5)
       }
       return acc
-    }, 0)
+    }, prev_acc)
     return 0
   }
   return 0
@@ -130,7 +130,7 @@ export const getPoints = (username: string) => {
     return acc + getPlatformPoints(handle, 'codeforces')
   }, 0) ?? 0
   const codeforcesParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
-    return acc + getPlatformParticipation(handle, 'codeforces')
+    return acc + getPlatformParticipation(handle, 'codeforces', 0)
   }, 0) ?? 0
   const icpcPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'icpc')
@@ -138,8 +138,10 @@ export const getPoints = (username: string) => {
   const zealotsPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'zealots')
   }, 0) ?? 0
+  var icpc_participation_acc = 0
   const icpcParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
-    return acc + getPlatformParticipation(handle, 'icpc')
+    icpc_participation_acc = getPlatformParticipation(handle, 'icpc', icpc_participation_acc)
+    return icpc_participation_acc
   }, 0) ?? 0
   return {
     codeforces: codeforcesPoints,
