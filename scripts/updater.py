@@ -259,6 +259,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 curr = set()
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
+                # print(data)
                 soup = BeautifulSoup(data, 'html.parser')
                 data = str(soup)
                 data = data[data.find(start):]
@@ -287,7 +288,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                                 solved[(uname, problem)][int(is_solved)] = timestamp
                 
                 index += 1
-                time.sleep(1)
+                # time.sleep(1)
                 print(
                     f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
                 if not fetched_cnt or curr == prev:
@@ -348,7 +349,7 @@ def main():
         for ac_handle in handle["atcoder_handles"]:
             submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
-        time.sleep(2)
+        time.sleep(1)
 
     # handle icpc
     print("starting handling icpc")
