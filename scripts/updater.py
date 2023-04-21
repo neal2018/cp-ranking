@@ -288,7 +288,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                                 solved[(uname, problem)][int(is_solved)] = timestamp
                 
                 index += 1
-                # time.sleep(1)
+                time.sleep(1)
                 print(
                     f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
                 if not fetched_cnt or curr == prev:
