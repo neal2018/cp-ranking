@@ -39,27 +39,29 @@ class Submission(NamedTuple):
     upsolved: bool
 
 
+url = f"https://codeforces.com/api/contest.list?gym=false"
+response = requests.get(url)
+# print(response.content)
+for contest in response.json()['result']:
+    contest_id = contest['id']
+    if contest_id in unrated_contests:
+        continue;
+    contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
+    contest_name = contest['name'].lower()
+    if "div. 2" in contest_name:
+        divisions[contest_id] = 2
+    elif "div. 1" in contest_name:
+        divisions[contest_id] = 1
+    elif "div. 3" in contest_name:
+        divisions[contest_id] = 3
+    elif "div. 4" in contest_name:
+        divisions[contest_id] = 4
+    else:
+        divisions[contest_id] = 2
+    contests[contest['id']] = contest['startTimeSeconds'] + contest['durationSeconds']
+
+
 def get_codeforces(handle: str) -> List[Submission]:
-    url = f"https://codeforces.com/api/contest.list?gym=false"
-    response = requests.get(url)
-    for contest in response.json()['result']:
-        contest_id = contest['id']
-        if contest_id in unrated_contests:
-            continue;
-        contests[contest_id] = contest['startTimeSeconds'] + contest['durationSeconds']
-        contest_name = contest['name'].lower()
-        if "div. 2" in contest_name:
-            divisions[contest_id] = 2
-        elif "div. 1" in contest_name:
-            divisions[contest_id] = 1
-        elif "div. 3" in contest_name:
-            divisions[contest_id] = 3
-        elif "div. 4" in contest_name:
-            divisions[contest_id] = 4
-        else:
-            divisions[contest_id] = 2
-        contests[contest['id']] = contest['startTimeSeconds'] + contest['durationSeconds']
-        
     def validate(submissions):
         def f(submission):
             if submission['verdict'] != 'OK':
@@ -177,8 +179,11 @@ class CFLogin:
             dt = self.session.get(link).text
 
         raw_html = BeautifulSoup(dt, 'html.parser')
-        csrf_token = raw_html.find_all(
-            "span", {"class": "csrf-token"})[0]["data-csrf"]
+        try:
+            csrf_token = raw_html.find_all(
+                "span", {"class": "csrf-token"})[0]["data-csrf"]
+        except:
+            print(raw_html)
         headers = {
             'X-Csrf-Token': csrf_token,
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
