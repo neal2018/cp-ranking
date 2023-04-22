@@ -238,7 +238,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
         while profile_str in team:
             team, names = get_token(team, profile_str, "\"")
             usernames.append(names)
-        return usernames
+        return sorted(usernames)
 
     all_handles = [item.lower() for sublist in handles for item in sublist]
 
