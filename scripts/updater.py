@@ -38,11 +38,20 @@ class Submission(NamedTuple):
     solved: bool
     upsolved: bool
 
+def get_json(url, retries=10):
+    for i in range(retries):
+        response = requests.get(url)
+        try:
+            json_result = response.json()
+            return json_result
+        except json.decoder.JSONDecodeError:
+            print(f"failed attempt {i}")
+            if i == 9:
+                exit(1)
+            time.sleep(5)
 
 url = f"https://codeforces.com/api/contest.list?gym=false"
-response = requests.get(url)
-# print(response.content)
-for contest in response.json()['result']:
+for contest in get_json(url)['result']:
     contest_id = contest['id']
     if contest_id in unrated_contests:
         continue;
@@ -64,6 +73,8 @@ for contest in response.json()['result']:
 def get_codeforces(handle: str) -> List[Submission]:
     def validate(submissions):
         def f(submission):
+            if not submission.get('verdict'): # in case this runs mid-contest and encounters un-judged submissions
+                return False
             if submission['verdict'] != 'OK':
                 return False
             if submission['creationTimeSeconds'] < START_DATE.timestamp():
@@ -106,11 +117,11 @@ def get_codeforces(handle: str) -> List[Submission]:
         return list(map(f, submissions))
 
     url = f"https://codeforces.com/api/user.status?handle={handle}&from=1&count=100000"
-    response = requests.get(url)
-    if not response.json().get("result"):
+    response_json = get_json(url)
+    if not response_json.get("result"):
         print(f"couldn't get results for {handle}")
         return []
-    submissions = response.json()["result"]
+    submissions = response_json["result"]
     return transform(unique(validate(submissions)))
 
 
@@ -242,6 +253,8 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
 
     all_handles = [item.lower() for sublist in handles for item in sublist]
 
+    errors = ["login - codeforces", "internal server error", "web server is down", "web server is returning an unknown error"]
+
     with CFLogin(os.environ["CF_USERNAME"], os.environ["CF_PASSWORD"]) as cf:
         submissions = list()
         for contest in contests:
@@ -264,11 +277,10 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 data = cf.session.get(submission_url).text
                 original = data
-                if "login - codeforces" in original.lower() or "internal server error" in original.lower():
-                    if "login - codeforces" in original.lower():
-                        print("logged out")
-                    if "internal server error" in original.lower():
-                        print("internal server error")
+                if any(x in original.lower() for x in errors):
+                    for x in errors:
+                        if x in original.lower():
+                            print(f'error: "{x}" in result')
                     time.sleep(5)
                     retries += 1
                     continue
@@ -287,7 +299,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     fetched_cnt += 1
                     if dt < contest_start:
                         need_break = True
-                        print("Need break was true...")
+                        print("need break")
                         break
                     is_solved = verdict == 'OK'
                     if not allow_unsolved and not is_solved:
