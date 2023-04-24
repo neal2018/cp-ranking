@@ -383,7 +383,7 @@ def main():
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
-    submissions.sort(key=lambda x : x["time"])
+    submissions.sort(key=lambda x : (x["time"], x["handle"]))
     # write submissions to src/submissions.json
     with open(os.path.join(data_path, "submissions.json"), "w") as f:
         json.dump(submissions, f, indent=2)
