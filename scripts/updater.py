@@ -275,7 +275,15 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     exit(1)
                 curr = set()
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
-                data = cf.session.get(submission_url).text
+                data = None
+                for i in range(10):
+                    try:
+                        data = cf.session.get(submission_url).text
+                        break
+                    except requests.exceptions.ConnectionError:
+                        if i == 9:
+                            exit(1)
+                        print("connection error attempt {i}")
                 original = data
                 if any(x in original.lower() for x in errors):
                     for x in errors:
@@ -395,7 +403,7 @@ def main():
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
-    submissions.sort(key=lambda x : (x["time"], x["handle"]))
+    submissions.sort(key=lambda x : (x["platform"], x["handle"], x["time"]))
     # write submissions to src/submissions.json
     with open(os.path.join(data_path, "submissions.json"), "w") as f:
         json.dump(submissions, f, indent=2)
