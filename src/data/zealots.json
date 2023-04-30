@@ -682,5 +682,11 @@
         "start": "Apr/29/2023 07:00",
         "end": "Apr/30/2023 06:59",
         "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/441190",
+        "start": "Apr/30/2023 07:00",
+        "end": "May/1/2023 06:59",
+        "multiplier": 1.0
     }
 ]
