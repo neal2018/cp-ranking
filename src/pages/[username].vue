@@ -43,10 +43,10 @@ const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) 
 const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
 
 const userCFSubmissions = submissions.filter(submission =>
-  (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase())))
+  (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 
 const userATsubmissions = submissions.filter(submission =>
-  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase())))
+  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 
 const userICPCsubmissions = submissions.filter(submission =>
   (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
