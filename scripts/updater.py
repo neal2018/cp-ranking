@@ -14,9 +14,11 @@ from bs4 import BeautifulSoup
 os.environ["CF_USERNAME"] = "cheetahbot"
 os.environ["CF_PASSWORD"] = "bottings5!"
 moscow_tz = pytz.timezone('Europe/Moscow')
+ny_tz = pytz.timezone('US/Eastern')
 utc_tz = pytz.timezone('UTC')
 
-START_DATE = datetime.datetime(2023, 1, 17)
+START_DATE = datetime.datetime(2023, 1, 17, tzinfo=ny_tz)
+END_DATE = datetime.datetime(2023, 5, 10, hour=23, minute=59, second=59, tzinfo=ny_tz)
 
 contests = {}
 divisions = {}
@@ -78,6 +80,8 @@ def get_codeforces(handle: str) -> List[Submission]:
             if submission['verdict'] != 'OK':
                 return False
             if submission['creationTimeSeconds'] < START_DATE.timestamp():
+                return False
+            if submission['creationTimeSeconds'] > END_DATE.timestamp():
                 return False
             if not submission.get('contestId'):
                 return False
@@ -305,6 +309,8 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
+                    if dt > END_DATE.timestamp():
+                        continue
                     if dt < contest_start:
                         need_break = True
                         print("need break")
