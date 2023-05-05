@@ -309,7 +309,7 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
-                    if dt > END_DATE.timestamp():
+                    if dt > END_DATE.astimezone(utc_tz):
                         continue
                     if dt < contest_start:
                         need_break = True
