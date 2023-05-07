@@ -370,5 +370,23 @@
         "start": "May/6/2023 20:00",
         "end": "May/7/2023 01:00",
         "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/442408",
+        "start": "May/7/2023 20:00",
+        "end": "May/8/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/442409",
+        "start": "May/7/2023 20:00",
+        "end": "May/8/2023 01:00",
+        "multiplier": 1.0
+    },
+    {
+        "name": "group/hosRkEuluH/contest/442410",
+        "start": "May/7/2023 20:00",
+        "end": "May/8/2023 01:00",
+        "multiplier": 1.0
     }
 ]
