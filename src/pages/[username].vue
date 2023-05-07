@@ -42,17 +42,50 @@ const handle = handles.find(handle => handle.username === props.username)!
 const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) => handle.toLowerCase())
 const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
 
-const userCFSubmissions = submissions.filter(submission =>
-  (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+const  userCFSubmissions= reactive(submissions.filter(submission =>
+  (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
-const userATsubmissions = submissions.filter(submission =>
-  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+const userATsubmissions = reactive(submissions.filter(submission =>
+  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
-const userICPCsubmissions = submissions.filter(submission =>
-  (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+const userICPCsubmissions = reactive(submissions.filter(submission =>
+  (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
 const userZealotssubmissions = submissions.filter(submission =>
   (submission.platform === 'zealots' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+
+const sortTable = (val: string, data: any)=> {
+    if (val === 'Contest ID' && data !== userICPCsubmissions) {
+      data.sort((a: any, b: any) => b.contest_id - a.contest_id);
+    } else if (val === 'Contest ID' && data === userICPCsubmissions){
+      data.sort((a: any, b: any) => (getLast(b.contest_id as string) as any) - (getLast(a.contest_id as string) as any)); 
+    } else if (val === 'Rating') {
+      data.sort((a: any, b: any) => b.rating - a.rating);
+    } else if (val === 'Solved Time') {
+      data.sort((a: any, b: any) => b.time - a.time);
+    } else if (val === 'Upsolved') {
+      data.sort((a: any, b: any) => a.upsolved - b.upsolved);
+    } else if (val === 'Division') {
+      data.sort((a: any, b: any) => a.division - b.division);
+    } else if (val === 'Points' && data === userCFSubmissions){
+      data.sort((a: any, b: any) => getPointFromProblem(b.upsolved, b.division, b.problem_id, b.platform) - getPointFromProblem(a.upsolved, a.division, a.problem_id, a.platform));
+    } else if (val === 'Points' && data === userATsubmissions){
+      data.sort((a: any, b: any) => getPointFromProblemId(b.problem_id, b.platform) - getPointFromProblemId(a.problem_id, a.platform));
+    } else if (val === 'Points' && data === userICPCsubmissions)
+      data.sort((a: any, b: any) => getPointFromProblem(b.upsolved, 0, "", "icpc") - getPointFromProblem(a.upsolved, 0, "", "icpc"));
+  }
+const sorteduserCFSubmissions = computed(() => {
+  return userCFSubmissions
+})
+
+const sorteduserATsubmissions = computed(() => {
+  return userATsubmissions
+})
+
+const sorteduserICPCsubmissions = computed(() => {
+  return userICPCsubmissions
+})
+
 </script>
 
 <template>
@@ -74,11 +107,12 @@ const userZealotssubmissions = submissions.filter(submission =>
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
-          <th v-for="val in codeforcesTitles" :key="val" border-1>
+          <th v-for="val in codeforcesTitles" :key="val" border-1 @click="sortTable(val, userCFSubmissions)">
             {{ val }}
+            <span v-if="val !== 'Handle' && val !== 'Problem ID'">&#8597;</span>
           </th>
         </tr>
-        <tr v-for="(userData, index) in userCFSubmissions" :key="index" border-1>
+        <tr v-for="(userData, index) in sorteduserCFSubmissions" :key="index" border-1>
           <td border-1>
             <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
               {{ userData.handle }}
@@ -130,11 +164,12 @@ const userZealotssubmissions = submissions.filter(submission =>
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
-          <th v-for="val in tableTitles" :key="val" border-1>
+          <th v-for="val in tableTitles" :key="val" border-1 @click="sortTable(val, userATsubmissions)">
             {{ val }}
+            <span v-if="val !== 'Handle' && val !== 'Problem ID'">&#8597;</span>
           </th>
         </tr>
-        <tr v-for="(userData, index) in userATsubmissions" :key="index" border-1>
+        <tr v-for="(userData, index) in sorteduserATsubmissions" :key="index" border-1>
           <td border-1>
             <a :href="`https://atcoder.jp/users/${userData.handle}`" target="_blank">
               {{ userData.handle }}
@@ -172,11 +207,12 @@ const userZealotssubmissions = submissions.filter(submission =>
       </p>
       <table border-1 m-auto m-y-5>
         <tr border-1>
-          <th v-for="val in icpcTitles" :key="val" border-1>
+          <th v-for="val in icpcTitles" :key="val" border-1 @click="sortTable(val, userICPCsubmissions)">
             {{ val }}
+            <span v-if="val !== 'Handle' && val !== 'Problem ID'">&#8597;</span>
           </th>
         </tr>
-        <tr v-for="(userData, index) in userICPCsubmissions" :key="index" border-1>
+        <tr v-for="(userData, index) in sorteduserICPCsubmissions" :key="index" border-1>
           <td border-1>
             <a :href="`https://codeforces.com/profile/${userData.handle}`" target="_blank">
               {{ userData.handle }}

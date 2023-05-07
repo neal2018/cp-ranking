@@ -40,6 +40,7 @@ declare global {
   const getPointFromProblem: typeof import('./src/composables/utils')['getPointFromProblem']
   const getPointFromProblemId: typeof import('./src/composables/utils')['getPointFromProblemId']
   const getPoints: typeof import('./src/composables/utils')['getPoints']
+  const getSolvedMultiplier: typeof import('./src/composables/utils')['getSolvedMultiplier']
   const getTableData: typeof import('./src/composables/utils')['getTableData']
   const getUpsolveMultiplier: typeof import('./src/composables/utils')['getUpsolveMultiplier']
   const h: typeof import('vue')['h']
@@ -327,6 +328,7 @@ declare module 'vue' {
     readonly getPointFromProblem: UnwrapRef<typeof import('./src/composables/utils')['getPointFromProblem']>
     readonly getPointFromProblemId: UnwrapRef<typeof import('./src/composables/utils')['getPointFromProblemId']>
     readonly getPoints: UnwrapRef<typeof import('./src/composables/utils')['getPoints']>
+    readonly getSolvedMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getSolvedMultiplier']>
     readonly getTableData: UnwrapRef<typeof import('./src/composables/utils')['getTableData']>
     readonly getUpsolveMultiplier: UnwrapRef<typeof import('./src/composables/utils')['getUpsolveMultiplier']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
