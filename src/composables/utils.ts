@@ -123,9 +123,9 @@ const getPlatformParticipation = (handle: string, platform: string, prev_acc: nu
 
 export const getPoints = (username: string) => {
   const handle = handles.find(handle => handle.username === username)
-  const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
-    return acc + getPlatformPoints(handle, 'atcoder')
-  }, 0) ?? 0
+  // const atcoderPoints = handle?.atcoder_handles.reduce((acc, handle) => {
+  //   return acc + getPlatformPoints(handle, 'atcoder')
+  // }, 0) ?? 0
   const codeforcesPoints = handle?.codeforces_handles.reduce((acc, handle) => {
     return acc + getPlatformPoints(handle, 'codeforces')
   }, 0) ?? 0
@@ -146,11 +146,13 @@ export const getPoints = (username: string) => {
   return {
     codeforces: codeforcesPoints,
     codeforcesParticipation: codeforcesParticipation,
-    atcoder: atcoderPoints,
+    // atcoder: atcoderPoints,
+    atcoder: 0,
     icpc: icpcPoints,
     icpcParticipation: icpcParticipation,
     zealots: zealotsPoints.toFixed(1),
-    total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
+    total: codeforcesPoints + codeforcesParticipation + 0 + icpcPoints,
+    // total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
   }
 }
 

@@ -40,13 +40,13 @@ const getLast = (str: string) => str.substring(str.lastIndexOf('/') + 1, str.len
 // get the user submission history from submission.json
 const handle = handles.find(handle => handle.username === props.username)!
 const codeforces_handles_lower = handle.codeforces_handles.map((handle: string) => handle.toLowerCase())
-const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
+// const atcoder_handles_lower = handle.atcoder_handles.map((handle: string) => handle.toLowerCase())
 
 const  userCFSubmissions= reactive(submissions.filter(submission =>
   (submission.platform === 'codeforces' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
-const userATsubmissions = reactive(submissions.filter(submission =>
-  (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
+// const userATsubmissions = reactive(submissions.filter(submission =>
+//   (submission.platform === 'atcoder' && atcoder_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
 const userICPCsubmissions = reactive(submissions.filter(submission =>
   (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
@@ -159,7 +159,7 @@ const sorteduserICPCsubmissions = computed(() => {
     </div>
 
     <div>
-      <p text-2xl p-t-10>
+      <!-- <p text-2xl p-t-10>
         AtCoder: {{ handle.atcoder_handles }}; {{ userPoints.atcoder }} Points
       </p>
       <table border-1 m-auto m-y-5>
@@ -198,7 +198,7 @@ const sorteduserICPCsubmissions = computed(() => {
             {{ getPointFromProblemId(userData.problem_id, userData.platform) }}
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
 
     <div>
