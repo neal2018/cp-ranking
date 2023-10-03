@@ -112,7 +112,7 @@ const getPlatformParticipation = (handle: string, platform: string, prev_acc: nu
         && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
         contests.add(submission.contest_id)
         // console.log(handle, formatTime(submission.time), acc + submission.division *getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform)* (acc >= 55 ? 1 : 5))
-        return acc + submission.division * getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform) * (acc >= 55 ? 1 : 5)
+        return acc + submission.division * getSolvedMultiplier(has_solved_solution.get(submission.contest_id)!, submission.platform) * (acc >= 20 ? 0.5 : 1)
       }
       return acc
     }, prev_acc)

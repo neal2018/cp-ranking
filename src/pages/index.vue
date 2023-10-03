@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces + Participation', 'ICPC', 'Total Live Points']
+const tableTitles = ['Rank', 'User', 'Codeforces + Participation', 'ICPC', 'Total Live Points', 'ICPC Particiation Bonus %']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -48,9 +48,9 @@ const go = (username: string) => {
               {{ userData.total }}
             </p>
           </td>
-          <!-- <td border-1 px-6>
+          <td border-1 px-6>
             {{ userData.icpcParticipation }}/55
-          </td> -->
+          </td>
         </tr>
       </table>
     </div>
