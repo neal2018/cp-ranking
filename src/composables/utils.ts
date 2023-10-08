@@ -3,22 +3,23 @@ import handles from '~/data/handles.json'
 
 export const getPointFromProblemId = (problem_id: string, platform: string) => {
   if (platform === 'codeforces') {
-    var letter = problem_id[0]
-    if (letter === 'A')
-      return 0.25
-    if (letter === 'B')
-      return 0.5
-    if (letter === 'C')
-      return 1
-    if (letter === 'D')
-      return 1.5
-    if (letter === 'E')
-      return 2
-    if (letter === 'F')
-      return 4
-    if (letter === 'G')
-      return 6
-    return 8
+    // var letter = problem_id[0]
+    // if (letter === 'A')
+    //   return 0.25
+    // if (letter === 'B')
+    //   return 0.5
+    // if (letter === 'C')
+    //   return 1
+    // if (letter === 'D')
+    //   return 1.5
+    // if (letter === 'E')
+    //   return 2
+    // if (letter === 'F')
+    //   return 4
+    // if (letter === 'G')
+    //   return 6
+    // return 8
+    return 1
   }
   if (platform === 'icpc') {
     return 0.5
@@ -31,14 +32,14 @@ export const getPointFromProblemId = (problem_id: string, platform: string) => {
 
 export const getDivisionMultiplier = (division: number, platform: string) => {
   if (platform === 'codeforces') {
-    if (division === 1)
-      return 4
-    if (division === 2)
-      return 1
-    if (division === 3)
-      return 0.25
-    if (division === 4)
-      return 0.125
+    // if (division === 1)
+    //   return 4
+    // if (division === 2)
+    //   return 1
+    // if (division === 3)
+    //   return 0.25
+    // if (division === 4)
+    //   return 0.125
     return 1
   }
   return 1
@@ -90,14 +91,15 @@ const getPlatformPoints = (handle: string, platform: string) => {
 const getPlatformParticipation = (handle: string, platform: string, prev_acc: number) => {
   const contests = new Set<string>()
   if (platform === 'codeforces')
-    return submissions.reduce((acc, submission) => {
-      if (submission.handle.toLowerCase() === handle.toLowerCase()
-        && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
-        contests.add(submission.contest_id)
-        return acc + 0.5
-      }
-      return acc
-    }, 0)
+    // return submissions.reduce((acc, submission) => {
+    //   if (submission.handle.toLowerCase() === handle.toLowerCase()
+    //     && submission.platform === platform && !submission.upsolved && !contests.has(submission.contest_id)) {
+    //     contests.add(submission.contest_id)
+    //     return acc + 0.5
+    //   }
+    //   return acc
+    // }, 0)
+    return 0
   if (platform === 'icpc') {
     const has_solved_solution = new Map<string, boolean>()
     submissions.forEach((submission) => {

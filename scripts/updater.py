@@ -6,8 +6,12 @@ import re
 import pytz
 from typing import List, NamedTuple
 from collections import defaultdict
+import random
 
 import requests
+import crypto
+import sys
+sys.modules['Crypto'] = crypto
 from Crypto.Cipher import AES
 from bs4 import BeautifulSoup
 
@@ -17,8 +21,8 @@ moscow_tz = pytz.timezone('Europe/Moscow')
 ny_tz = pytz.timezone('US/Eastern')
 utc_tz = pytz.timezone('UTC')
 
-START_DATE = datetime.datetime(2023, 1, 17, tzinfo=ny_tz)
-END_DATE = datetime.datetime(2023, 5, 10, hour=23, minute=59, second=59, tzinfo=ny_tz)
+START_DATE = datetime.datetime(2023, 9, 5, tzinfo=ny_tz)
+END_DATE = datetime.datetime(2023, 12, 22, hour=23, minute=59, second=59, tzinfo=ny_tz)
 
 contests = {}
 divisions = {}
@@ -87,7 +91,9 @@ def get_codeforces(handle: str) -> List[Submission]:
                 return False
             if not contests.get(submission['contestId']):
                 return False
-            if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
+            # if submission['creationTimeSeconds'] - contests[submission['contestId']] > 604800:
+            #     return False
+            if submission['creationTimeSeconds'] > contests[submission['contestId']]: # no upsolves
                 return False
             if submission['author']['participantType'] not in {'CONTESTANT', 'OUT_OF_COMPETITION', 'PRACTICE', 'VIRTUAL'}:
                 return False
@@ -381,31 +387,34 @@ def main():
     data_path = os.path.join(base_path, "src", "data")
     handles = read_json(os.path.join(data_path, "handles.json"))
     icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
-    zealots_contests = read_json(os.path.join(data_path, "zealots.json"))
+    # zealots_contests = read_json(os.path.join(data_path, "zealots.json"))
 
     submissions = list()
 
     # handle codeforces and atcoder
-    print("starting handling codeforces and atcoder")
+    # print("starting handling codeforces and atcoder")
+    print("starting handling codeforces")
     for handle in handles:
+        num = random.uniform(10, 20)
+        time.sleep(num)
         for cf_handle in handle["codeforces_handles"]:
             submissions.extend(get_codeforces(cf_handle))
-        for ac_handle in handle["atcoder_handles"]:
-            submissions.extend(get_atcoder(ac_handle))
+        # for ac_handle in handle["atcoder_handles"]:
+        #     submissions.extend(get_atcoder(ac_handle))
         print(f"done {handle}")
         time.sleep(1)
 
     # handle icpc
-    print("starting handling icpc")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
-    print(f"fetched {len(submissions)} submissions from icpc")
+    # print("starting handling icpc")
+    # cf_handles = [handle["codeforces_handles"] for handle in handles]
+    # submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
+    # print(f"fetched {len(submissions)} submissions from icpc")
 
-    # handle zealots
-    print("starting handling zealots")
-    cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
-    print(f"fetched {len(submissions)} submissions from zealots")
+    # # handle zealots
+    # print("starting handling zealots")
+    # cf_handles = [handle["codeforces_handles"] for handle in handles]
+    # submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
+    # print(f"fetched {len(submissions)} submissions from zealots")
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))

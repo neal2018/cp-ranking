@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces + Participation', 'ICPC', 'Total Live Points', 'ICPC Particiation Bonus %']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'Practice', 'Total Live Points', 'ICPC Particiation Bonus %']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -34,7 +34,8 @@ const go = (username: string) => {
           </td>
           <td border-1>
             <p relative>
-              {{ userData.codeforces }} + {{ userData.codeforcesParticipation }}
+              <!-- {{ userData.codeforces }} + {{ userData.codeforcesParticipation }} -->
+              {{ userData.codeforces }}
             </p>
           </td>
           <td border-1 px-6>
