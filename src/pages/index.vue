@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getTableData } from '~/composables/utils'
 
-const tableTitles = ['Rank', 'User', 'Codeforces', 'Practice', 'Total Live Points', 'ICPC Particiation Bonus %']
+const tableTitles = ['Rank', 'User', 'Codeforces', 'Zealots', 'Total Live Points', 'ICPC Particiation Bonus %']
 const tableData = getTableData()
 const router = useRouter()
 
@@ -9,7 +9,7 @@ const go = (username: string) => {
   if (username)
     router.push(`/${encodeURIComponent(username)}`)
 }
-</script>
+</script>˜
 
 <template>
   <div relative flex flex-col>

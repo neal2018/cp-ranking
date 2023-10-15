@@ -1,0 +1,38 @@
+[
+	{
+	    "name": "group/hosRkEuluH/contest/471479",
+	    "start": "Sep/4/2023 16:00",
+	    "end": "Sep/11/2023 16:00",
+	    "multiplier": 1.0
+	},
+	{
+		"name": "group/hosRkEuluH/contest/472698",
+		"start": "Sep/11/2023 16:00",
+		"end": "Sep/18/2023 16:00",
+		"multiplier": 1.0
+	},
+    {
+		"name": "group/hosRkEuluH/contest/474083",
+		"start": "Sep/18/2023 16:00",
+		"end": "Sep/25/2023 16:00",
+		"multiplier": 1.0
+	},
+    {
+		"name": "group/hosRkEuluH/contest/475383",
+		"start": "Sep/25/2023 16:00",
+		"end": "Oct/2/2023 16:00",
+		"multiplier": 1.0
+	},
+    {
+		"name": "group/hosRkEuluH/contest/476841",
+		"start": "Oct/2/2023 16:00",
+		"end": "Oct/9/2023 16:00",
+		"multiplier": 1.0
+	},
+    {
+		"name": "group/hosRkEuluH/contest/478329",
+		"start": "Oct/9/2023 16:00",
+		"end": "Oct/16/2023 16:00",
+		"multiplier": 1.0
+	}
+]

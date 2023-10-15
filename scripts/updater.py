@@ -299,6 +299,8 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     for x in errors:
                         if x in original.lower():
                             print(f'error: "{x}" in result')
+                            with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
+                                f.write(original)
                     time.sleep(5)
                     retries += 1
                     continue
@@ -387,22 +389,22 @@ def main():
     data_path = os.path.join(base_path, "src", "data")
     handles = read_json(os.path.join(data_path, "handles.json"))
     icpc_contests = read_json(os.path.join(data_path, "icpcs.json"))
-    # zealots_contests = read_json(os.path.join(data_path, "zealots.json"))
+    zealots_contests = read_json(os.path.join(data_path, "zealots.json"))
 
     submissions = list()
 
     # handle codeforces and atcoder
     # print("starting handling codeforces and atcoder")
-    print("starting handling codeforces")
-    for handle in handles:
-        num = random.uniform(10, 20)
-        time.sleep(num)
-        for cf_handle in handle["codeforces_handles"]:
-            submissions.extend(get_codeforces(cf_handle))
-        # for ac_handle in handle["atcoder_handles"]:
-        #     submissions.extend(get_atcoder(ac_handle))
-        print(f"done {handle}")
-        time.sleep(1)
+    # print("starting handling codeforces")
+    # for handle in handles:
+    #     num = random.uniform(10, 20)
+    #     time.sleep(num)
+    #     for cf_handle in handle["codeforces_handles"]:
+    #         submissions.extend(get_codeforces(cf_handle))
+    #     # for ac_handle in handle["atcoder_handles"]:
+    #     #     submissions.extend(get_atcoder(ac_handle))
+    #     print(f"done {handle}")
+    #     time.sleep(1)
 
     # handle icpc
     # print("starting handling icpc")
@@ -410,11 +412,11 @@ def main():
     # submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
     # print(f"fetched {len(submissions)} submissions from icpc")
 
-    # # handle zealots
-    # print("starting handling zealots")
-    # cf_handles = [handle["codeforces_handles"] for handle in handles]
-    # submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
-    # print(f"fetched {len(submissions)} submissions from zealots")
+    # handle zealots
+    print("starting handling zealots")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
+    print(f"fetched {len(submissions)} submissions from zealots")
 
     # transform submissions to json
     submissions = list(map(lambda x: x._asdict(), submissions))
