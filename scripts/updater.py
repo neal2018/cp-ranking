@@ -378,18 +378,18 @@ def main():
 
     submissions = list()
 
-    # # handle codeforces and atcoder
-    # # print("starting handling codeforces and atcoder")
-    # print("starting handling codeforces")
-    # for handle in handles:
-    #     num = random.uniform(10, 20)
-    #     time.sleep(num)
-    #     for cf_handle in handle["codeforces_handles"]:
-    #         submissions.extend(get_codeforces(cf_handle))
-    #     # for ac_handle in handle["atcoder_handles"]:
-    #     #     submissions.extend(get_atcoder(ac_handle))
-    #     print(f"done {handle}")
-    #     time.sleep(1)
+    # handle codeforces and atcoder
+    # print("starting handling codeforces and atcoder")
+    print("starting handling codeforces")
+    for handle in handles:
+        num = random.uniform(10, 20)
+        time.sleep(num)
+        for cf_handle in handle["codeforces_handles"]:
+            submissions.extend(get_codeforces(cf_handle))
+        # for ac_handle in handle["atcoder_handles"]:
+        #     submissions.extend(get_atcoder(ac_handle))
+        print(f"done {handle}")
+        time.sleep(1)
 
     # handle icpc
     print("starting handling icpc")
