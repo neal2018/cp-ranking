@@ -1,6 +1,5 @@
 beautifulsoup4==4.12.2
-crypto==1.4.1
-pycryptodome==3.19.0
+pyaes==1.6.1
 pytz==2023.3.post1
 Requests==2.31.0
 selenium==4.14.0
