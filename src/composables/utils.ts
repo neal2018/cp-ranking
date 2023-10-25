@@ -157,7 +157,8 @@ export const getPoints = (username: string) => {
     icpc: icpcPoints,
     icpcParticipation: icpcParticipation,
     zealots: zealotsPoints,
-    total: codeforcesPoints + codeforcesParticipation + zealotsPoints + icpcPoints,
+    total: codeforcesPoints + codeforcesParticipation + zealotsPoints,
+    // total: codeforcesPoints + codeforcesParticipation + zealotsPoints + icpcPoints,
     // total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
   }
 }
