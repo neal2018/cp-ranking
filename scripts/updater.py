@@ -301,6 +301,8 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     print(tm)
                     if tm.endswith("UTC-4") or tm.endswith("UTC-5"):
                         tm = tm[:-5]
+                    if tm.endswith("UTC"):
+                        tm = tm[:-3]
                     print(tm)
                     usernames = row[2].split(": ")[-1].split(", ")
                     problem = row[3]
