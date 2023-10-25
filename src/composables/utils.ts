@@ -100,7 +100,7 @@ const getPlatformParticipation = (handle: string, platform: string, prev_acc: nu
     //   return acc
     // }, 0)
     return 0
-  if (platform === 'icpc') {
+  if (platform === 'icpc' || platform === 'zealots') {
     const has_solved_solution = new Map<string, boolean>()
     submissions.forEach((submission) => {
       if (submission.handle.toLowerCase() === handle.toLowerCase())
@@ -141,8 +141,12 @@ export const getPoints = (username: string) => {
     return acc + getPlatformPoints(handle, 'zealots')
   }, 0) ?? 0
   var icpc_participation_acc = 0
+  const zealotsParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
+    icpc_participation_acc = getPlatformParticipation(handle, 'zealots', icpc_participation_acc)
+    return icpc_participation_acc
+  }, 0) ?? 0
   const icpcParticipation = handle?.codeforces_handles.reduce((acc, handle) => {
-    icpc_participation_acc = getPlatformParticipation(handle, 'icpc', icpc_participation_acc)
+    icpc_participation_acc = getPlatformParticipation(handle, 'icpc', zealotsParticipation)
     return icpc_participation_acc
   }, 0) ?? 0
   return {

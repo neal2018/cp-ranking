@@ -382,15 +382,15 @@ def main():
         time.sleep(1)
 
     # handle icpc
-    # print("starting handling icpc")
-    # cf_handles = [handle["codeforces_handles"] for handle in handles]
-    # submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=True))
-    # print(f"fetched {len(submissions)} submissions from icpc")
+    print("starting handling icpc")
+    cf_handles = [handle["codeforces_handles"] for handle in handles]
+    submissions.extend(get_group(cf_handles, "icpc", icpc_contests, allow_unsolved=False))
+    print(f"fetched {len(submissions)} submissions from icpc")
 
     # handle zealots
     print("starting handling zealots")
     cf_handles = [handle["codeforces_handles"] for handle in handles]
-    submissions.extend(get_group(cf_handles, "zealots", zealots_contests))
+    submissions.extend(get_group(cf_handles, "zealots", zealots_contests, allow_unsolved=False))
     print(f"fetched {len(submissions)} submissions from zealots")
 
     # transform submissions to json
