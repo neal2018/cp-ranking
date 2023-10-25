@@ -10,6 +10,7 @@ import random
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 import requests
 import pyaes
@@ -187,7 +188,10 @@ class CFLogin:
     def __init__(self, username: str, password: str):
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome()
+        options = Options()
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Chrome(options=options)
 
     def __enter__(self):
         self.driver.get(self.service_url)
@@ -367,18 +371,18 @@ def main():
 
     submissions = list()
 
-    # handle codeforces and atcoder
-    # print("starting handling codeforces and atcoder")
-    print("starting handling codeforces")
-    for handle in handles:
-        num = random.uniform(10, 20)
-        time.sleep(num)
-        for cf_handle in handle["codeforces_handles"]:
-            submissions.extend(get_codeforces(cf_handle))
-        # for ac_handle in handle["atcoder_handles"]:
-        #     submissions.extend(get_atcoder(ac_handle))
-        print(f"done {handle}")
-        time.sleep(1)
+    # # handle codeforces and atcoder
+    # # print("starting handling codeforces and atcoder")
+    # print("starting handling codeforces")
+    # for handle in handles:
+    #     num = random.uniform(10, 20)
+    #     time.sleep(num)
+    #     for cf_handle in handle["codeforces_handles"]:
+    #         submissions.extend(get_codeforces(cf_handle))
+    #     # for ac_handle in handle["atcoder_handles"]:
+    #     #     submissions.extend(get_atcoder(ac_handle))
+    #     print(f"done {handle}")
+    #     time.sleep(1)
 
     # handle icpc
     print("starting handling icpc")
