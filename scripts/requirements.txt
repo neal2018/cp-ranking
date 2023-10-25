@@ -1,5 +1,6 @@
-requests==2.28.1
-beautifulsoup4==4.10.0
-pycryptodome==3.15.0
-pytz==2021.3
-setuptools==58.0.4
+beautifulsoup4==4.12.2
+crypto==1.4.1
+pycryptodome==3.19.0
+pytz==2023.3.post1
+Requests==2.31.0
+selenium==4.14.0
