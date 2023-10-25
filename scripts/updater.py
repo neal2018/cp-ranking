@@ -7,6 +7,8 @@ import pytz
 from typing import List, NamedTuple
 from collections import defaultdict
 import random
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 import requests
 import crypto
@@ -187,44 +189,37 @@ class CFLogin:
     def __init__(self, username: str, password: str):
         self.username = username
         self.password = password
+        self.driver = webdriver.Chrome()
 
     def __enter__(self):
-        self.session = requests.session()
-        dt = self.session.get(self.service_url).text
-
-        if "Redirecting" in dt:
-            rcpc = self.get_rcpc(dt)
-            self.session.cookies.set(
-                "rcpc", rcpc, domain="codeforces.com", path="/")
-            link = re.findall(r'href="(.+?)"', dt)[0]
-            dt = self.session.get(link).text
-
-        raw_html = BeautifulSoup(dt, 'html.parser')
-        try:
-            csrf_token = raw_html.find_all(
-                "span", {"class": "csrf-token"})[0]["data-csrf"]
-        except:
-            print(raw_html)
-        headers = {
-            'X-Csrf-Token': csrf_token,
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
-        }
-        payload = {
-            'csrf_token': csrf_token,
-            'action': 'enter',
-            'handleOrEmail': self.username,
-            'password': self.password,
-        }
-        self.session.post(self.service_url, data=payload, headers=headers)
+        self.driver.get(self.service_url)
+        username_field = self.driver.find_element(by=By.ID, value="handleOrEmail")
+        password_field =self.driver.find_element(by=By.ID, value="password")
+        login_button = self.driver.find_element(by=By.XPATH, value='//*[@id="enterForm"]/table/tbody/tr[4]/td/div[1]/input')
+        username_field.send_keys(self.username)
+        password_field.send_keys(self.password)
+        login_button.click()
+        time.sleep(5)
         return self
 
     def __exit__(self, etype, value, traceback):
-        soup = BeautifulSoup(self.session.get(self.BASE).text, 'html.parser')
-        logout = soup.select_one("a[href*=logout]")
-        if logout:
-            href = logout["href"]
-            assert isinstance(href, str)
-            self.session.get(self.BASE + href)
+        # soup = BeautifulSoup(self.session.get(self.BASE).text, 'html.parser')
+        # logout = soup.select_one("a[href*=logout]")
+        # if logout:
+        #     href = logout["href"]
+        #     assert isinstance(href, str)
+        #     self.session.get(self.BASE + href)
+        pass
+
+    def navigate(self, url):
+        self.driver.get(url)
+
+    def get_content(self):
+        datatable_xpath = '//*[@id="pageContent"]/div[2]/div[6]/table'
+        mytable = self.driver.find_element("xpath", datatable_xpath)
+        rows = [[cell.text for cell in row.find_elements(By.TAG_NAME, 'td')] for row in mytable.find_elements(By.CSS_SELECTOR, 'tr')]
+        print(rows)
+        return rows
 
     def get_rcpc(self, dt):
         matched = re.findall(r'toNumbers\("(.+?)"\)', dt)
@@ -245,6 +240,8 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
     time_str = "<span class=\"format-time\" data-locale=\"en\">"
     start = "<div class=\"datatable\" " + \
         "style=\"background-color: #E1E1E1; padding-bottom: 3px;\">"
+    
+   
 
     def get_token(data, start, end):
         pos = data.find(start)
@@ -266,8 +263,12 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
     errors = ["login - codeforces", "internal server error", "web server is down", "web server is returning an unknown error"]
 
     with CFLogin(os.environ["CF_USERNAME"], os.environ["CF_PASSWORD"]) as cf:
+        time.sleep(3)
+        print("here ok")
+        print(type(cf))
         submissions = list()
         for contest in contests:
+            print(contest)
             contest_name = contest["name"]
             contest_start = moscow_tz.localize(datetime.datetime.strptime(
                 contest["start"], "%b/%d/%Y %H:%M")).astimezone(utc_tz)
@@ -285,56 +286,81 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                     exit(1)
                 curr = set()
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
+                cf.navigate(submission_url)
+                time.sleep(3)
                 data = None
                 for i in range(10):
                     try:
-                        data = cf.session.get(submission_url).text
+                        # data = cf.session.get(submission_url).text
+                        data = cf.get_content()
+                        print("data", data)
+                        # time.sleep(5)
+                        # with open(f"okayy.html", "w", encoding="utf-8") as f:
+                        #         f.write(data)
                         break
                     except requests.exceptions.ConnectionError:
                         if i == 9:
                             exit(1)
                         print("connection error attempt {i}")
                 original = data
-                if any(x in original.lower() for x in errors):
-                    for x in errors:
-                        if x in original.lower():
-                            print(f'error: "{x}" in result')
-                            with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
-                                f.write(original)
-                    time.sleep(5)
-                    retries += 1
-                    continue
-                soup = BeautifulSoup(data, 'html.parser')
-                data = str(soup)
-                data = data[data.find(start):]
+                # with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
+                #     f.write(original)
+                # if any(x in original.lower() for x in errors):
+                #     for x in errors:
+                #         if x in original.lower():
+                #             print(f'error: "{x}" in result')
+                #             with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
+                #                 f.write(original)
+                #     time.sleep(5)
+                #     retries += 1
+                #     continue
+                # soup = BeautifulSoup(data, 'html.parser')
+                # # data = str(soup)
+                # data = data[data.find(start):]
                 fetched_cnt = 0
-                while data.find(profile_str) != -1:
-                    data, tm = get_token(data, time_str, "<")
-                    data, team = get_token(data, team_str, team_end_str) 
-                    usernames = get_usernames(team)
-                    data, problem = get_token(data, problem_str, "\"")
-                    data, verdict = get_token(data, verdict_str, "\"")
+                for row in data:
+                    if not row:
+                        continue
+                    print(row)
+                    time.sleep(0.01)
+                    tm = row[1][:-5]
+                    usernames = row[2].split(": ")[-1].split(", ")
+                    print(usernames)
+                    problem = row[3]
+                    verdict = row[5]
+                # while data.find(profile_str) != -1:
+                    # data, tm = get_token(data, time_str, "<")
+                    # data, team = get_token(data, team_str, team_end_str) 
+                    # usernames = get_usernames(team)
+                    # data, problem = get_token(data, problem_str, "\"")
+                    # data, verdict = get_token(data, verdict_str, "\"")
+
                     dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
+                    print(fetched_cnt)
                     if dt > END_DATE.astimezone(utc_tz):
+                        print("CONTINUE")
                         continue
                     if dt < contest_start:
                         need_break = True
                         print("need break")
                         break
-                    is_solved = verdict == 'OK'
+                    is_solved = verdict == 'Accepted'
                     if not allow_unsolved and not is_solved:
                         continue
                     for uname in usernames:
+                        print("HERE")
                         if uname.lower() in all_handles:
                             timestamp = int(dt.timestamp())
                             if solved[(uname, problem)][int(is_solved)] is None:
                                 solved[(uname, problem)][int(is_solved)] = timestamp
                             elif timestamp < solved[(uname, problem)][int(is_solved)]:
                                 solved[(uname, problem)][int(is_solved)] = timestamp
+                        else:
+                            print("NOT TRUE", uname)
                 
-                time.sleep(1)
+                time.sleep(3)
                 print(
                     f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
                 index += 1
@@ -395,16 +421,16 @@ def main():
 
     # handle codeforces and atcoder
     # print("starting handling codeforces and atcoder")
-    # print("starting handling codeforces")
-    # for handle in handles:
-    #     num = random.uniform(10, 20)
-    #     time.sleep(num)
-    #     for cf_handle in handle["codeforces_handles"]:
-    #         submissions.extend(get_codeforces(cf_handle))
-    #     # for ac_handle in handle["atcoder_handles"]:
-    #     #     submissions.extend(get_atcoder(ac_handle))
-    #     print(f"done {handle}")
-    #     time.sleep(1)
+    print("starting handling codeforces")
+    for handle in handles:
+        num = random.uniform(10, 20)
+        time.sleep(num)
+        for cf_handle in handle["codeforces_handles"]:
+            submissions.extend(get_codeforces(cf_handle))
+        # for ac_handle in handle["atcoder_handles"]:
+        #     submissions.extend(get_atcoder(ac_handle))
+        print(f"done {handle}")
+        time.sleep(1)
 
     # handle icpc
     # print("starting handling icpc")

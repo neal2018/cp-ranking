@@ -25,7 +25,7 @@ export const getPointFromProblemId = (problem_id: string, platform: string) => {
     return 0.5
   }
   if (platform === 'zealots') {
-    return 0.1
+    return 0.5
   }
   return 0
 }
@@ -152,8 +152,8 @@ export const getPoints = (username: string) => {
     atcoder: 0,
     icpc: icpcPoints,
     icpcParticipation: icpcParticipation,
-    zealots: zealotsPoints.toFixed(1),
-    total: codeforcesPoints + codeforcesParticipation + 0 + icpcPoints,
+    zealots: zealotsPoints,
+    total: codeforcesPoints + codeforcesParticipation + zealotsPoints + icpcPoints,
     // total: codeforcesPoints + codeforcesParticipation + atcoderPoints + icpcPoints,
   }
 }

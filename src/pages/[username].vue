@@ -51,8 +51,8 @@ const  userCFSubmissions= reactive(submissions.filter(submission =>
 const userICPCsubmissions = reactive(submissions.filter(submission =>
   (submission.platform === 'icpc' && submission.solved && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse())
 
-// const userZealotssubmissions = submissions.filter(submission =>
-//   (submission.platform === 'zealots' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
+const userZealotssubmissions = submissions.filter(submission =>
+  (submission.platform === 'zealots' && codeforces_handles_lower.includes(submission.handle.toLowerCase()))).reverse()
 
 const sortTable = (val: string, data: any)=> {
     if (val === 'Contest ID' && data !== userICPCsubmissions) {
@@ -242,7 +242,7 @@ const sorteduserICPCsubmissions = computed(() => {
     </div>
 
     <div>
-      <!-- <p text-2xl p-t-10>
+      <p text-2xl p-t-10>
         Zealots: {{ handle.codeforces_handles }}; {{ userPoints.zealots }} Points
       </p>
       <table border-1 m-auto m-y-5>
@@ -277,7 +277,7 @@ const sorteduserICPCsubmissions = computed(() => {
             {{ getPointFromProblem(userData.upsolved, 0, "", "zealots") }}
           </td>
         </tr>
-      </table> -->
+      </table>
     </div>
 
     <div>
