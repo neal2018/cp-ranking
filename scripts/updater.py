@@ -12,10 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 import requests
-import crypto
-import sys
-sys.modules['Crypto'] = crypto
-from Crypto.Cipher import AES
+import pyaes
 from bs4 import BeautifulSoup
 
 os.environ["CF_USERNAME"] = "cheetahbot"
@@ -227,7 +224,9 @@ class CFLogin:
         matched = re.findall(r'toNumbers\("(.+?)"\)', dt)
         assert len(matched) == 3
         key, iv, text = matched
-        block = AES.new(bytes.fromhex(key), AES.MODE_CBC, bytes.fromhex(iv))
+        key = bytes.fromhex(key)
+        iv = bytes.fromhex(iv)
+        block = pyaes.AESModeOfOperationCBC(key, iv)
         rcpc = block.decrypt(bytes.fromhex(text)).hex()
         return rcpc
 
