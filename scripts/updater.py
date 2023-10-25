@@ -297,7 +297,9 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 for row in data:
                     if not row:
                         continue
-                    tm = row[1][:-5]
+                    tm = row[1]
+                    if tm.endswith("UTC-4") or tm.endswith("UTC-5"):
+                        tm = tm[:-5]
                     usernames = row[2].split(": ")[-1].split(", ")
                     problem = row[3]
                     verdict = row[5]
