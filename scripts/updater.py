@@ -7,6 +7,7 @@ import pytz
 from typing import List, NamedTuple
 from collections import defaultdict
 import random
+import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -203,22 +204,23 @@ class CFLogin:
         return self
 
     def __exit__(self, etype, value, traceback):
-        # soup = BeautifulSoup(self.session.get(self.BASE).text, 'html.parser')
-        # logout = soup.select_one("a[href*=logout]")
-        # if logout:
-        #     href = logout["href"]
-        #     assert isinstance(href, str)
-        #     self.session.get(self.BASE + href)
         pass
 
     def navigate(self, url):
         self.driver.get(url)
+        # time.sleep(3)
 
     def get_content(self):
+        
         datatable_xpath = '//*[@id="pageContent"]/div[2]/div[6]/table'
-        mytable = self.driver.find_element("xpath", datatable_xpath)
+        mytable = None
+        while True:
+            try:
+                mytable = self.driver.find_element("xpath", datatable_xpath)
+                break
+            except selenium.common.exceptions.NoSuchElementException:
+                time.sleep(0.1)
         rows = [[cell.text for cell in row.find_elements(By.TAG_NAME, 'td')] for row in mytable.find_elements(By.CSS_SELECTOR, 'tr')]
-        print(rows)
         return rows
 
     def get_rcpc(self, dt):
@@ -264,8 +266,6 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
 
     with CFLogin(os.environ["CF_USERNAME"], os.environ["CF_PASSWORD"]) as cf:
         time.sleep(3)
-        print("here ok")
-        print(type(cf))
         submissions = list()
         for contest in contests:
             print(contest)
@@ -288,88 +288,38 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                 submission_url = f"{cf.BASE}/{contest_name}/status?pageIndex={index}&order=BY_JUDGED_DESC"
                 cf.navigate(submission_url)
                 time.sleep(3)
-                data = None
-                for i in range(10):
-                    try:
-                        # data = cf.session.get(submission_url).text
-                        data = cf.get_content()
-                        print("data", data)
-                        # time.sleep(5)
-                        # with open(f"okayy.html", "w", encoding="utf-8") as f:
-                        #         f.write(data)
-                        break
-                    except requests.exceptions.ConnectionError:
-                        if i == 9:
-                            exit(1)
-                        print("connection error attempt {i}")
-                original = data
-                # with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
-                #     f.write(original)
-                # if any(x in original.lower() for x in errors):
-                #     for x in errors:
-                #         if x in original.lower():
-                #             print(f'error: "{x}" in result')
-                #             with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
-                #                 f.write(original)
-                #     time.sleep(5)
-                #     retries += 1
-                #     continue
-                # soup = BeautifulSoup(data, 'html.parser')
-                # # data = str(soup)
-                # data = data[data.find(start):]
+                data = cf.get_content()
                 fetched_cnt = 0
                 for row in data:
                     if not row:
                         continue
-                    print(row)
-                    time.sleep(0.01)
                     tm = row[1][:-5]
                     usernames = row[2].split(": ")[-1].split(", ")
-                    print(usernames)
                     problem = row[3]
                     verdict = row[5]
-                # while data.find(profile_str) != -1:
-                    # data, tm = get_token(data, time_str, "<")
-                    # data, team = get_token(data, team_str, team_end_str) 
-                    # usernames = get_usernames(team)
-                    # data, problem = get_token(data, problem_str, "\"")
-                    # data, verdict = get_token(data, verdict_str, "\"")
-
                     dt = moscow_tz.localize(datetime.datetime.strptime(tm, "%b/%d/%Y %H:%M")).astimezone(utc_tz)
                     curr.add((tuple(usernames), dt))
                     fetched_cnt += 1
-                    print(fetched_cnt)
                     if dt > END_DATE.astimezone(utc_tz):
-                        print("CONTINUE")
                         continue
                     if dt < contest_start:
                         need_break = True
-                        print("need break")
                         break
                     is_solved = verdict == 'Accepted'
                     if not allow_unsolved and not is_solved:
                         continue
                     for uname in usernames:
-                        print("HERE")
                         if uname.lower() in all_handles:
                             timestamp = int(dt.timestamp())
                             if solved[(uname, problem)][int(is_solved)] is None:
                                 solved[(uname, problem)][int(is_solved)] = timestamp
                             elif timestamp < solved[(uname, problem)][int(is_solved)]:
                                 solved[(uname, problem)][int(is_solved)] = timestamp
-                        else:
-                            print("NOT TRUE", uname)
-                
-                time.sleep(3)
                 print(
                     f"fetched total: {len(solved)} current page: {index}, {fetched_cnt}")
                 index += 1
                 if not fetched_cnt or curr == prev:
                     print("broke here", len(solved), fetched_cnt, curr==prev)
-                    # if (len(solved) == 0):
-                    #     print(submission_url)
-                    #     with open(f"{contest_name.replace('/', '-')}.html", "w", encoding="utf-8") as f:
-                    #         f.write(original)
                     break
                 prev = curr
             for (uname, problem), (wa_timestamp, ac_timestamp) in sorted(solved.items(), key=lambda x: min([y for y in x[1] if y is not None])):
@@ -400,7 +350,6 @@ def get_group(handles: List[str], group, contests, allow_unsolved=False):
                         submission_id=contest_start.timestamp(),
                     ))
             print(f"done {contest_name}")
-            # time.sleep(2)
         return submissions
 
 
