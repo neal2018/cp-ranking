@@ -961,6 +961,30 @@
   },
   {
     "platform": "codeforces",
+    "handle": "emthom",
+    "contest_id": 1895,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231143222,
+    "time": 1699022625,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "emthom",
+    "contest_id": 1895,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231189363,
+    "time": 1699027283,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
     "handle": "gkermit",
     "contest_id": 1890,
     "problem_id": "A",
@@ -1016,6 +1040,18 @@
     "division": 2,
     "submission_id": 227382076,
     "time": 1696865333,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "gyo2102",
+    "contest_id": 1895,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231164571,
+    "time": 1699024056,
     "solved": true,
     "upsolved": false
   },
@@ -1141,6 +1177,30 @@
   },
   {
     "platform": "codeforces",
+    "handle": "jnfh97314",
+    "contest_id": 1895,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231154608,
+    "time": 1699023216,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "jnfh97314",
+    "contest_id": 1895,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231175674,
+    "time": 1699025375,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
     "handle": "jonathanAngel",
     "contest_id": 1879,
     "problem_id": "A",
@@ -1244,6 +1304,30 @@
     "division": 2,
     "submission_id": 230215055,
     "time": 1698506284,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "mate_asher",
+    "contest_id": 1895,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231158336,
+    "time": 1699023482,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "mate_asher",
+    "contest_id": 1895,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231171737,
+    "time": 1699024871,
     "solved": true,
     "upsolved": false
   },
@@ -1676,6 +1760,30 @@
     "division": 2,
     "submission_id": 227348631,
     "time": 1696862779,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "ryanhmercer",
+    "contest_id": 1895,
+    "problem_id": "A",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231140605,
+    "time": 1699022507,
+    "solved": true,
+    "upsolved": false
+  },
+  {
+    "platform": "codeforces",
+    "handle": "ryanhmercer",
+    "contest_id": 1895,
+    "problem_id": "B",
+    "rating": -1,
+    "division": 2,
+    "submission_id": 231154994,
+    "time": 1699023240,
     "solved": true,
     "upsolved": false
   },
